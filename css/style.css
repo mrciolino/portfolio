@@ -91,6 +91,9 @@
 
 /* Project 1  */
 /* Text area clear default */
+
+
+
 /* Test Project */
 /* textarea input */
 textarea {
@@ -103,4 +106,8 @@ textarea {
     background-color: #f8f8f8;
     font-size: 16px;
     resize: none;
+}
+.summary {
+   word-wrap: break-word;
+   width: 500px;
 }

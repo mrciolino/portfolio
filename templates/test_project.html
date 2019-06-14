@@ -2,6 +2,50 @@
     <link rel="stylesheet" href="../css/style.css" />
 </head>
 
+<script type="text/javascript">
+    function getNumber() {
+        var max = 6.0; // The minimum number you want
+        var min = 0.0; // The maximum number you want
+        return (Math.random() * (max - min + 1) + min).toFixed(2);
+    }
+
+    // updates one DOM element given its id
+    function updateDom(id) {
+        // Sets content of <div> to number
+        document.getElementById(id).value = getNumber();
+    }
+
+    // updates all DOM elements listed
+    function updateAll() {
+        updateDom('f1');
+        updateDom('f2');
+        updateDom('f3');
+        updateDom('f4');
+    }
+
+    window.onload = function() {
+        // setup the button click
+        document.getElementById("Features").onclick = function() {
+            doWork()
+        };
+    }
+
+    function doWork() {
+        // grab the values
+        var features = [{
+            Feature_1: document.getElementById('f1').value,
+            Feature_2: document.getElementById('f2').value,
+            Feature_3: document.getElementById('f3').value,
+            Feature_4: document.getElementById('f3').value,
+        }];
+        // ajax the JSON to the server
+        $.post("receiver", features, function() {});
+        // stop link reloading the page
+        event.preventDefault();
+    }
+</script>
+
+
 <body>
     <!-- navigation bar -->
     <div class="navigation-bar">
@@ -13,18 +57,28 @@
     </div>
 
     <!-- Input text area -->
-    Input any number between 0 and 6
-    <form method="POST">
-        <input type="number" name="quantity" min="0" max="6" name="n1">
-        <input type="number" name="quantity" min="0" max="6" name="n2">
-        <input type="number" name="quantity" min="0" max="6" name="n3">
-        <input type="number" name="quantity" min="0" max="6" name="n4">
-        <br>
-        <input name="Description" type="submit">
-        <input name="Random" type="submit" value="Random">
-        </br>
+    <p class="summary">
+        This is perhaps the best known database to be found in the pattern recognition literature. Fisher's paper is a classic in the field and is referenced frequently to this day. (See Duda & Hart, for example.) The data set contains 3 classes of
+        50 instances each, where each class refers to a type of iris plant.
+    </p>
+
+    <p>
+        Feature 1: sepal length in cm </br>
+        Feature 2: sepal width in cm </br>
+        Feature 3: petal length in cm </br>
+        Feature 4: petal width in cm </br>
+
+        Classes Iris Setosa, Iris Versicolour Iris Virginica
+    </p>
+
+    <form method="POST" class="Features">
+        <input type="number" name="quantity" min="0.00" max="6.00" id="f1" required="True">
+        <input type="number" name="quantity" min="0.00" max="6.00" id="f2" required="True">
+        <input type="number" name="quantity" min="0.00" max="6.00" id="f3" required="True">
+        <input type="number" name="quantity" min="0.00" max="6.00" id="f4" required="True">
     </form>
 
-
+    <input id="Features" type="button" value="Submit">
+    <input name="Random" type="button" value="Random" onclick="updateAll();">
 
 </body>

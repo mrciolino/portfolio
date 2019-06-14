@@ -1,22 +1,28 @@
+import numpy as np
 from flask import Flask, request, render_template
+import pickle
 
 app = Flask(__name__)
 
 
 @app.route('/')
-def my_form():
-    return render_template('project_1.html')
+def output():
+    # serve index template
+    return render_template('index.html')
 
 
-@app.route('/', methods=['POST'])
-def my_form_post():
-    return 'You entered: {}'.format(request.form['Description'])
+@app.route('/receiver', methods=['POST'])
+def worker():
+    # read json + reply
+    data = request.get_json()
+    result = ''
+
+    for item in data:
+        # loop over every row
+        result += str(item['make']) + '\n'
+
+    return result
 
 
-@app.route('/', methods=['POST'])
-def my_form_post():
-    return 'You entered: {}'.format(request.form['Description'])
-
-
-if __name__ == "__main":
-    app.run()
+if __name__ == "__main__":
+    app.run(debug=True)
