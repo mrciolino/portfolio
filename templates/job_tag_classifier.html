@@ -1,15 +1,9 @@
 <head>
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css')}}" />
 </head>
 
-<!-- navigation bar -->
-<div class="navigation-bar">
-    <li><a href="../index.html">Home</a></li>
-    <li><a href="About.asp">About</a></li>
-    <li><a href="Projects.asp">Projects</a></li>
-    <li><a href="Contact.asp">Contact</a></li>
-    <li><a href="Resume.asp">Resume</a></li>
-</div>
+<!-- navigation bar header -->
+{% include 'header.html' %}
 
 <div>
     <br>
@@ -22,9 +16,8 @@ Input the Job Description here.
         </br>
     </form>
 
-
-    
-
-
     </br>
 </div>
+
+<!-- footer -->
+{% include 'footer.html' %}

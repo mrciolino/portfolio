@@ -1,5 +1,7 @@
 <head>
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css')}}" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 
 <script type="text/javascript">
@@ -36,26 +38,79 @@
             Feature_1: document.getElementById('f1').value,
             Feature_2: document.getElementById('f2').value,
             Feature_3: document.getElementById('f3').value,
-            Feature_4: document.getElementById('f3').value,
+            Feature_4: document.getElementById('f4').value,
         }];
+        // generate new heatmap
+        plot_heatmap()
         // ajax the JSON to the server
-        $.post("receiver", features, function() {});
+        $.ajax({
+            type: 'POST',
+            url: '/predict_iris',
+            data: JSON.stringify(features),
+            success: function(data) {
+                display_result(data);
+                return data;
+            },
+            contentType: "application/json",
+            dataType: 'json'
+        });
         // stop link reloading the page
         event.preventDefault();
     }
+
+    function plot_heatmap() {
+        var data = [{
+            z: [
+                [
+                    document.getElementById('f1').value,
+                    document.getElementById('f2').value,
+                    document.getElementById('f3').value,
+                    document.getElementById('f4').value
+                ]
+            ],
+            type: 'heatmap',
+            zauto: false,
+            zmin: 0,
+            zmax: 6,
+            colorscale: 'RdBu',
+        }];
+        var layout = {
+            showlegend: false,
+            xaxis: {
+                autorange: true,
+                showgrid: false,
+                zeroline: false,
+                showline: false,
+                autotick: true,
+                ticks: '',
+                showticklabels: false
+            },
+            yaxis: {
+                autorange: true,
+                showgrid: false,
+                zeroline: false,
+                showline: false,
+                autotick: true,
+                ticks: '',
+                showticklabels: false
+            }
+        };
+
+        Plotly.newPlot('heatmapdiv', data, layout, {
+            displayModeBar: false,
+            staticPlot: true
+        });
+    }
+
+    function display_result(data) {
+        document.getElementById("showresults").innerHTML = data;
+    }
 </script>
 
+<!-- navigation bar header -->
+{% include 'header.html' %}
 
 <body>
-    <!-- navigation bar -->
-    <div class="navigation-bar">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="About.asp">About</a></li>
-        <li><a href="Projects.asp">Projects</a></li>
-        <li><a href="Contact.asp">Contact</a></li>
-        <li><a href="Resume.asp">Resume</a></li>
-    </div>
-
     <!-- Input text area -->
     <p class="summary">
         This is perhaps the best known database to be found in the pattern recognition literature. Fisher's paper is a classic in the field and is referenced frequently to this day. (See Duda & Hart, for example.) The data set contains 3 classes of
@@ -82,3 +137,12 @@
     <input name="Random" type="button" value="Random" onclick="updateAll();">
 
 </body>
+
+<!-- place for predictions -->
+<section id="showresults"></section>
+
+<!-- place for heatmap -->
+<div id="heatmapdiv"></div>
+
+<!-- footer -->
+{% include 'footer.html' %}

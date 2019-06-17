@@ -1,40 +1,23 @@
-<!DOCTYPE html>
-<html>
-
 <head>
-    <link rel="stylesheet" href="css/style.css" />
+    <!-- load our css -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css')}}" />
+    <!-- Load font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <!-- navigation bar -->
-    <div class="navigation-bar">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="About.asp">About</a></li>
-        <li><a href="Projects.asp">Projects</a></li>
-        <li><a href="Contact.asp">Contact</a></li>
-        <li><a href="Resume.asp">Resume</a></li>
-    </div>
-
-    <!-- Load font awesome icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- navigation bar header -->
+    {% include 'header.html' %}
 
     <!-- links to projects -->
-    <h2>Project 1 Link</h2>
-    <p><a href="templates/project_1.html">Novel Job Tag Classifier</a></p>
-    <p><a href={{ url_for('cool_form') }}</a></p>
-    <h2>Test Project Link</h2>
-    <p><a href="templates/test_project.html">Iris Classifier</a></p>
+    <p>
+        <a href="{{ url_for('test_project') }}">Test Project</a>
+        <br></br>
+        <a href="{{ url_for('job_tag_classifier') }}">Job Tag Classifier</a>
+    </p>
 
-    <!-- The social media icon bar -->
-    <section id="lab_social_icon_footer">
-        <!-- Include Font Awesome Stylesheet in Header -->
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-        <div class="container">
-            <div class="text-center center-block">
-                <a href="https://www.facebook.com/bootsnipp"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
-                <a href="https://twitter.com/bootsnipp"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
-                <a href="https://plus.google.com/+Bootsnipp-page"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
-                <a href="mailto:#"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
-            </div>
-        </div>
-    </section>
+    <!-- The social media footer -->
+    {% include 'footer.html' %}
+
+
+</body>
