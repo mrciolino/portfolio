@@ -6,7 +6,7 @@
 
 <script type="text/javascript">
     function getNumber() {
-        var max = 6.0; // The minimum number you want
+        var max = 5.0; // The minimum number you want
         var min = 0.0; // The maximum number you want
         return (Math.random() * (max - min + 1) + min).toFixed(2);
     }
@@ -61,12 +61,10 @@
     function plot_heatmap() {
         var data = [{
             z: [
-                [
-                    document.getElementById('f1').value,
-                    document.getElementById('f2').value,
-                    document.getElementById('f3').value,
-                    document.getElementById('f4').value
-                ]
+                [document.getElementById('f1').value],
+                [document.getElementById('f2').value],
+                [document.getElementById('f3').value],
+                [document.getElementById('f4').value]
             ],
             type: 'heatmap',
             zauto: false,
@@ -103,9 +101,92 @@
     }
 
     function display_result(data) {
-        document.getElementById("showresults").innerHTML = data;
+
+        var result = Object.values(data)[0];
+
+        document.getElementById('Setosa').style.backgroundColor = 'rgba(213, 177, 177, 0.25)';
+        document.getElementById("Versicolour").style.backgroundColor = 'rgba(213, 177, 177, 0.25)';
+        document.getElementById("Virginica").style.backgroundColor = 'rgba(213, 177, 177, 0.25)';
+
+        if (result == "setosa") {
+            document.getElementById("Setosa").style.backgroundColor = 'rgba(35, 167, 40, 0.76)';
+        }
+        if (result == "versicolor") {
+            document.getElementById("Versicolour").style.backgroundColor = 'rgba(35, 167, 40, 0.76)';
+        }
+        if (result == "virginica") {
+            document.getElementById("Virginica").style.backgroundColor = 'rgba(35, 167, 40, 0.76)';
+        }
     }
 </script>
+
+<style>
+    #Setosa {
+        text-align: center;
+        background-color: rgba(213, 177, 177, 0.25);;
+        display: inline-block;
+        height: 1.15em;
+        width: 8em;
+    }
+
+    #Versicolour {
+        text-align: center;
+        background-color: rgba(213, 177, 177, 0.25);;
+        display: inline-block;
+        height: 1.15em;
+        width: 8em;
+    }
+
+    #Virginica {
+        text-align: center;
+        background-color: rgba(213, 177, 177, 0.25);
+        display: inline-block;
+        height: 1.15em;
+        width: 8em;
+    }
+
+    #preds {
+        position: absolute;
+        zoom: 1.75;
+        -moz-transform: scale(1.75);
+        right: 100;
+        top: 100;
+    }
+
+    #heatmapdiv {
+        zoom: 0.75;
+        -moz-transform: scale(0.75);
+    }
+    .summary {
+        display:block;
+        padding: 25px 20px;
+        box-sizing: border-box;
+        border: 4px solid #ccc;
+        border-radius: 10px;
+        background-color: rgba(228, 224, 204, 0.31);
+        font-size: 16px;
+        word-wrap: break-word;
+        width: 500px;
+    }
+
+    .summary2 {
+        width: 100%;
+        height: auto;
+        padding: 12px 20px;
+        font-size: 16px;
+        word-wrap: break-word;
+        width: 500px;
+    }
+
+    .Features {
+        width: 100%;
+        height: auto;
+        padding: 12px 20px;
+    }
+
+</style>
+
+<!-- ////////// Start of body ///////////////// -->
 
 <!-- navigation bar header -->
 {% include 'header.html' %}
@@ -117,29 +198,35 @@
         50 instances each, where each class refers to a type of iris plant.
     </p>
 
-    <p>
+    <p class=summary2>
         Feature 1: sepal length in cm </br>
         Feature 2: sepal width in cm </br>
         Feature 3: petal length in cm </br>
         Feature 4: petal width in cm </br>
 
-        Classes Iris Setosa, Iris Versicolour Iris Virginica
+        Classes: Iris Setosa, Iris Versicolour Iris Virginica
     </p>
 
     <form method="POST" class="Features">
-        <input type="number" name="quantity" min="0.00" max="6.00" id="f1" required="True">
-        <input type="number" name="quantity" min="0.00" max="6.00" id="f2" required="True">
-        <input type="number" name="quantity" min="0.00" max="6.00" id="f3" required="True">
-        <input type="number" name="quantity" min="0.00" max="6.00" id="f4" required="True">
+        <input type="number" name="quantity" min="0.00" max="10.00" id="f1" required="True">
+        <input type="number" name="quantity" min="0.00" max="10.00" id="f2" required="True">
+        <input type="number" name="quantity" min="0.00" max="10.00" id="f3" required="True">
+        <input type="number" name="quantity" min="0.00" max="10.00" id="f4" required="True">
+
+        <br></br>
+
+        <input id="Features" type="button" value="Submit">
+        <input name="Random" type="button" value="Random" onclick="updateAll();">
     </form>
 
-    <input id="Features" type="button" value="Submit">
-    <input name="Random" type="button" value="Random" onclick="updateAll();">
 
 </body>
 
-<!-- place for predictions -->
-<section id="showresults"></section>
+<aside id="preds">
+    <div id="Setosa">Iris Setosa</div><br></br>
+    <div id="Versicolour">Iris Versicolour</div><br></br>
+    <div id="Virginica">Iris Virginica</div>
+</aside>
 
 <!-- place for heatmap -->
 <div id="heatmapdiv"></div>
