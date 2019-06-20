@@ -1,4 +1,3 @@
-import matplotlib.pyplot as plt
 import pickle as pkl
 import os
 
@@ -30,4 +29,4 @@ def run_predictions(input):
             file.close()
         predict(clf, input)
 
-    return max(predictions,key=predictions.count)
+    return 'Test'
