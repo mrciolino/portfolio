@@ -1,0 +1,235 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css')}}" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<script type="text/javascript">
+    function getNumber() {
+        var max = 5.0; // The minimum number you want
+        var min = 0.0; // The maximum number you want
+        return (Math.random() * (max - min + 1) + min).toFixed(2);
+    }
+
+    // updates one DOM element given its id
+    function updateDom(id) {
+        // Sets content of <div> to number
+        document.getElementById(id).value = getNumber();
+    }
+
+    // updates all DOM elements listed
+    function updateAll() {
+        updateDom('f1');
+        updateDom('f2');
+        updateDom('f3');
+        updateDom('f4');
+    }
+
+    window.onload = function() {
+        // setup the button click
+        document.getElementById("Features").onclick = function() {
+            doWork()
+        };
+    }
+
+    function doWork() {
+        // grab the values
+        var features = [{
+            Feature_1: document.getElementById('f1').value,
+            Feature_2: document.getElementById('f2').value,
+            Feature_3: document.getElementById('f3').value,
+            Feature_4: document.getElementById('f4').value,
+        }];
+        // generate new heatmap
+        plot_heatmap()
+        // ajax the JSON to the server
+        $.ajax({
+            type: 'POST',
+            url: '/predict_iris',
+            data: JSON.stringify(features),
+            success: function(data) {
+                display_result(data);
+                return data;
+            },
+            contentType: "application/json",
+            dataType: 'json'
+        });
+        // stop link reloading the page
+        event.preventDefault();
+    }
+
+    function plot_heatmap() {
+        var data = [{
+            z: [
+                [document.getElementById('f1').value],
+                [document.getElementById('f2').value],
+                [document.getElementById('f3').value],
+                [document.getElementById('f4').value]
+            ],
+            type: 'heatmap',
+            zauto: false,
+            zmin: 0,
+            zmax: 6,
+            colorscale: 'RdBu',
+        }];
+        var layout = {
+            showlegend: false,
+            xaxis: {
+                autorange: true,
+                showgrid: false,
+                zeroline: false,
+                showline: false,
+                autotick: true,
+                ticks: '',
+                showticklabels: false
+            },
+            yaxis: {
+                autorange: true,
+                showgrid: false,
+                zeroline: false,
+                showline: false,
+                autotick: true,
+                ticks: '',
+                showticklabels: false
+            }
+        };
+
+        Plotly.newPlot('heatmapdiv', data, layout, {
+            displayModeBar: false,
+            staticPlot: true
+        });
+    }
+
+    function display_result(data) {
+
+        var result = Object.values(data)[0];
+
+        document.getElementById('Setosa').style.backgroundColor = 'rgba(213, 177, 177, 0.25)';
+        document.getElementById("Versicolour").style.backgroundColor = 'rgba(213, 177, 177, 0.25)';
+        document.getElementById("Virginica").style.backgroundColor = 'rgba(213, 177, 177, 0.25)';
+
+        if (result == "setosa") {
+            document.getElementById("Setosa").style.backgroundColor = 'rgba(35, 167, 40, 0.76)';
+        }
+        if (result == "versicolor") {
+            document.getElementById("Versicolour").style.backgroundColor = 'rgba(35, 167, 40, 0.76)';
+        }
+        if (result == "virginica") {
+            document.getElementById("Virginica").style.backgroundColor = 'rgba(35, 167, 40, 0.76)';
+        }
+    }
+</script>
+
+<style>
+    #Setosa {
+        text-align: center;
+        background-color: rgba(213, 177, 177, 0.25);;
+        display: inline-block;
+        height: 1.15em;
+        width: 8em;
+    }
+
+    #Versicolour {
+        text-align: center;
+        background-color: rgba(213, 177, 177, 0.25);;
+        display: inline-block;
+        height: 1.15em;
+        width: 8em;
+    }
+
+    #Virginica {
+        text-align: center;
+        background-color: rgba(213, 177, 177, 0.25);
+        display: inline-block;
+        height: 1.15em;
+        width: 8em;
+    }
+
+    #preds {
+        position: absolute;
+        zoom: 1.75;
+        -moz-transform: scale(1.75);
+        right: 100;
+        top: 100;
+    }
+
+    #heatmapdiv {
+        zoom: 0.75;
+        -moz-transform: scale(0.75);
+    }
+    .summary {
+        display:block;
+        padding: 25px 20px;
+        box-sizing: border-box;
+        border: 4px solid #ccc;
+        border-radius: 10px;
+        background-color: rgba(228, 224, 204, 0.31);
+        font-size: 16px;
+        word-wrap: break-word;
+        width: 500px;
+    }
+
+    .summary2 {
+        width: 100%;
+        height: auto;
+        padding: 12px 20px;
+        font-size: 16px;
+        word-wrap: break-word;
+        width: 500px;
+    }
+
+    .Features {
+        width: 100%;
+        height: auto;
+        padding: 12px 20px;
+    }
+
+</style>
+
+<!-- ////////// Start of body ///////////////// -->
+
+<!-- navigation bar header -->
+{% include 'header.html' %}
+
+<body>
+    <!-- Input text area -->
+    <p class="summary">
+        This is perhaps the best known database to be found in the pattern recognition literature. Fisher's paper is a classic in the field and is referenced frequently to this day. (See Duda & Hart, for example.) The data set contains 3 classes of
+        50 instances each, where each class refers to a type of iris plant.
+    </p>
+
+    <p class=summary2>
+        Feature 1: sepal length in cm </br>
+        Feature 2: sepal width in cm </br>
+        Feature 3: petal length in cm </br>
+        Feature 4: petal width in cm </br>
+
+        Classes: Iris Setosa, Iris Versicolour Iris Virginica
+    </p>
+
+    <form method="POST" class="Features">
+        <input type="number" name="quantity" min="0.00" max="10.00" id="f1" required="True">
+        <input type="number" name="quantity" min="0.00" max="10.00" id="f2" required="True">
+        <input type="number" name="quantity" min="0.00" max="10.00" id="f3" required="True">
+        <input type="number" name="quantity" min="0.00" max="10.00" id="f4" required="True">
+
+        <br></br>
+
+        <input id="Features" type="button" value="Submit">
+        <input name="Random" type="button" value="Random" onclick="updateAll();">
+    </form>
+
+
+</body>
+
+<aside id="preds">
+    <div id="Setosa">Iris Setosa</div><br></br>
+    <div id="Versicolour">Iris Versicolour</div><br></br>
+    <div id="Virginica">Iris Virginica</div>
+</aside>
+
+<!-- place for heatmap -->
+<div id="heatmapdiv"></div>
+
+<!-- footer -->
+{% include 'footer.html' %}

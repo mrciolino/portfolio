@@ -1,5 +1,6 @@
 <head>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css')}}" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 </head>
 
 <script>
@@ -13,7 +14,7 @@
     function doWork() {
         // grab the values
         var features = [{
-            Feature_1: document.getElementById('Description').value
+            Feature_1: document.getElementById('text').value
         }];
         // ajax the JSON to the server
         $.ajax({
@@ -30,6 +31,11 @@
         // stop link reloading the page
         event.preventDefault();
     }
+
+    function display_result(data) {
+        document.getElementById('preds').innerHTML = 'test';
+    }
+
 </script>
 
 <style>
@@ -54,6 +60,10 @@ Input the Job Description here.
         <input id="Description" type="button" value="Submit">
         </br>
     </form>
+</div>
+
+<div id="preds">
+nice
 </div>
 
 <!-- footer -->

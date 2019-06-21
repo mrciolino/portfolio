@@ -1,32 +1,29 @@
+from keras import models
 import pickle as pkl
+import pandas as pd
 import os
 
-# read in the inputs
-input = [5, 1, 7, 2]
-
-# load model
-model_pkls = ["projects/test_project/model/iris_model_naive_bayes.pkl",
-              "projects/test_project/model/iris_model_svc.pkl",
-              "projects/test_project/model/iris_model_knn.pkl",
-              "projects/test_project/model/iris_model_random_forest.pkl"]
+sys.path.append("Job Tag Classifier Tools")
+from Pipeline import DataLoader, tag_decoder
 
 
 def run_predictions(input):
 
-    predictions = []
+    # save the passed job description and job title to a csv file to pass to dataloader
 
-    def predict(clf, input):
-        # predict
-        prediction_index = clf.predict([input])
-        prediction = ['setosa', 'versicolor', 'virginica'][int(prediction_index)]
 
-        # return the results
-        predictions.append(prediction)
+    # load our data into X and Y
+    X, _, Y, _ = DataLoader("train_file.csv", test_size=0)
 
-    for model in model_pkls:
-        with open(os.getcwd() + '/' + model, 'rb') as file:
-            clf = pkl.load(file)
-            file.close()
-        predict(clf, input)
+    # encode the input
+    encoder = models.load_model("Models/encoder_model")
+    X_encoded = encoder.predict(X)
 
-    return 'Test'
+    # load the classifier
+    model = models.load_model("Models/classifier_model")
+    list_of_indices = model.predict(X_encoded)
+
+    # decode the target back into tags
+    predicition = tag_decoder(list_of_indices, threshold=.2)
+
+    return predicition
