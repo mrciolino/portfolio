@@ -2,6 +2,12 @@ from flask import Flask, request, render_template, jsonify
 import sys
 import os
 
+sys.path.append(os.getcwd() + "/projects/job_tag_classifier")
+import predict_job_tag
+
+sys.path.append(os.getcwd() + "/projects/iris_classifier")
+import predict_iris
+
 app = Flask(__name__)
 
 
@@ -23,9 +29,6 @@ def job_tag_classifier():
 @app.route('/predict_iris', methods=['POST'])
 def predict_iris():
 
-    sys.path.append(os.getcwd() + "/projects/iris_classifier")
-    import predict_iris
-
     app.logger.info('Running Iris Classifers')
     # get the data
     data = request.get_json()
@@ -41,22 +44,16 @@ def predict_iris():
 @app.route('/predict_tags', methods=['POST'])
 def predict_tags():
 
-    sys.path.append(os.getcwd() + "/projects/job_tag_classifier")
-    import predict_job_tag
-
-    # app.logger.info('Running Job Tag Classifers')
-    # # get the data
-    # data = request.get_json()
-    # # convert data into array
-    # features = [float(i) for i in list(data[0].values())]
-    # app.logger.info(features)
-    # # run the prediction and return
-    # result = predict_job_tag.run_predictions(features)
-    # app.logger.info(result)
-    # return jsonify(result=result)
-
-    return jsonify(result='tester')
-
+    app.logger.info('Running Job Tag Classifers')
+    # get the data
+    data = request.get_json()
+    # convert data into array
+    features = [i for i in list(data[0].values())]
+    app.logger.info("Title %s" % features[0])
+    # run the prediction and return
+    result = predict_job_tag.run_predictions(features)
+    app.logger.info(result)
+    return jsonify(result=result)
 
 
 if __name__ == "__main__":

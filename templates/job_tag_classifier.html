@@ -6,7 +6,7 @@
 <script>
     window.onload = function() {
     // setup the button click
-    document.getElementById("Description").onclick = function() {
+    document.getElementById("submit").onclick = function() {
         doWork()
     };
     }
@@ -14,8 +14,11 @@
     function doWork() {
         // grab the values
         var features = [{
-            Feature_1: document.getElementById('text').value
+            Feature_1: document.getElementById('text').Title.value,
+            Feature_2: document.getElementById('text').Description.value
         }];
+        //progress myBar
+        move()
         // ajax the JSON to the server
         $.ajax({
             type: 'POST',
@@ -33,17 +36,58 @@
     }
 
     function display_result(data) {
-        document.getElementById('preds').innerHTML = 'test';
+        document.getElementById('preds').innerHTML = Object.values(data)[0];;
     }
 
+    function move() {
+        var elem = document.getElementById("myBar");
+        var width = 1;
+        var id = setInterval(frame, 35);
+
+        function frame() {
+            if (width >= 100) {
+                clearInterval(id);
+            } else {
+                width++;
+                elem.style.width = width + '%';
+            }
+        }
+    }
 </script>
 
 <style>
     .Description{
         position: relative;
         left: 30px;
-        top: 30px;
-
+        top: 50px;
+    }
+    .Title{
+        position: absolute;
+        left: 30px;
+        top: 40px;
+    }
+    #preds{
+        position: relative;
+        left:60%;
+        bottom:45%;
+    }
+    #submit{
+        position: relative;
+        left:30px;
+        top: 80px;
+    }
+    #myProgress {
+        position: relative;
+        left:30%;
+        top:-30%;
+        transform: rotate(270deg);
+        width: 25%;
+        background-color: grey;
+    }
+    #myBar {
+        width: 1%;
+        height: 30px;
+        background-color: green;
     }
 </style>
 
@@ -51,20 +95,33 @@
 <!-- navigation bar header -->
 {% include 'header.html' %}
 
-<div class="Description">
-    <form id="text" method="POST">
-        <textarea name="Description" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" rows="30" cols="60">
+<body>
+    <div>
+        <form id="text" method="POST">
+
+            <textarea class="Title" name="Title" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" rows="2" cols="60">
+Input the Job title here.
+        </textarea>
+
+            <textarea class="Description" name="Description" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" rows="30" cols="60">
 Input the Job Description here.
         </textarea>
-        <br>
-        <input id="Description" type="button" value="Submit">
-        </br>
-    </form>
-</div>
 
-<div id="preds">
-nice
-</div>
+            <br>
+            <input id="submit" type="button" value="Submit" onclick="move()">
+            </br>
 
+        </form>
+    </div>
+
+    <div id="preds">
+        nice
+    </div>
+
+    <div id="myProgress">
+        <div id="myBar"></div>
+    </div>
+
+</body>
 <!-- footer -->
 {% include 'footer.html' %}

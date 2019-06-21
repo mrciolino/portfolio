@@ -3,6 +3,7 @@ Matthew Ciolino - Job Tag Classifier
 Collection of data processing functions that takes
 our features converts them into a format usable by AI models
 """
+import os
 import re
 import sys
 import pickle
@@ -163,9 +164,6 @@ def target_encoder(df):
         # create job target encoder
         labeler = MultiLabelBinarizer()
         y = labeler.fit_transform(df.job_targets)
-        # save target corpus
-        with open("Models/Tokenizers/target_tokens.pkl", 'wb') as vocab_file:
-            pickle.dump(labeler, vocab_file, protocol=pickle.HIGHEST_PROTOCOL)
     except:
         print("ERROR: Unable to one-hot-encode target")
         traceback.print_exc(file=sys.stdout)

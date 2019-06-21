@@ -5,10 +5,10 @@ import os
 input = [5, 1, 7, 2]
 
 # load model
-model_pkls = ["projects/test_project/model/iris_model_naive_bayes.pkl",
-              "projects/test_project/model/iris_model_svc.pkl",
-              "projects/test_project/model/iris_model_knn.pkl",
-              "projects/test_project/model/iris_model_random_forest.pkl"]
+model_pkls = ["projects/iris_classifier/model/iris_model_naive_bayes.pkl",
+              "projects/iris_classifier/model/iris_model_svc.pkl",
+              "projects/iris_classifier/model/iris_model_knn.pkl",
+              "projects/iris_classifier/model/iris_model_random_forest.pkl"]
 
 
 def run_predictions(input):

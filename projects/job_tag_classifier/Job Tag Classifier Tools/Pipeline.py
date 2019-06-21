@@ -43,7 +43,7 @@ def BatchData(data_file, sql_add_new_data_string):
 
 def tag_decoder(list_of_indices, threshold):
 
-    with open("Models/Tokenizers/target_tokens.pkl", 'rb') as handle:
+    with open("projects/job_tag_classifier/model/target_tokens.pkl", 'rb') as handle:
         tokenizer = pickle.load(handle)
 
     target = []
