@@ -2,13 +2,16 @@ from flask import Flask, request, render_template, jsonify
 import sys
 import os
 
-sys.path.append(os.getcwd() + "/projects/job_tag_classifier")
-import predict_job_tag
+try:
+    sys.path.append(os.getcwd() + "/projects/job_tag_classifier")
+    import predict_job_tag
 
-sys.path.append(os.getcwd() + "/projects/iris_classifier")
-import predict_iris
+    sys.path.append(os.getcwd() + "/projects/iris_classifier")
+    import predict_iris
+except:
+    print("Startup packages for ML failed to load")
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 
 
 @app.route('/')

@@ -1,4 +1,6 @@
-/* # Empty CSS file for your own CSS  */
+/* ---------------------------------------------------- */
+/* SPALSH PAGE CSS */
+/* ---------------------------------------------------- */
 #Header {
     overflow: hidden;
     background-color: #333;
@@ -13,7 +15,7 @@
 }
 
 #home {
-    background-image: url('/Users/mrciolino/Downloads/layoutit/src/refs/home_background_bluish.jpg');
+    background-image: refs/home_background_bluish.jpg')}}";
     background-size: cover;
     padding-top: 150px;
     padding-bottom: 200px;
@@ -36,3 +38,10 @@
     height: auto;
     display: inline-block;
 }
+
+/* ---------------------------------------------------- */
+/* SPALSH PAGE CSS */
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+/* SPALSH PAGE CSS */
+/* ---------------------------------------------------- */
