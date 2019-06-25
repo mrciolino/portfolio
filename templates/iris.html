@@ -17,29 +17,35 @@
 
 </head>
 
+<style>
+    #Title {
+        background-image: url(static/refs/home_background_bluish.jpg);
+        background-size: cover;
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+</style>
+
 <body>
 
-    <div id="Header" class="container-fluid">
-        <div class="row">
+    <div class="container-fluid">
+        <div id="Header" class="navbar navbar-expand-lg navbar-light bg-light fixed-top" >
             <div class="col-md-12">
                 <ul class="nav nav-pills">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('index') }}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Profile</a>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
     <div id="Content" class="container-fluid">
-        <div id="Iris_Title" class="row">
+        <div id="Title" class="row">
             <div class="col-md-12">
-                <h3>
+                <h1>
                     Iris Classifier Ensemble
-                </h3>
-                <p>
+                </h1>
+                <p style="max-width: 500px">
                     A collection of classifiers used on the famous Iris dataset. This is perhaps the best known database to be found
                     in the pattern recognition literature. Fisher's paper is a classic in the field and is referenced frequently to this
                     day. (See Duda & Hart, for example.) The data set contains 3 classes of 50 instances each, where each class refers
@@ -68,10 +74,12 @@
                 </p>
                 <p>
                   <div class="form-group">
-                    <textarea class="form-control" id="Feature" rows="1" cols="1" type="number" required></textarea>
-                    <textarea class="form-control" id="Feature" rows="1" cols="1" type="number" required></textarea>
-                    <textarea class="form-control" id="Feature" rows="1" cols="1" type="number" required></textarea>
-                    <textarea class="form-control" id="Feature" rows="1" cols="1" type="number" required></textarea>
+                    <input class="form-control" id="f1" rows="1" cols="1" type="number" required></textarea>
+                    <input class="form-control" id="f2" rows="1" cols="1" type="number" required></textarea>
+                    <input class="form-control" id="f3" rows="1" cols="1" type="number" required></textarea>
+                    <input class="form-control" id="f4" rows="1" cols="1" type="number" required></textarea>
+                    <button class="btn btn-primary" type="submit" id="Features">Submit</button>
+                    <button class="btn btn-primary" type="submit" onclick="updateAll();">Random</button>
                   </div>
                 </p>
             </div>
