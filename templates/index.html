@@ -17,7 +17,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-
+<style>
+    #Title {
+        background-image: "{{ url_for('static', filename = 'refs/home_background_bluish.pdf') }}" no-repeat 0px 0px;
+        background-size: cover;
+        padding-top: 150px;
+        padding-bottom: 200px;
+    }
+</style>
 
 <body>
 
@@ -42,7 +49,7 @@
         </div>
     </div>
     <div id="Content" class="container-fluid">
-        <div id="home" class="row">
+        <div id="Title" class="row">
             <div class="col-md-12">
                 <h1 class="text-dark">
                     Matthew Ciolino
@@ -71,7 +78,7 @@
                         Novel Job Tag Classifier from Job Description
                     </p>
                     <p>
-                        <a class="btn btn-primary btn-large" href="{{ url_for('test_project') }}">Demo</a>
+                        <a class="btn btn-primary btn-large" href="{{ url_for('job_tag_classifier') }}">Demo</a>
                     </p>
                 </div>
             </div>
@@ -86,7 +93,7 @@
                         Simple ensamble of classifiers on the iris dataset
                     </p>
                     <p>
-                        <a class="btn btn-primary btn-large" href="{{ url_for('job_tag_classifier') }}">Demo</a>
+                        <a class="btn btn-primary btn-large" href="{{ url_for('test_project') }}">Demo</a>
                     </p>
                 </div>
             </div>
@@ -174,7 +181,7 @@
                             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                                 <div class="card-body" style="display:table; margin-left:auto; margin-right:auto;">
                                     <p>
-                                        <embed src="/Users/mrciolino/Downloads/layoutit/src/refs/All Resume.pdf" width="800px" height="1040px">
+                                        <embed src="{{ url_for('static', filename = 'refs/All Resume.pdf') }}" width="800px" height="1040px">
                                     </p>
                                 </div>
                             </div>

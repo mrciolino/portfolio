@@ -21,7 +21,7 @@ def index():
 
 @app.route('/test_project')
 def test_project():
-    return render_template('iris_classifier.html')
+    return render_template('iris.html')
 
 
 @app.route('/job_tag_classifier')
