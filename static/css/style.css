@@ -1,0 +1,38 @@
+/* # Empty CSS file for your own CSS  */
+#Header {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.87);
+}
+
+#Content {
+    margin-top: 50px;
+}
+
+#home {
+    background-image: url('/Users/mrciolino/Downloads/layoutit/src/refs/home_background_bluish.jpg');
+    background-size: cover;
+    padding-top: 150px;
+    padding-bottom: 200px;
+}
+
+#Projects {
+    padding-top: 50px;
+}
+
+#Resume {
+    padding-top: 50px;
+}
+
+#Contact {
+    padding-top: 50px;
+}
+
+#spacer {
+    width: 20px;
+    height: auto;
+    display: inline-block;
+}

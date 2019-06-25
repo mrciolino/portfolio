@@ -1,23 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <!-- load our css -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css')}}" />
-    <!-- Load font awesome icons -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Bootstrap 4, from LayoutIt!</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap-social.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
+
+
 <body>
-    <!-- navigation bar header -->
-    {% include 'header.html' %}
 
-    <!-- links to projects -->
-    <p>
-        <a href="{{ url_for('test_project') }}">Iris Classifier</a>
-        <br></br>
-        <a href="{{ url_for('job_tag_classifier') }}">Job Tag Classifier</a>
-    </p>
+    <div class="container-fluid">
+        <div id="Header" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="col-md-12">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Header">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Resume">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="Content" class="container-fluid">
+        <div id="home" class="row">
+            <div class="col-md-12">
+                <h1 class="text-dark">
+                    Matthew Ciolino
+                </h1>
+                <p class="text-left">
+                    Data Science Portfolio
+                </p>
+            </div>
+        </div>
+        <div id="Projects" class="row">
+            <div class="col-md-8">
+                <h3>
+                    Projects
+                </h3>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="jumbotron">
+                    <h2>
+                        Job Tag Classifier
+                    </h2>
+                    <p>
+                        Novel Job Tag Classifier from Job Description
+                    </p>
+                    <p>
+                        <a class="btn btn-primary btn-large" href="{{ url_for('test_project') }}">Learn more</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-3">
+                <div class="jumbotron">
+                    <h2>
+                        Iris Classifier
+                    </h2>
+                    <p>
+                        Simple ensamble of classifiers on the iris dataset
+                    </p>
+                    <p>
+                        <a class="btn btn-primary btn-large" href="{{ url_for('job_tag_classifier') }}">Learn more</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-3">
+                <div class="jumbotron">
+                    <h2>
+                        Wikipedia Traffic Time Series
+                    </h2>
+                    <p>
+                        Forcasting wikipedia article traffic 60 days out
+                    </p>
+                    <p>
+                        <a class="btn btn-primary btn-large" href="#">Learn more</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-1">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="jumbotron">
+                    <h2>
+                        Project 4
+                    </h2>
+                    <p>
+                        Project Description 4
+                    </p>
+                    <p>
+                        <a class="btn btn-primary btn-large" href="#">Learn more</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-3">
+                <div class="jumbotron">
+                    <h2>
+                        Project 5
+                    </h2>
+                    <p>
+                        Project Description 4
+                    </p>
+                    <p>
+                        <a class="btn btn-primary btn-large" href="#">Learn more</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-3">
+                <div class="jumbotron">
+                    <h2>
+                        Project 5
+                    </h2>
+                    <p>
+                        Project Description 4
+                    </p>
+                    <p>
+                        <a class="btn btn-primary btn-large" href="#">Learn more</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-1">
+            </div>
+        </div>
+        <div id="Resume" class="row">
+            <div class="col-md-12">
+                <h2>
+                    Resume
+                </h2>
+                <p>
+                    Below is my current resume, press expand resume to see it.
+                </p>
+                <div class="bs-example">
+                    <div class="accordion" id="accordionExample">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h2 class="mb-0">
+                                    <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne">View Resume</button>
+                                </h2>
+                            </div>
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div class="card-body" style="display:table; margin-left:auto; margin-right:auto;">
+                                    <p>
+                                        <embed src="/Users/mrciolino/Downloads/layoutit/src/refs/All Resume.pdf" width="800px" height="1040px">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <!-- The social media footer -->
-    {% include 'footer.html' %}
+        <div id="Contact" class="row">
+            <div class="col-md-8">
+                <form id="contact-form" method="post" action="contact.php" role="form">
+                    <h2> Contact </h2>
+                    <div class="messages"></div>
+                    <div class="controls">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_name">Name *</label>
+                                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your name *" required="required" data-error="Firstname is required.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_lastname">Company *</label>
+                                    <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your company name *" required="required" data-error="Lastname is required.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_email">Email *</label>
+                                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="form_need">Please specify your need</label>
+                                    <select id="form_need" name="need" class="form-control" data-error="Please specify your need.">
+                                        <option value=""></option>
+                                        <option value="Request quotation">Looking to Recruit</option>
+                                        <option value="Request order status">Seeking your Opinion</option>
+                                        <option value="Request copy of an invoice">Testing your Website</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="form_message">Message *</label>
+                                    <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn btn-success btn-send" value="Send message">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="text-muted">
+                                    <strong>*</strong> These fields are required.
+                            </div>
+                        </div>
+                    </div>
 
+                </form>
+            </div>
+            <div class="col-md-4">
+                <h2>
+                    Contact Info
+                </h2>
+                <p>
+                    Feel free to contact me or to check on my code yourself. Anything you see on this website is open source and you may use it as well!
+                </p>
+                <div id="social_buttons">
+                    <!--Linkedin-->
+                    <button type="button" class="btn btn-social-icon btn-linkedin"><i class="fa fa-linkedin"></i></button>
+                    <p id="spacer"></p>
+                    <!--Github-->
+                    <button type="button" class="btn btn-social-icon btn-github"><i class="fa fa-github"></i></button>
+                    <p id="spacer"></p>
+                    <!-- Twitter -->
+                    <button type="button" class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></button>
+                    <p id="spacer"></p>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
+
+</html>
