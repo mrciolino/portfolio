@@ -2,44 +2,55 @@
 /* SPALSH PAGE CSS */
 /* ---------------------------------------------------- */
 #Header {
-  overflow: hidden;
-  background-color: #333;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.87);
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.87);
 }
 
 #Content {
-  margin-top: 50px;
+    margin-top: 50px;
 }
 
 #Projects {
-  padding-top: 50px;
+    padding-top: 50px;
 }
 
 #Resume {
-  padding-top: 50px;
+    padding-top: 50px;
 }
 
 #Contact {
-  padding-top: 50px;
+    padding-top: 50px;
 }
 
 #spacer {
-  width: 20px;
-  height: auto;
-  display: inline-block;
+    width: 20px;
+    height: auto;
+    display: inline-block;
+}
+
+#padding {
+    padding: 5px;
 }
 
 /* ---------------------------------------------------- */
 /* IRIS PAGE CSS */
 /* ---------------------------------------------------- */
 #Iris_IO {
-  padding-top: 50px;
-  padding-bottom: 300px;
+    padding-top: 50px;
+    padding-bottom: 300px;
 }
 
+#Iris_Title_Text {
+    top: 0;
+    left: -5px;
+    max-width: 500px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.37);
+}
 
 /* ---------------------------------------------------- */
 /* SPALSH PAGE CSS */

@@ -17,6 +17,12 @@
 
 </head>
 
+<script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/scripts.js')}}"></script>
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
 <style>
     #Title {
         background-image: url(static/refs/home_background_bluish.jpg);
@@ -27,13 +33,15 @@
 </style>
 
 <body>
-
     <div class="container-fluid">
-        <div id="Header" class="navbar navbar-expand-lg navbar-light bg-light fixed-top" >
+        <div id="Header" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="col-md-12">
                 <ul class="nav nav-pills">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Iris_IO">Project</a>
                     </li>
                 </ul>
             </div>
@@ -41,14 +49,14 @@
     </div>
     <div id="Content" class="container-fluid">
         <div id="Title" class="row">
-            <div class="col-md-12">
+            <div id="Iris_Title_Text" class="col-md-12">
                 <h1>
                     Iris Classifier Ensemble
                 </h1>
                 <p style="max-width: 500px">
                     A collection of classifiers used on the famous Iris dataset. This is perhaps the best known database to be found
                     in the pattern recognition literature. Fisher's paper is a classic in the field and is referenced frequently to this
-                    day. (See Duda & Hart, for example.) The data set contains 3 classes of 50 instances each, where each class refers
+                    day. The data set contains 3 classes of 50 instances each, where each class refers
                     to a type of iris plant. The ensemble takes the majority vote of the classifiers.
                     <ul>
                         <li> Support Vector Classifier (SVC) </li>
@@ -73,14 +81,18 @@
                     Classes: Iris Setosa, Iris Versicolour Iris Virginica
                 </p>
                 <p>
-                  <div class="form-group">
-                    <input class="form-control" id="f1" rows="1" cols="1" type="number" required></textarea>
-                    <input class="form-control" id="f2" rows="1" cols="1" type="number" required></textarea>
-                    <input class="form-control" id="f3" rows="1" cols="1" type="number" required></textarea>
-                    <input class="form-control" id="f4" rows="1" cols="1" type="number" required></textarea>
-                    <button class="btn btn-primary" type="submit" id="Features">Submit</button>
-                    <button class="btn btn-primary" type="submit" onclick="updateAll();">Random</button>
-                  </div>
+                    <div class="form-group">
+                        <input class="form-control" id="f1" rows="1" cols="1" type="number" required></input>
+                        <div id="padding"></div>
+                        <input class="form-control" id="f2" rows="1" cols="1" type="number" required></input>
+                        <div id="padding"></div>
+                        <input class="form-control" id="f3" rows="1" cols="1" type="number" required></input>
+                        <div id="padding"></div>
+                        <input class="form-control" id="f4" rows="1" cols="1" type="number" required></input>
+                        <div id="padding"></div>
+                        <button class="btn btn-primary" type="submit" id="Features">Submit</button>
+                        <button class="btn btn-primary" type="submit" onclick="randomize_features();">Random</button>
+                    </div>
                 </p>
             </div>
             <div class="col-md-4">
@@ -102,11 +114,10 @@
                 </p>
             </div>
         </div>
+        <div  class="col-md-12" id="heatmapdiv">
+        </div>
     </div>
 
-    <script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
-    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
-    <script src="{{ url_for('static', filename='js/scripts.js')}}"></script>
 </body>
 
 </html>
