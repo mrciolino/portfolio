@@ -1,4 +1,5 @@
 import pickle as pkl
+import warnings
 import os
 
 # read in the inputs
@@ -8,10 +9,14 @@ input = [5, 1, 7, 2]
 model_pkls = ["projects/iris_classifier/model/iris_model_naive_bayes.pkl",
               "projects/iris_classifier/model/iris_model_svc.pkl",
               "projects/iris_classifier/model/iris_model_knn.pkl",
-              "projects/iris_classifier/model/iris_model_random_forest.pkl"]
+              "projects/iris_classifier/model/iris_model_random_forest.pkl",
+              "projects/iris_classifier/model/iris_model_nerual.pkl"]
 
 
-def run_predictions(input):
+warnings.filterwarnings("ignore")
+
+
+def run_iris(input):
 
     predictions = []
 
@@ -29,4 +34,4 @@ def run_predictions(input):
             file.close()
         predict(clf, input)
 
-    return max(predictions,key=predictions.count)
+    return [max(predictions, key=predictions.count), predictions]

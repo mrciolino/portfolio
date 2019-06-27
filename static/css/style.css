@@ -40,8 +40,8 @@
 /* IRIS PAGE CSS */
 /* ---------------------------------------------------- */
 #Iris_IO {
-    padding-top: 50px;
-    padding-bottom: 300px;
+    padding-top: 100px;
+    padding-bottom: 200px;
 }
 
 #Iris_Title_Text {
@@ -50,6 +50,12 @@
     max-width: 500px;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.37);
+}
+
+#Iris_Classes {
+    padding-top: 50px;
+    text-align: center;
+    padding-bottom: 50px;
 }
 
 /* ---------------------------------------------------- */

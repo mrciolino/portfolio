@@ -41,18 +41,86 @@ function randomize_features() {
     for (var i = 0; i < arrayLength; i++) {
         randomize(features[i])
     }
-    plot_heatmap()
 }
 
-function plot_heatmap() {
-    var data = [{
-        z: [
-            [1, 20, 30],
-            [20, 1, 60],
-            [30, 60, 1]
-        ],
-        type: 'heatmap'
+// collect the features and ajax to flask
+function submit_features() {
+    // grab the values
+    var features = [{
+        Feature_1: document.getElementById('f1').value,
+        Feature_2: document.getElementById('f2').value,
+        Feature_3: document.getElementById('f3').value,
+        Feature_4: document.getElementById('f4').value,
     }];
+    // ajax the JSON to the server
+    $.ajax({
+        type: 'POST',
+        url: '/predict_iris',
+        data: JSON.stringify(features),
+        success: function(data) {
+            display_result(data);
+            display_each(data);
+            return data;
+        },
+        contentType: "application/json",
+        dataType: 'json'
+    });
+    // stop link reloading the page
+    event.preventDefault();
+}
 
-    Plotly.newPlot('heatmapdiv', data);
+// display the results of the
+function display_result(data) {
+
+    var result = Object.values(data)[0][0];
+
+    document.getElementById("Setosa").className = "badge badge-primary";
+    document.getElementById("Versicolour").className = "badge badge-primary";
+    document.getElementById("Virginica").className = "badge badge-primary";
+
+    if (result == "setosa") {
+        document.getElementById("Setosa").className = "badge badge-success";
+    }
+    if (result == "versicolor") {
+        document.getElementById("Versicolour").className = "badge badge-success";
+    }
+    if (result == "virginica") {
+        document.getElementById("Virginica").className = "badge badge-success";
+    }
+}
+
+function display_each(data) {
+    var result = Object.values(data)[0][1];
+    var mydata = [{
+            "Name": 'Support Vector Classifier',
+            "Accuracy": "test0",
+            "Guess": result[0]
+        },
+        {
+            "Name": 'Naive Bayes',
+            "Accuracy": "test0",
+            "Guess": result[1]
+        },
+        {
+            "Name": 'Random Forest',
+            "Accuracy": "test0",
+            "Guess": result[2]
+        },
+        {
+            "Name": 'K Nearest Neighbors',
+            "Accuracy": "test0",
+            "Guess": result[3]
+        },
+        {
+            "Name": 'Neural Network',
+            "Accuracy": "test0",
+            "Guess": result[4]
+        }
+    ]
+
+    $(function() {
+        $('#Iris_Table').bootstrapTable({
+            data: mydata
+        });
+    });
 }

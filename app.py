@@ -5,14 +5,12 @@ import os
 try:
     sys.path.append(os.getcwd() + "/projects/job_tag_classifier")
     import predict_job_tag
-
     sys.path.append(os.getcwd() + "/projects/iris_classifier")
-    import predict_iris
+    from predict_iris import run_iris
 except:
     print("Startup packages for ML failed to load")
 
 app = Flask(__name__, static_url_path='/static')
-
 
 @app.route('/')
 def index():
@@ -39,7 +37,7 @@ def predict_iris():
     features = [float(i) for i in list(data[0].values())]
     app.logger.info(features)
     # run the prediction and return
-    result = predict_iris.run_predictions(features)
+    result = run_iris(features)
     app.logger.info(result)
     return jsonify(result=result)
 

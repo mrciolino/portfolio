@@ -14,14 +14,14 @@
     <link href="{{ url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/bootstrap-social.css')}}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet">
+    <link href="https://unpkg.com/bootstrap-table@1.15.2/dist/bootstrap-table.min.css" rel="stylesheet">
 
 </head>
 
 <script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
 <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
 <script src="{{ url_for('static', filename='js/scripts.js')}}"></script>
-
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.15.2/dist/bootstrap-table.min.js"></script>
 
 <style>
     #Title {
@@ -63,6 +63,7 @@
                         <li> Naive Bayes </li>
                         <li> Random Forest </li>
                         <li> K Nearest Neighbors </li>
+                        <li> Neural Network </li>
                     </ul>
                 </p>
             </div>
@@ -90,31 +91,56 @@
                         <div id="padding"></div>
                         <input class="form-control" id="f4" rows="1" cols="1" type="number" required></input>
                         <div id="padding"></div>
-                        <button class="btn btn-primary" type="submit" id="Features">Submit</button>
+                        <button class="btn btn-primary" type="submit" onclick="submit_features()">Submit</button>
                         <button class="btn btn-primary" type="submit" onclick="randomize_features();">Random</button>
                     </div>
                 </p>
             </div>
             <div class="col-md-4">
-                <div class="progress">
-                    <div class="progress-bar w-75 progress-bar-striped progress-bar-animated">
-                    </div>
+                <div id="Iris_Classes">
+                    <h1> <span id="Setosa" class="badge badge-primary">Setosa</span></h1>
+                    <h1> <span id="Versicolour" class="badge badge-primary">Versicolour</span></h1>
+                    <h1> <span id="Virginica" class="badge badge-primary">Virginica</span></h1>
                 </div>
             </div>
             <div class="col-md-4">
-                <h2>
-                    Heading
-                </h2>
-                <p>
-                    Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio
-                    dui.
-                </p>
-                <p>
-                    <a class="btn" href="#">View details »</a>
-                </p>
+                <table id="Iris_Table" class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th data-field="Name">Name</th>
+                            <th data-field="Accuracy">Accuracy</th>
+                            <th data-field="Guess">Guess</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Support Vector Classifier</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Naive Bayes</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Random Forest</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">K Nearest Neighbors</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Neural Network</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-        </div>
-        <div  class="col-md-12" id="heatmapdiv">
         </div>
     </div>
 
