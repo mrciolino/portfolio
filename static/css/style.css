@@ -26,6 +26,10 @@
     padding-top: 50px;
 }
 
+#social{
+  padding-bottom: 25px;  
+}
+
 #spacer {
     width: 20px;
     height: auto;
@@ -35,6 +39,7 @@
 #padding {
     padding: 5px;
 }
+
 
 /* ---------------------------------------------------- */
 /* IRIS PAGE CSS */

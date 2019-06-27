@@ -3,12 +3,6 @@
 // scroll to different divs
 $('a[href*="#"]').on('click', function(e) {
     e.preventDefault()
-    if ($($(this).attr('href')).offset() == 0) {
-        $("html, body").animate({
-            scrollTop: 0
-        }, "slow");
-        return false;
-    }
     $('html, body').animate({
         scrollTop: $($(this).attr('href')).offset().top - 60,
     }, 500, 'linear')
@@ -92,35 +86,33 @@ function display_result(data) {
 function display_each(data) {
     var result = Object.values(data)[0][1];
     var mydata = [{
-            "Name": 'Support Vector Classifier',
-            "Accuracy": "test0",
+            "Name": '<strong>Support Vector Classifier</strong>',
+            "Accuracy": "96.7 %",
             "Guess": result[0]
         },
         {
-            "Name": 'Naive Bayes',
-            "Accuracy": "test0",
+            "Name": '<strong>Naive Bayes</strong>',
+            "Accuracy": "95.3 %",
             "Guess": result[1]
         },
         {
-            "Name": 'Random Forest',
-            "Accuracy": "test0",
+            "Name": '<strong>Random Forest</strong>',
+            "Accuracy": "91.3 %",
             "Guess": result[2]
         },
         {
-            "Name": 'K Nearest Neighbors',
-            "Accuracy": "test0",
+            "Name": '<strong>K Nearest Neighbors</strong>',
+            "Accuracy": "96.7 %",
             "Guess": result[3]
         },
         {
-            "Name": 'Neural Network',
-            "Accuracy": "test0",
+            "Name": '<strong>Neural Network</strong>',
+            "Accuracy": "98.0 %",
             "Guess": result[4]
         }
     ]
-
+    console.log("Hello world!");
     $(function() {
-        $('#Iris_Table').bootstrapTable({
-            data: mydata
+        $('#Iris_Table').bootstrapTable('load', mydata)
         });
-    });
 }

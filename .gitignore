@@ -2,3 +2,4 @@ __pycache__
 test.py
 predict_job_tag.pyc
 app.pyc
+predict_iris.pyc

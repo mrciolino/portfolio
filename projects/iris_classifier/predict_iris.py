@@ -1,4 +1,4 @@
-import pickle as pkl
+from joblib import load
 import warnings
 import os
 
@@ -6,11 +6,11 @@ import os
 input = [5, 1, 7, 2]
 
 # load model
-model_pkls = ["projects/iris_classifier/model/iris_model_naive_bayes.pkl",
-              "projects/iris_classifier/model/iris_model_svc.pkl",
-              "projects/iris_classifier/model/iris_model_knn.pkl",
-              "projects/iris_classifier/model/iris_model_random_forest.pkl",
-              "projects/iris_classifier/model/iris_model_nerual.pkl"]
+model_pkls = ["projects/iris_classifier/model/iris_model_naive_bayes.joblib",
+              "projects/iris_classifier/model/iris_model_svc.joblib",
+              "projects/iris_classifier/model/iris_model_knn.joblib",
+              "projects/iris_classifier/model/iris_model_random_forest.joblib",
+              "projects/iris_classifier/model/iris_model_nerual.joblib"]
 
 
 warnings.filterwarnings("ignore")
@@ -30,7 +30,7 @@ def run_iris(input):
 
     for model in model_pkls:
         with open(os.getcwd() + '/' + model, 'rb') as file:
-            clf = pkl.load(file)
+            clf = load(file)
             file.close()
         predict(clf, input)
 

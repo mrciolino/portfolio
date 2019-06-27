@@ -83,13 +83,13 @@
                 </p>
                 <p>
                     <div class="form-group">
-                        <input class="form-control" id="f1" rows="1" cols="1" type="number" required></input>
+                        <input class="form-control" id="f1" rows="1" cols="1" type="number" required="required"></input>
                         <div id="padding"></div>
-                        <input class="form-control" id="f2" rows="1" cols="1" type="number" required></input>
+                        <input class="form-control" id="f2" rows="1" cols="1" type="number" required="required"></input>
                         <div id="padding"></div>
-                        <input class="form-control" id="f3" rows="1" cols="1" type="number" required></input>
+                        <input class="form-control" id="f3" rows="1" cols="1" type="number" required="required"></input>
                         <div id="padding"></div>
-                        <input class="form-control" id="f4" rows="1" cols="1" type="number" required></input>
+                        <input class="form-control" id="f4" rows="1" cols="1" type="number" required="required"></input>
                         <div id="padding"></div>
                         <button class="btn btn-primary" type="submit" onclick="submit_features()">Submit</button>
                         <button class="btn btn-primary" type="submit" onclick="randomize_features();">Random</button>
@@ -104,7 +104,7 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <table id="Iris_Table" class="table table-hover">
+                <table id="Iris_Table" data-toggle="table" class="table table-hover">
                     <thead>
                         <tr>
                             <th data-field="Name">Name</th>
@@ -114,29 +114,29 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row">Support Vector Classifier</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
+                            <th scope="row"><strong>Support Vector Classifier</strong></th>
+                            <td>96.7 %</td>
+                            <td></td>
                         </tr>
                         <tr>
-                            <th scope="row">Naive Bayes</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
+                            <th scope="row"><strong>Naive Bayes</strong></th>
+                            <td>95.3 %</td>
+                            <td></td>
                         </tr>
                         <tr>
-                            <th scope="row">Random Forest</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
+                            <th scope="row"><strong>Random Forest</strong></th>
+                            <td>91.3 %</td>
+                            <td></td>
                         </tr>
                         <tr>
-                            <th scope="row">K Nearest Neighbors</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
+                            <th scope="row"><strong>K Nearest Neighbors</strong></th>
+                            <td>96.7 %</td>
+                            <td></td>
                         </tr>
                         <tr>
-                            <th scope="row">Neural Network</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
+                            <th scope="row"><strong>Neural Network</strong></th>
+                            <td>98.0 %</td>
+                            <td></td>
                         </tr>
                     </tbody>
                 </table>
