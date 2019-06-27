@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Iris Classifier</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap-social.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet">
+
+</head>
+
+<script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/scripts.js')}}"></script>
+
+
+<style>
+    #Title {
+        background-image: url(static/refs/home_background_bluish.jpg);
+        background-size: cover;
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+</style>
+
+<body>
+    <div class="container-fluid">
+        <div id="Header" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="col-md-12">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Iris_IO">Project</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="Content" class="container-fluid">
+        <div id="Title" class="row">
+            <div id="Iris_Title_Text" class="col-md-12">
+                <h1>
+                    Iris Classifier Ensemble
+                </h1>
+                <p style="max-width: 500px">
+                  We take a job title and a job description and predict the tags associated with that job. We do this through Natural Language Processing (NLP), a Convolutional Autoencoder (AE), and a Deep Neural Network (DNN). This model will train itself to become more accurate as more jobs are added by training it when new data is added. The model uses feature hashing which allows it to learn new words in the job descriptions.
+                </p>
+            </div>
+        </div>
+        <div id="Iris_IO" class="row">
+            <div class="col-md-6">
+                <h2>
+                    Data Input
+                </h2>
+                <p>
+                  Enter the Job Title
+                  Enter the Job Description
+                </p>
+                <p>
+                    <div class="form-group">
+                        <input class="form-control" id="f1" rows="1" cols="1" required="required"></input>
+                        <div id="padding"></div>
+                        <input class="form-control" id="f2" rows="20" cols="50" required="required"></input>
+                        <div id="padding"></div>
+                        <button class="btn btn-primary" type="submit" onclick="submit_features()">Submit</button>
+                    </div>
+                </p>
+            </div>
+            <div class="col-md-6">
+                <div id="Iris_Classes">
+                    <h1> <span id="Setosa" class="badge badge-primary">full stack</span></h1>
+                    <h1> <span id="Versicolour" class="badge badge-primary">frontend</span></h1>
+                    <h1> <span id="Virginica" class="badge badge-primary">backend</span></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

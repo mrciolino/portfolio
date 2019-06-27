@@ -22,7 +22,7 @@ def test_project():
 
 @app.route('/job_tag_classifier')
 def job_tag_classifier():
-    return render_template('job_tag_classifier.html')
+    return render_template('jobtag.html')
 
 
 @app.route('/predict_iris', methods=['POST'])
