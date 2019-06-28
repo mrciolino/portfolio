@@ -1,4 +1,6 @@
-// Empty JS for your own code to be here
+// ************* GENERAL *************
+// ************* GENERAL *************
+// ************* GENERAL *************
 
 // scroll to different divs
 $('a[href*="#"]').on('click', function(e) {
@@ -16,8 +18,10 @@ $("a[href='#Header']").click(function() {
 });
 
 // ************* IRIS CLASSIFER *************
+// ************* IRIS CLASSIFER *************
+// ************* IRIS CLASSIFER *************
 // updates one DOM element given its id
-function randomize(id) {
+function randomize_iris(id) {
 
     function getNumber() {
         var max = 5.0; // The minimum number you want
@@ -29,16 +33,16 @@ function randomize(id) {
 }
 
 // updates all DOM elements listed
-function randomize_features() {
+function randomize_iris_features() {
     var features = ["f1", "f2", "f3", "f4"];
     var arrayLength = features.length;
     for (var i = 0; i < arrayLength; i++) {
-        randomize(features[i])
+        randomize_iris(features[i])
     }
 }
 
 // collect the features and ajax to flask
-function submit_features() {
+function submit_iris_features() {
     // grab the values
     var features = [{
         Feature_1: document.getElementById('f1').value,
@@ -52,8 +56,8 @@ function submit_features() {
         url: '/predict_iris',
         data: JSON.stringify(features),
         success: function(data) {
-            display_result(data);
-            display_each(data);
+            display_iris_result(data);
+            display_iris_table(data);
             return data;
         },
         contentType: "application/json",
@@ -64,7 +68,7 @@ function submit_features() {
 }
 
 // display the results of the
-function display_result(data) {
+function display_iris_result(data) {
 
     var result = Object.values(data)[0][0];
 
@@ -83,7 +87,7 @@ function display_result(data) {
     }
 }
 
-function display_each(data) {
+function display_iris_table(data) {
     var result = Object.values(data)[0][1];
     var mydata = [{
             "Name": '<strong>Support Vector Classifier</strong>',
@@ -111,8 +115,52 @@ function display_each(data) {
             "Guess": result[4]
         }
     ]
-    console.log("Hello world!");
     $(function() {
         $('#Iris_Table').bootstrapTable('load', mydata)
-        });
+    });
+}
+
+// ************* JOB TAG CLASSIFER *************
+// ************* JOB TAG CLASSIFER *************
+// ************* JOB TAG CLASSIFER *************
+
+// collect the features and ajax to flask
+function submit_job_tag_features() {
+    // grab the values
+    var features = [{
+        Feature_1: document.getElementById('job_title').value,
+        Feature_2: document.getElementById('job_description').value,
+    }];
+    // fill the progress bar
+    $(".progress-bar").animate({
+        width: "70%"
+    }, 2500);
+    // ajax the JSON to the server
+    $.ajax({
+        type: 'POST',
+        url: '/job_tag_classifier',
+        data: JSON.stringify(features),
+        success: function(data) {
+            display_jobtag_result(data)
+            return data;
+        },
+        contentType: "application/json",
+        dataType: 'json'
+    });
+    // stop link reloading the page
+    event.preventDefault();
+}
+
+function display_jobtag_result(data) {
+
+    function toggle_class(id) {
+        document.getElementById(id).className = "badge badge-success";
+    }
+
+    var result = Object.values(data)[0];
+    var arrayLength = result.length;
+
+    for (var i = 0; i < arrayLength; i++) {
+        toggle_class(result[i])
+    }
 }

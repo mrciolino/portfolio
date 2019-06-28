@@ -2,8 +2,8 @@ from flask import Flask, request, render_template, jsonify
 import sys
 import os
 
-# sys.path.append(os.getcwd() + "/projects/job_tag_classifier")
-# import predict_job_tag
+sys.path.append(os.getcwd() + "/projects/job_tag_classifier")
+import predict_job_tag
 sys.path.append(os.getcwd() + "/projects/iris_classifier")
 from predict_iris import run_iris
 
@@ -40,15 +40,15 @@ def predict_iris():
     return jsonify(result=result)
 
 
-@app.route('/predict_tags', methods=['POST'])
+@app.route('/job_tag_classifier', methods=['POST'])
 def predict_tags():
 
-    app.logger.info('Running Job Tag Classifers')
+    app.logger.info('Running Job Tag Classifer')
     # get the data
     data = request.get_json()
     # convert data into array
     features = [i for i in list(data[0].values())]
-    app.logger.info("Title %s" % features[0])
+    app.logger.info("Title: %s" % features[0])
     # run the prediction and return
     result = predict_job_tag.run_predictions(features)
     app.logger.info(result)

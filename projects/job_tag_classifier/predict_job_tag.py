@@ -1,4 +1,4 @@
-from keras import models
+from keras import models, backend
 import pandas as pd
 import sys
 
@@ -6,8 +6,6 @@ sys.path.append("projects/job_tag_classifier/Job Tag Classifier Tools")
 from Pipeline import tag_decoder
 from FeatureCreation import feature_creation
 from FeatureProcessing import feature_processing
-from sklearn.model_selection import train_test_split
-
 
 def run_predictions(input):
 
@@ -21,15 +19,14 @@ def run_predictions(input):
                 'job_tag_id': 'N/A',
                 'job_tag_name': 'N/A'}
         df = pd.DataFrame(data, index=[0])
+
         # create features and process them
         df = feature_creation(df)  # create some text features
-        x, y = feature_processing(df)  # convert the text into numbers for processing
-        # train test split formatting
-        X_train, X_test, Y_train, Y_test = train_test_split(x, y, test_size=0, random_state=42)
-        return X_train, X_test, Y_train, Y_test
+        x, _ = feature_processing(df)  # convert the text into numbers for processing
+        return x
 
     # load our data into X and Y
-    X, _, Y, _ = load_data(*input)
+    X = load_data(*input)
 
     # encode the input
     encoder = models.load_model("projects/job_tag_classifier/model/encoder_model")
@@ -41,5 +38,8 @@ def run_predictions(input):
 
     # decode the target back into tags
     predicition = tag_decoder(list_of_indices, threshold=.2)
+
+    # clear the thread 
+    backend.clear_session()
 
     return predicition

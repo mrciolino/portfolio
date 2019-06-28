@@ -26,8 +26,12 @@
     padding-top: 50px;
 }
 
-#social{
-  padding-bottom: 25px;  
+#social_buttons {
+    text-align: center;
+}
+
+#social {
+    padding-bottom: 25px;
 }
 
 #spacer {
@@ -39,7 +43,6 @@
 #padding {
     padding: 5px;
 }
-
 
 /* ---------------------------------------------------- */
 /* IRIS PAGE CSS */
@@ -64,5 +67,32 @@
 }
 
 /* ---------------------------------------------------- */
-/* SPALSH PAGE CSS */
+/* JOB TAG PAGE CSS */
 /* ---------------------------------------------------- */
+#JOBTAG_IO {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#JOBTAG_Title_Text {
+    top: 0;
+    left: -5px;
+    max-width: 500px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.57);
+}
+
+#JOBTAG_Classes {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#JOBTAG_padding {
+    padding: 15px;
+}
+
+.progress.active .progress-bar {
+    -webkit-transition: none !important;
+    transition: none !important;
+}

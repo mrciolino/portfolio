@@ -40,7 +40,7 @@
                         <a class="nav-link" href="{{ url_for('index') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#Iris_IO">Project</a>
+                        <a class="nav-link" href="#JOBTAG_IO">Project</a>
                     </li>
                 </ul>
             </div>
@@ -48,39 +48,68 @@
     </div>
     <div id="Content" class="container-fluid">
         <div id="Title" class="row">
-            <div id="Iris_Title_Text" class="col-md-12">
-                <h1>
-                    Iris Classifier Ensemble
-                </h1>
+            <div id="JOBTAG_Title_Text" class="col-md-12">
+                <h2>
+                    Job Tag Classifier
+                </h2>
                 <p style="max-width: 500px">
-                  We take a job title and a job description and predict the tags associated with that job. We do this through Natural Language Processing (NLP), a Convolutional Autoencoder (AE), and a Deep Neural Network (DNN). This model will train itself to become more accurate as more jobs are added by training it when new data is added. The model uses feature hashing which allows it to learn new words in the job descriptions.
+                    We take a job title and a job description and predict the tags associated with that job. We do this through Natural Language Processing (NLP), a Convolutional Autoencoder (AE), and a Deep Neural Network (DNN). This model will
+                    train itself to become more accurate as more jobs are added by training it when new data is added. The model uses feature hashing which allows it to learn new words in the job descriptions.
                 </p>
             </div>
         </div>
-        <div id="Iris_IO" class="row">
+        <div id="JOBTAG_IO" class="row">
             <div class="col-md-6">
                 <h2>
                     Data Input
                 </h2>
                 <p>
-                  Enter the Job Title
-                  Enter the Job Description
+                    Enter the Job Title
+                    Enter the Job Description
                 </p>
                 <p>
                     <div class="form-group">
-                        <input class="form-control" id="f1" rows="1" cols="1" required="required"></input>
+                        <textarea class="form-control" id="job_title" rows="1" required="required" placeholder="Enter Job Title"></textarea>
                         <div id="padding"></div>
-                        <input class="form-control" id="f2" rows="20" cols="50" required="required"></input>
+                        <textarea class="form-control" id="job_description" rows="20" required="required" placeholder="Enter Job Description"></textarea>
                         <div id="padding"></div>
-                        <button class="btn btn-primary" type="submit" onclick="submit_features()">Submit</button>
+                        <button class="btn btn-primary" type="submit" onclick="submit_job_tag_features()">Submit</button>
                     </div>
                 </p>
             </div>
-            <div class="col-md-6">
-                <div id="Iris_Classes">
-                    <h1> <span id="Setosa" class="badge badge-primary">full stack</span></h1>
-                    <h1> <span id="Versicolour" class="badge badge-primary">frontend</span></h1>
-                    <h1> <span id="Virginica" class="badge badge-primary">backend</span></h1>
+            <div id="JOBTAG_Classes" class="col-md-6">
+                <div class="progress progress-striped active">
+                    <div class="progress-bar progress-bar-success" style="width:0%"></div>
+                </div>
+                <div id=JOBTAG_padding>
+                    <div class=row>
+                        <h2 id="JOBTAG_padding"> <span id="Product Manager" class="badge badge-primary">Product Manager</span></h2>
+                        <h2 id="JOBTAG_padding"> <span id="Tech" class="badge badge-primary">Tech</span></h2>
+                        <h2 id="JOBTAG_padding"> <span id="Software" class="badge badge-primary">Software</span></h2>
+                    </div>
+                    <div class=row>
+                        <h2 id="JOBTAG_padding"> <span id="Internship" class="badge badge-primary">Internship</span></h2>
+                        <h2 id="JOBTAG_padding"> <span id="Web" class="badge badge-primary">Web</span></h2>
+                        <h2 id="JOBTAG_padding"> <span id="Sales" class="badge badge-primary">Sales</span></h2>
+                    </div>
+                    <div class=row>
+                        <h2 id="JOBTAG_padding"> <span id="Backend" class="badge badge-primary">Backend</span></h2>
+                        <h2 id="JOBTAG_padding"> <span id="Recruiting" class="badge badge-primary">Recruiting</span></h2>
+                        <h2 id="JOBTAG_padding"> <span id="Frontend" class="badge badge-primary">Frontend</span></h2>
+                    </div>
+                    <div class=row>
+                        <h2 id="JOBTAG_padding"> <span id="Designer" class="badge badge-primary">Designer</span></h2>
+                        <h2 id="JOBTAG_padding"> <span id="Express" class="badge badge-primary">Express.js</span></h2>
+                        <h2 id="JOBTAG_padding"> <span id="Full-Stack" class="badge badge-primary">Full-Stack</span></h2>
+                    </div>
+                    <div class=row>
+                        <h2 id="JOBTAG_padding"> <span id="React" class="badge badge-primary">React</span></h2>
+                        <h2 id="JOBTAG_padding"> <span id="Customer Service" class="badge badge-primary">Customer Service</span></h2>
+                        <h2 id="JOBTAG_padding"> <span id="Flask" class="badge badge-primary">Flask</span></h2>
+                    </div>
+                    <div class=row>
+                        <h2 id="JOBTAG_padding"> <span id="Angular" class="badge badge-primary">Angular</span></h2>
+                    </div>
                 </div>
             </div>
         </div>

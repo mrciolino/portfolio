@@ -78,6 +78,7 @@
                     </p>
                     <p>
                         <a class="btn btn-primary btn-large" href="{{ url_for('job_tag_classifier') }}">Demo</a>
+                        <button class="btn btn-primary btn-large" onclick="window.open('https://github.com/mrciolino/Job-Tag-Classifier' + location.search)">Github</button>
                     </p>
                 </div>
             </div>
@@ -92,7 +93,7 @@
                         Simple ensamble of classifiers on the iris dataset
                     </p>
                     <p>
-                        <a class="btn btn-primary btn-large" href="{{ url_for('test_project') }}">Demo</a>
+                        <button class="btn btn-primary btn-large" href="{{ url_for('test_project') }}">Demo</button>
                     </p>
                 </div>
             </div>
@@ -107,7 +108,7 @@
                         Forcasting wikipedia article traffic 60 days out
                     </p>
                     <p>
-                        <a class="btn btn-primary btn-large" href="https://github.com/mrciolino/Wikipedia-Traffic-Time-Series">Github</a>
+                        <button class="btn btn-primary btn-large" onclick="window.open('https://github.com/mrciolino/Wikipedia-Traffic-Time-Series' + location.search)">Github</button>
                     </p>
                 </div>
             </div>
@@ -264,13 +265,15 @@
                 </p>
                 <div id="social_buttons">
                     <!--Linkedin-->
-                    <button type="button" href="https://www.linkedin.com/in/mrciolino/" class="btn btn-social-icon btn-linkedin"><i class="fa fa-linkedin"></i></button>
+                    <button type="button" onclick="window.open('https://www.linkedin.com/in/mrciolino/' + location.search)" class="btn btn-social-icon btn-linkedin"><i class="fa fa-linkedin"></i></button>
                     <p id="spacer"></p>
                     <!--Github-->
-                    <button type="button" href="https://github.com/mrciolino" class="btn btn-social-icon btn-github"><i class="fa fa-github"></i></button>
+                    <button type="button" onclick="window.open('https://github.com/mrciolino' + location.search)" class="btn btn-social-icon btn-github"><i class="fa fa-github"></i></button>
                     <p id="spacer"></p>
                     <!-- Twitter -->
-                    <button type="button" href="https://twitter.com/CioBazzert" class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></button>
+                    <button type="button" onclick="window.open('https://twitter.com/CioBazzert' + location.search)" class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></button>
+                    <p id="spacer"></p>
+                    <a href="mailto:mrciolino@alum.lehigh.edu" target="_blank" class="btn btn-primary">Email</a>
                     <p id="spacer"></p>
                 </div>
             </div>
