@@ -3,12 +3,10 @@ Matthew Ciolino - Job Tag Classifier
 Collection of data collection functions that imports
 and cleans our data before feature engineering
 """
-from sqlalchemy import create_engine
 from nltk.corpus import wordnet
 import pandas as pd
 import numpy as np
 import traceback
-import psycopg2
 import sys
 
 

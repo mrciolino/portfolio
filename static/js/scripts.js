@@ -133,8 +133,8 @@ function submit_job_tag_features() {
     }];
     // fill the progress bar
     $(".progress-bar").animate({
-        width: "70%"
-    }, 2500);
+        width: "100%"
+    }, 5000);
     // ajax the JSON to the server
     $.ajax({
         type: 'POST',
@@ -142,6 +142,10 @@ function submit_job_tag_features() {
         data: JSON.stringify(features),
         success: function(data) {
             display_jobtag_result(data)
+            // return progress bar to zero
+            $(".progress-bar").animate({
+                width: "0%"
+            }, 0);
             return data;
         },
         contentType: "application/json",
