@@ -26,6 +26,7 @@ dependencies:
   - gast=0.2.2=py37_0
   - gensim=3.4.0=py37h1de35cc_0
   - grpcio=1.16.1=py37h044775b_1
+  - gunicorn=19.9.0=py37_0
   - h5py=2.9.0=py37h3134771_0
   - hdf5=1.10.4=hfa1e0ec_0
   - idna=2.8=py37_0
@@ -91,3 +92,4 @@ dependencies:
   - yaml=0.1.7=hc338f04_2
   - zlib=1.2.11=h1de35cc_3
 prefix: /Volumes/SD.Card/Anaconda/anaconda3/envs/portfolio
+
