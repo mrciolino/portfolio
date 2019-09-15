@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Poltician Voting Classifier</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap-social.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet">
+
+</head>
+
+<script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/scripts.js')}}"></script>
+
+
+<style>
+    #Title {
+        background-image: url(static/refs/home_background_bluish.jpg);
+        background-size: cover;
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+</style>
+
+<body>
+    <div class="container-fluid">
+        <div id="Header" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="col-md-12">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#JOBTAG_IO">Project</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="Content" class="container-fluid">
+        <div id="Title" class="row">
+            <div id="JOBTAG_Title_Text" class="col-md-12">
+                <h2 style="color:black;">
+                    Poltician Voting Classifier
+                </h2>
+                <p style="max-width: 500px; color:black;">
+                    We takes past bills and clustering them based on the topics they contain. We take those clusters and attached them to a politicains voting record. From this we trained a support vector classifier (SVC) to predict how they are
+                    going to vote on a test bill. This model takes into account voting records, social media, and socioeconomic information.
+                </p>
+            </div>
+        </div>
+        <div id="JOBTAG_IO" class="row">
+            <div class="col-md-4">
+                <h2>
+                    Data Input
+                </h2>
+                <p>
+                    Enter a Sentator, bill information, and a bill abstract
+                </p>
+                <div class="form-group">
+                    <div id="VOTE_name" class="col-md-12">
+                        <div> <strong> Sentator </strong> </div>
+                        <label class="radio-inline"><input type="radio" name="name" checked> Bernie Sanders</label>
+                        <label class="radio-inline"><input type="radio" name="name"> Elizabeth Warren</label>
+                        <label class="radio-inline"><input type="radio" name="name"> Kamala Harris</label>
+                    </div>
+                    <div id="padding"></div>
+                    <div id="VOTE_sponsers" class="col-md-12">
+                        <div> <strong> Sponsers' Parties </strong> </div>
+                        <label class="checkbox-inline"><input type="checkbox" value=""> Indpendent</label>
+                        <label class="checkbox-inline"><input type="checkbox" value=""> Democratic</label>
+                        <label class="checkbox-inline"><input type="checkbox" value=""> Republican</label>
+                    </div>
+                    <div id="padding"></div>
+                    <div class="col-md-12">
+                        <input class="form-control" id="VOTE_sponser_num" rows="1" cols="1" type="number" required="required" placeholder="Number of Sponsers"></input>
+                        <div id="padding"></div>
+                        <input class="form-control" id="VOTE_history_num" rows="1" cols="1" type="number" required="required" placeholder="Number of Previous Proposals"></input>
+                        <div id="padding"></div>
+                    </div>
+                    <div class="col-md-12">
+                        <div> <strong> Bill Type </strong> </div>
+                        <select id="VOTE_bill_type" class="form-control">
+                            <option>B</option>
+                            <option>CR</option>
+                            <option>JR</option>
+                            <option>R</option>
+                        </select>
+                    </div>
+                    <div id="padding"></div>
+                    <div class="col-md-12">
+                        <div> <strong> Status </strong> </div>
+                        <select id="VOTE_status" class="form-control">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>
+                    </div>
+                    <div id="padding"></div>
+                    <div id="VOTE_body" class="col-md-12">
+                        <div> <strong> Body </strong> </div>
+                        <label class="radio-inline"><input type="radio" name="body" checked> Senate </label>
+                        <label class="radio-inline"><input type="radio" name="body"> House </label>
+                    </div>
+                    <div id="padding"></div>
+                </div>
+            </div>
+            <div id="bill_abstract" class="col-md-4">
+                <textarea class="form-control" id="VOTE_bill" rows="20" required="required" placeholder="Enter Bill Abstract"></textarea>
+            </div>
+            <div id="Results" class="col-md-4">
+                placeholder - feature importance
+                result
+            </div>
+            <div id="padding"></div>
+            <button class="btn btn-primary" type="submit" onclick="submit_bill_features()">Submit</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

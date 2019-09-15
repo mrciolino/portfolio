@@ -168,3 +168,36 @@ function display_jobtag_result(data) {
         toggle_class(result[i])
     }
 }
+
+// ************* Poltician Vote CLASSIFER *************
+// ************* Poltician Vote CLASSIFER *************
+// ************* Poltician Vote CLASSIFER *************
+
+// collect the features and ajax to flask
+function submit_bill_features() {
+    // grab the values
+    var features = [{
+        Feature_1: document.getElementById('VOTE_bill').value,
+        Feature_2: document.getElementById('VOTE_name').value,
+        Feature_3: document.getElementById('VOTE_sponsers').value,
+        Feature_4: document.getElementById('VOTE_sponser_num').value,
+        Feature_5: document.getElementById('VOTE_history_num').value,
+        Feature_6: document.getElementById('VOTE_bill_type').value,
+        Feature_7: document.getElementById('VOTE_status').value,
+        Feature_8: document.getElementById('VOTE_body').value,
+    }];
+    // ajax the JSON to the server
+    $.ajax({
+        type: 'POST',
+        url: '/poltician_predict',
+        data: JSON.stringify(features),
+        success: function(data) {
+            display_iris_result(data);
+            return data;
+        },
+        contentType: "application/json",
+        dataType: 'json'
+    });
+    // stop link reloading the page
+    event.preventDefault();
+}

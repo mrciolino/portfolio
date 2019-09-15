@@ -71,10 +71,10 @@
             <div class="col-md-3">
                 <div class="jumbotron">
                     <h2>
-                        Job Tag Classifier
+                        Novel Job Tag Classifier
                     </h2>
                     <p>
-                        Novel Job Tag Classifier from Job Description
+                        Predict job tag (i.e. frontend) from Job Description
                     </p>
                     <p>
                         <a class="btn btn-primary btn-large" href="{{ url_for('job_tag_classifier') }}">Demo</a>
@@ -87,13 +87,14 @@
             <div class="col-md-3">
                 <div class="jumbotron">
                     <h2>
-                        Iris Classifier
+                        Poltician Voting Classifier
                     </h2>
                     <p>
-                        Simple ensamble of classifiers on the iris dataset
+                        Predict how a politican is going to vote on a bill
                     </p>
                     <p>
-                        <a class="btn btn-primary btn-large" href="{{ url_for('test_project') }}">Demo</a>
+                        <a class="btn btn-primary btn-large" href="{{ url_for('politician_classifier') }}">Demo</a>
+                        <button class="btn btn-primary btn-large" onclick="window.open('https://nbviewer.jupyter.org/github/mrciolino/Test-Repo/blob/master/US%20Map%20Example.ipynb' + location.search)">Notebook</button>
                     </p>
                 </div>
             </div>
@@ -108,7 +109,7 @@
                         Forcasting wikipedia article traffic 60 days out
                     </p>
                     <p>
-                        <button class="btn btn-primary btn-large" onclick="window.open('https://github.com/mrciolino/Wikipedia-Traffic-Time-Series' + location.search)">Github</button>
+                        <button class="btn btn-primary btn-large" onclick="window.open('https://github.com/mrciolino/Kaggle-Competitions/tree/master/Wikipedia%20Web%20Traffic' + location.search)">Github</button>
                     </p>
                 </div>
             </div>
@@ -119,13 +120,13 @@
             <div class="col-md-3">
                 <div class="jumbotron">
                     <h2>
-                        Project 4
+                        Single Image Super Resolution
                     </h2>
                     <p>
-                        Project Description 4
+                        System for multi-scale Super Resolution
                     </p>
                     <p>
-                        <a class="btn btn-primary btn-large" href="#">Learn more</a>
+                        <button class="btn btn-primary btn-large" onclick="window.open('https://github.com/mrciolino/Test-Repo' + location.search)">Github</button>
                     </p>
                 </div>
             </div>
@@ -137,7 +138,7 @@
                         Project 5
                     </h2>
                     <p>
-                        Project Description 4
+                        Project Description 5
                     </p>
                     <p>
                         <a class="btn btn-primary btn-large" href="#">Learn more</a>
@@ -149,13 +150,13 @@
             <div class="col-md-3">
                 <div class="jumbotron">
                     <h2>
-                        Project 5
+                        Testing Project
                     </h2>
                     <p>
-                        Project Description 4
+                        Location to try new things
                     </p>
                     <p>
-                        <a class="btn btn-primary btn-large" href="#">Learn more</a>
+                        <a class="btn btn-primary btn-large" href="{{ url_for('test_project') }}">Demo</a>
                     </p>
                 </div>
             </div>
@@ -193,7 +194,7 @@
 
         <div id="Contact" class="row">
             <div class="col-md-8">
-                <form id="contact-form" method="post" action="contact.php" role="form">
+                <form id="contact-form" method="post" action="{{ url_for('static', filename='php/contact.php')}}" role="form">
                     <h2> Contact </h2>
                     <div class="messages"></div>
                     <div class="controls">
