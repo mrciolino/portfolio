@@ -110,7 +110,7 @@
                     <div id="VOTE_body" class="col-md-12">
                         <div> <strong> Body </strong> </div>
                         <label class="radio-inline"><input type="radio" name="body" value="Senate" checked> Senate </label>
-                        <label class="radio-inline"><input type="radio" name="body" value="House"> House </label>
+                        <!-- <label class="radio-inline"><input type="radio" name="body" value="House"> House </label> -->
                     </div>
                     <div id="padding"></div>
                     <button class="btn btn-primary" class="form-control" type="submit" onclick="submit_bill_features()">Submit</button>
@@ -120,12 +120,14 @@
                 <textarea class="form-control" id="VOTE_bill" rows="20" required="required" placeholder="Enter Bill Abstract"></textarea>
             </div>
             <div id="Results" class="col-md-4">
+                <div class="progress progress-striped active">
+                    <div class="progress-bar progress-bar-success" style="width:0%"></div>
+                </div>
                 <div class=row>
                     <h2 id="JOBTAG_padding"> <span id="vote_yes" class="badge badge-primary">Vote Yes</span></h2>
                     <h2 id="JOBTAG_padding"> <span id="vote_no" class="badge badge-primary">Vote No</span></h2>
                 </div>
-                placeholder - feature importance
-                result
+                <div id="poltician_feature_importance"><strong> Feature Importance </strong></div>
             </div>
         </div>
     </div>

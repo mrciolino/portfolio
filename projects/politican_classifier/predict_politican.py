@@ -9,7 +9,7 @@ import matplotlib
 matplotlib.use('Agg')
 
 dummy = ["Bill is meant to provide family's with subsidies for their disabled child policy via medicare",
-         'Lindsey Graham', ['Democratic', 'Republican'], '3', '3', 'B', '1', 'Senate']
+         'Bernie Sanders', ['Democratic', 'Republican'], '3', '3', 'B', '1', 'Senate']
 
 feature_df = pd.DataFrame(np.zeros(21)).transpose()
 feature_df.columns = ['vote', 'sponsors', 'history', "sponser_parties_set()",
@@ -73,9 +73,10 @@ def construct_dataframe(features):
 def f_importances(imp, names, top):
     # create chart
     imp, names = zip(*sorted(list(zip(imp, names))))
-    fig = plt.figure(figsize=(12, 8))
+    fig = plt.figure(figsize=(8, 12))
     plt.barh(range(top), imp[::-1][0:top], align='center')
     plt.yticks(range(top), names[::-1][0:top])
+    plt.yticks(rotation=35)
 
     # save to numpy array
     fig.canvas.draw()
@@ -94,7 +95,7 @@ def predict_vote(features):
     model = load("projects/politican_classifier/models/" + str(id_politician_map[features[1]]) + "_svc.joblib")
 
     # grab feature importance
-    data = f_importances(abs(model.coef_[0]), df.columns.tolist(), top=30).tolist()
+    data = f_importances(abs(model.coef_[0]), df.columns.tolist(), top=25).tolist()
 
     # predict vote
     vote = model.predict(df.drop(columns=['vote']).values)
@@ -102,6 +103,4 @@ def predict_vote(features):
     # decode vote
     vote = 'vote_yes' if int(vote) == 1 else 'vote_no'
 
-    return [vote, data]
-
-    
+    return [vote, features[1]]

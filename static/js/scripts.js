@@ -195,13 +195,21 @@ function submit_bill_features() {
         Feature_7: document.getElementById('VOTE_status').value,
         Feature_8: body,
     }];
+    // fill the progress bar
+    $(".progress-bar").animate({
+        width: "100%"
+    }, 1000);
     // ajax the JSON to the server
     $.ajax({
         type: 'POST',
         url: '/poltician_predict',
         data: JSON.stringify(features),
         success: function(data) {
-            // display_vote_result(data);
+            display_vote_result(data);
+            // return progress bar to zero
+            $(".progress-bar").animate({
+                width: "0%"
+            }, 0);
             return data;
         },
         contentType: "application/json",
@@ -213,16 +221,27 @@ function submit_bill_features() {
 
 function display_vote_result(data) {
 
-    function toggle_class(id) {
-        document.getElementById(id).className = "badge badge-success";
+    document.getElementById("vote_no").className = "badge badge-primary";
+    document.getElementById("vote_yes").className = "badge badge-primary";
+
+    var vote_result = Object.values(data)[0][0];
+
+    if (vote_result == "vote_yes") {
+        document.getElementById("vote_yes").className = "badge badge-success";
+    }
+    if (vote_result == "vote_no") {
+        document.getElementById("vote_no").className = "badge badge-success";
     }
 
-    var result = Object.values(data)[0];
-    var arrayLength = result.length;
+    var name = Object.values(data)[0][1];
+    document.getElementById("poltician_feature_importance").innerHTML = "<strong> Feature Importance </strong>";
 
-    for (var i = 0; i < arrayLength; i++) {
-        toggle_class(result[i])
+    function image(thisImg) {
+        var img = document.createElement("IMG");
+        img.src = "static/refs/poltician_feature_importance/"+thisImg+".png";
+        img.height = 600;
+        img.width = 400;
+        document.getElementById('poltician_feature_importance').appendChild(img);
     }
-
-
+    image(name)
 }
