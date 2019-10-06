@@ -175,16 +175,25 @@ function display_jobtag_result(data) {
 
 // collect the features and ajax to flask
 function submit_bill_features() {
+    // grab the name
+    var name = $("input[name=name]:checked").val();
+    // grab body
+    var body = $("input[name=body]:checked").val();
+    // grab sponser parties
+    var sponsers = [];
+    $('#VOTE_sponsers input:checked').each(function() {
+        sponsers.push($(this).attr('name'));
+    });
     // grab the values
     var features = [{
         Feature_1: document.getElementById('VOTE_bill').value,
-        Feature_2: document.getElementById('VOTE_name').value,
-        Feature_3: document.getElementById('VOTE_sponsers').value,
+        Feature_2: name,
+        Feature_3: sponsers,
         Feature_4: document.getElementById('VOTE_sponser_num').value,
         Feature_5: document.getElementById('VOTE_history_num').value,
         Feature_6: document.getElementById('VOTE_bill_type').value,
         Feature_7: document.getElementById('VOTE_status').value,
-        Feature_8: document.getElementById('VOTE_body').value,
+        Feature_8: body,
     }];
     // ajax the JSON to the server
     $.ajax({
@@ -192,7 +201,7 @@ function submit_bill_features() {
         url: '/poltician_predict',
         data: JSON.stringify(features),
         success: function(data) {
-            display_iris_result(data);
+            // display_vote_result(data);
             return data;
         },
         contentType: "application/json",
@@ -200,4 +209,20 @@ function submit_bill_features() {
     });
     // stop link reloading the page
     event.preventDefault();
+}
+
+function display_vote_result(data) {
+
+    function toggle_class(id) {
+        document.getElementById(id).className = "badge badge-success";
+    }
+
+    var result = Object.values(data)[0];
+    var arrayLength = result.length;
+
+    for (var i = 0; i < arrayLength; i++) {
+        toggle_class(result[i])
+    }
+
+
 }
