@@ -2,7 +2,6 @@ import matplotlib.pyplot as plt
 from joblib import load
 import pandas as pd
 import numpy as np
-import sklearn
 
 # dont display
 import matplotlib
