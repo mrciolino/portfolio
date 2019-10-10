@@ -7,6 +7,4 @@ Change resume to Machine Learning one
 
 finish contact form (flask-bootstrap)
 
-add politician notebook from nbviewer - explain private repo
-
-start multi scale single image super res repo
+start multi scale single image super res notebook

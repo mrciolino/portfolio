@@ -8,6 +8,8 @@ sys.path.append(os.getcwd() + "/projects/job_tag_classifier")
 import predict_job_tag
 sys.path.append(os.getcwd() + "/projects/politican_classifier")
 from predict_politican import predict_vote
+sys.path.append(os.getcwd() + "/static/contact")
+from contact import send_simple_message
 
 app = Flask(__name__, static_url_path='/static')
 
@@ -74,6 +76,20 @@ def predict_votes():
     # run the prediction and return
     result = predict_vote(features)
     app.logger.info(result[0])
+    return jsonify(result=result)
+
+
+@app.route('/post_mail', methods=['POST'])
+def post_mail():
+
+    app.logger.info('Sending mail to server')
+    # get the data
+    data = request.get_json()
+    # convert data into array
+    features = [i for i in list(data[0].values())]
+    # send the mail to mailgun server
+    result = send_simple_message(*features)
+    app.logger.info("Email Results:", result)
     return jsonify(result=result)
 
 

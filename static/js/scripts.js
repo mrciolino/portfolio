@@ -17,6 +17,45 @@ $("a[href='#Header']").click(function() {
     return false;
 });
 
+function submit_mail_features() {
+    // grab the values
+    var features = [{
+        Feature_1: document.getElementById('form_name').value, //name
+        Feature_2: document.getElementById('form_lastname').value, //company
+        Feature_3: document.getElementById('form_email').value, //email
+        Feature_4: document.getElementById('form_need').value, //reason
+        Feature_5: document.getElementById('form_message').value, //message
+    }];
+    // ajax the JSON to the server
+    $.ajax({
+        type: 'POST',
+        url: '/post_mail',
+        data: JSON.stringify(features),
+        success: function(data) {
+            display_mail_result(data);
+            return data;
+        },
+        contentType: "application/json",
+        dataType: 'json'
+    });
+    // stop link reloading the page
+    event.preventDefault();
+}
+
+// display the results of the
+function display_mail_result(data) {
+    var result = Object.values(data)[0];
+    if (result == 200) {
+        document.getElementById("mail_submit_button").className = "btn btn-sucess";
+    }
+    else{
+        document.getElementById("mail_submit_button").className = "btn btn-danger";
+    }
+    setTimeout(function() {
+        document.getElementById("mail_submit_button").className = "btn btn-primary";
+    }, 3000);
+}
+
 // ************* IRIS CLASSIFER *************
 // ************* IRIS CLASSIFER *************
 // ************* IRIS CLASSIFER *************
