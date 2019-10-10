@@ -1,10 +1,9 @@
+![](static/refs/favicon/apple-touch-icon.png)
+
 # Portfolio
 
-Contains projects that I have connected to a web application as a REST API. Feel free to test the projects out or to download the layout to use for your own projects.
+Code for my machine learning portfolio. Contains projects that i have done over the years. Some project contain demos, others contain just a notebook, while other are just papers. These are the specializations that I have made during my journey as a machine learning engineer.
 
-TODO:
-Change resume to Machine Learning one
-
-finish contact form (flask-bootstrap)
-
-start multi scale single image super res notebook
+##### TODO:
+ML Resume
+TSRGAN Notebook
