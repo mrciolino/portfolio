@@ -1,4 +1,5 @@
 import os
+import time
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 
@@ -12,12 +13,24 @@ Feature_5: document.getElementById('form_message').value, //message
 
 
 def send_simple_message(name, company, email, reason, message):
-    subject = "Name: " + str(name) + "\nCompany: " + str(company)
-    content = str(subject) + "\nEmail: " + str(email) + "\nSubject: " + str(reason) + "\nMessage: " + str(message)
+
+    subject = ("SENDGRID - %s at %s: %s" % (name, company, reason))
+    html_note = ("""
+                <p>Someone has used the contact form on your portfolio website.</p>
+                <p>Sendgrid sent the following message at %s.</p>
+                <p>_________________________________________________</p>
+                <p>Name: %s</p>
+                <p>Company: %s</p>
+                <p>Email: <a href="mailto:%s">%s</a></p>
+                <p>Subject: %s</p>
+                <p>Message: %s</p>
+                """
+                 % (time.ctime(), name, company, email, email, reason, message))
+
     message = Mail(from_email='app138263545@heroku.com',
                    to_emails='mrciolino@alum.lehigh.edu',
                    subject=subject,
-                   plain_text_content=content)
+                   html_content=html_note)
     try:
         sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
         response = sg.send(message)
@@ -26,6 +39,7 @@ def send_simple_message(name, company, email, reason, message):
         code = str(e)
 
     return code
+
 
 if __name__ == "__main__":
     name, company, email, reason, message = ["Matt", "Self-Employed", "self@email.com", "Testing", "How is it going?"]

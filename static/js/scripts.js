@@ -46,13 +46,16 @@ function submit_mail_features() {
 function display_mail_result(data) {
     var result = Object.values(data)[0];
     if (result == 200) {
-        document.getElementById("mail_submit_button").className = "btn btn-sucess";
+        document.getElementById("mail_submit_button").className = "btn btn-success";
+        document.getElementById("mail_submit_button").value="----Sent----";
     }
     else{
         document.getElementById("mail_submit_button").className = "btn btn-danger";
+        document.getElementById("mail_submit_button").value="---Failed---";
     }
     setTimeout(function() {
         document.getElementById("mail_submit_button").className = "btn btn-primary";
+        document.getElementById("mail_submit_button").value="Send Message";
     }, 3000);
 }
 
@@ -237,7 +240,7 @@ function submit_bill_features() {
     // fill the progress bar
     $(".progress-bar").animate({
         width: "100%"
-    }, 1000);
+    }, 2000);
     // ajax the JSON to the server
     $.ajax({
         type: 'POST',
