@@ -7,5 +7,4 @@ Code for my machine learning portfolio. Contains projects that i have done over 
 Visit the website: http://matthewciolino.herokuapp.com/
 
 ##### TODO:
-ML Resume
-SRGAN Notebook
+ML Resume Paper Links
