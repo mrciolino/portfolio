@@ -45,14 +45,16 @@ function submit_mail_features() {
 // display the results of the
 function display_mail_result(data) {
     var result = Object.values(data)[0];
+
     if (result == 200) {
         document.getElementById("mail_submit_button").className = "btn btn-success";
-        document.getElementById("mail_submit_button").value="----Sent----";
+        document.getElementById("mail_submit_button").value="----  Sent  ----";
     }
     else{
         document.getElementById("mail_submit_button").className = "btn btn-danger";
-        document.getElementById("mail_submit_button").value="---Failed---";
+        document.getElementById("mail_submit_button").value="---  Failed  ---";
     }
+
     setTimeout(function() {
         document.getElementById("mail_submit_button").className = "btn btn-primary";
         document.getElementById("mail_submit_button").value="Send Message";
