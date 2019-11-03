@@ -5,3 +5,4 @@ app.pyc
 predict_iris.pyc
 portfolio
 keys.py
+.DS_Store
