@@ -9,3 +9,4 @@ cloudpickle==1.2.2
 sendgrid==6.0.5
 gensim==3.8.0
 textblob==0.15.3
+newrelic==5.2.1.129 
