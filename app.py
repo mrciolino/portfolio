@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, jsonify
+from flask import Flask, request, render_template, jsonify, send_file
 import sys
 import os
 
@@ -32,6 +32,14 @@ def job_tag_classifier():
 @app.route('/politician_classifier')
 def politician_classifier():
     return render_template('politicians.html')
+
+
+@app.route('/spie_presentation')
+def spie_presentation():
+    return send_file("static/refs/Super Resolution SPIE.pdf",
+                     'application/pdf',
+                     as_attachment=False,
+                     attachment_filename="Ciolino SPIE Presentation.pdf")
 
 
 @app.route('/predict_iris', methods=['POST'])
