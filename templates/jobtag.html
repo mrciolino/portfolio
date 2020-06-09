@@ -16,6 +16,7 @@
 </head>
 
 <script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
 <script src="{{ url_for('static', filename='js/scripts.js')}}"></script>
 
@@ -49,6 +50,7 @@
             <div id="JOBTAG_Title_Text" class="col-md-12">
                 <h2 style="color:black;">
                     Job Tag Classifier
+                    <button class="btn btn-primary btn-sm" onclick="window.open('https://github.com/mrciolino/Job-Tag-Classifier' + location.search)">Github</button>
                 </h2>
                 <p style="max-width: 500px; color:black;">
                     We take a job title and a job description and predict the tags associated with that job. We do this through Natural Language Processing (NLP), a Convolutional Autoencoder (AE), and a Deep Neural Network (DNN). This model will
@@ -109,34 +111,36 @@ At Google, we don’t just accept difference—we celebrate it, we support it, a
                 <div class="progress progress-striped active">
                     <div class="progress-bar progress-bar-success" style="width:0%"></div>
                 </div>
-                <div id=JOBTAG_padding>
-                    <div class=row>
-                        <h2 id="JOBTAG_padding"> <span id="Product Manager" class="badge badge-primary">Product Manager</span></h2>
-                        <h2 id="JOBTAG_padding"> <span id="Tech" class="badge badge-primary">Tech</span></h2>
-                        <h2 id="JOBTAG_padding"> <span id="Software" class="badge badge-primary">Software</span></h2>
-                    </div>
-                    <div class=row>
-                        <h2 id="JOBTAG_padding"> <span id="Internship" class="badge badge-primary">Internship</span></h2>
-                        <h2 id="JOBTAG_padding"> <span id="Web" class="badge badge-primary">Web</span></h2>
-                        <h2 id="JOBTAG_padding"> <span id="Sales" class="badge badge-primary">Sales</span></h2>
-                    </div>
-                    <div class=row>
-                        <h2 id="JOBTAG_padding"> <span id="Backend" class="badge badge-primary">Backend</span></h2>
-                        <h2 id="JOBTAG_padding"> <span id="Recruiting" class="badge badge-primary">Recruiting</span></h2>
-                        <h2 id="JOBTAG_padding"> <span id="Frontend" class="badge badge-primary">Frontend</span></h2>
-                    </div>
-                    <div class=row>
-                        <h2 id="JOBTAG_padding"> <span id="Designer" class="badge badge-primary">Designer</span></h2>
-                        <h2 id="JOBTAG_padding"> <span id="Express" class="badge badge-primary">Express.js</span></h2>
-                        <h2 id="JOBTAG_padding"> <span id="Full-Stack" class="badge badge-primary">Full-Stack</span></h2>
-                    </div>
-                    <div class=row>
-                        <h2 id="JOBTAG_padding"> <span id="React" class="badge badge-primary">React</span></h2>
-                        <h2 id="JOBTAG_padding"> <span id="Customer Service" class="badge badge-primary">Customer Service</span></h2>
-                        <h2 id="JOBTAG_padding"> <span id="Flask" class="badge badge-primary">Flask</span></h2>
-                    </div>
-                    <div class=row>
-                        <h2 id="JOBTAG_padding"> <span id="Angular" class="badge badge-primary">Angular</span></h2>
+                <div>
+                    <div id="JOBTAGS" class=row style="padding:15px;">
+                        <h2 style="padding:15px;"> <span id="Product Manager" class="badge badge-secondary">Product Manager</span></h2>
+                        <h2 style="padding:15px;"> <span id="Tech" class="badge badge-secondary">Tech</span></h2>
+                        <h2 style="padding:15px;"> <span id="Software" class="badge badge-secondary">Software</span></h2>
+                        <h2 style="padding:15px;"> <span id="Web" class="badge badge-secondary">Web</span></h2>
+                        <h2 style="padding:15px;"> <span id="Sales" class="badge badge-secondary">Sales</span></h2>
+                        <h2 style="padding:15px;"> <span id="Backend" class="badge badge-secondary">Backend</span></h2>
+                        <h2 style="padding:15px;"> <span id="Recruiting" class="badge badge-secondary">Recruiting</span></h2>
+                        <h2 style="padding:15px;"> <span id="Frontend" class="badge badge-secondary">Frontend</span></h2>
+                        <h2 style="padding:15px;"> <span id="Designer" class="badge badge-secondary">Designer</span></h2>
+                        <h2 style="padding:15px;"> <span id="Express" class="badge badge-secondary">Express.js</span></h2>
+                        <h2 style="padding:15px;"> <span id="Full-Stack" class="badge badge-secondary">Full-Stack</span></h2>
+                        <h2 style="padding:15px;"> <span id="React" class="badge badge-secondary">React</span></h2>
+                        <h2 style="padding:15px;"> <span id="Customer Service" class="badge badge-secondary">Customer Service</span></h2>
+                        <h2 style="padding:15px;"> <span id="Flask" class="badge badge-secondary">Flask</span></h2>
+                        <h2 style="padding:15px;"> <span id="Angular" class="badge badge-secondary">Angular</span></h2>
+                        <h2 style="padding:15px;"> <span id="Database" class="badge badge-secondary">Database</span></h2>
+                        <h2 style="padding:15px;"> <span id="DynamoDB" class="badge badge-secondary">DynamoDB</span></h2>
+                        <h2 style="padding:15px;"> <span id="Hardware" class="badge badge-secondary">Hardware</span></h2>
+                        <h2 style="padding:15px;"> <span id="MSSQL" class="badge badge-secondary">MSSQL</span></h2>
+                        <h2 style="padding:15px;"> <span id="Management" class="badge badge-secondary">Management</span></h2>
+                        <h2 style="padding:15px;"> <span id="Marketing" class="badge badge-secondary">Marketing</span></h2>
+                        <h2 style="padding:15px;"> <span id="MongoDB" class="badge badge-secondary">MongoDB</span></h2>
+                        <h2 style="padding:15px;"> <span id="MySQL" class="badge badge-secondary">MySQL</span></h2>
+                        <h2 style="padding:15px;"> <span id="NoSQL" class="badge badge-secondary">NoSQL</span></h2>
+                        <h2 style="padding:15px;"> <span id="PostgreSQL" class="badge badge-secondary">PostgreSQL</span></h2>
+                        <h2 style="padding:15px;"> <span id="Redis" class="badge badge-secondary">Redis</span></h2>
+                        <h2 style="padding:15px;"> <span id="SQL" class="badge badge-secondary">SQL</span></h2>
+                        <h2 style="padding:15px;"> <span id="Social Media" class="badge badge-secondary">Social Media</span></h2>
                     </div>
                 </div>
             </div>

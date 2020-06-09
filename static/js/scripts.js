@@ -48,16 +48,15 @@ function display_mail_result(data) {
 
     if (result == 200) {
         document.getElementById("mail_submit_button").className = "btn btn-success";
-        document.getElementById("mail_submit_button").value="----  Sent  ----";
-    }
-    else{
+        document.getElementById("mail_submit_button").value = "----  Sent  ----";
+    } else {
         document.getElementById("mail_submit_button").className = "btn btn-danger";
-        document.getElementById("mail_submit_button").value="---  Failed  ---";
+        document.getElementById("mail_submit_button").value = "---  Failed  ---";
     }
 
     setTimeout(function() {
         document.getElementById("mail_submit_button").className = "btn btn-primary";
-        document.getElementById("mail_submit_button").value="Send Message";
+        document.getElementById("mail_submit_button").value = "Send Message";
     }, 3000);
 }
 
@@ -178,7 +177,7 @@ function submit_job_tag_features() {
     // fill the progress bar
     $(".progress-bar").animate({
         width: "100%"
-    }, 5000);
+    }, 500);
     // ajax the JSON to the server
     $.ajax({
         type: 'POST',
@@ -201,14 +200,22 @@ function submit_job_tag_features() {
 
 function display_jobtag_result(data) {
 
+    function remove_class(id) {
+        document.getElementById(id).className = "badge badge-secondary";
+    }
+
+    var everyChild = document.querySelectorAll("#JOBTAGS span");
+    console.log(everyChild)
+    for (var i = 0; i<everyChild.length; i++) {
+        remove_class(everyChild[i].id)
+    }
+
     function toggle_class(id) {
         document.getElementById(id).className = "badge badge-success";
     }
 
     var result = Object.values(data)[0];
-    var arrayLength = result.length;
-
-    for (var i = 0; i < arrayLength; i++) {
+    for (var i = 0; i < result.length; i++) {
         toggle_class(result[i])
     }
 }
@@ -282,7 +289,7 @@ function display_vote_result(data) {
 
     function image(thisImg) {
         var img = document.createElement("IMG");
-        img.src = "static/refs/poltician_feature_importance/"+thisImg+".png";
+        img.src = "static/refs/poltician_feature_importance/" + thisImg + ".png";
         img.height = 600;
         img.width = 400;
         document.getElementById('poltician_feature_importance').appendChild(img);

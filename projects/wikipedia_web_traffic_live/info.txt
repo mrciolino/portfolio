@@ -1,0 +1,4 @@
+https://pageviews.toolforge.org/siteviews/?platform=all-access&source=pageviews&agent=user&range=latest-60&sites=en.wikipedia.org
+https://towardsdatascience.com/how-to-create-a-plotly-visualization-and-embed-it-on-websites-517c1a78568b
+
+basically embed a bunch of different algos every night and allow a person to compare them over time
