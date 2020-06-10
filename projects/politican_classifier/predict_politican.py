@@ -94,7 +94,7 @@ def predict_vote(features):
     model = load("projects/politican_classifier/models/" + str(id_politician_map[features[1]]) + "_svc.joblib")
 
     # grab feature importance
-    data = f_importances(abs(model.coef_[0]), df.columns.tolist(), top=25).tolist()
+    # data = f_importances(abs(model.coef_[0]), df.columns.tolist(), top=25).tolist()
 
     # predict vote
     vote = model.predict(df.drop(columns=['vote']).values)

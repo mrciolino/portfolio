@@ -18,7 +18,7 @@
 <script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
 <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
 <script src="{{ url_for('static', filename='js/scripts.js')}}"></script>
-
+<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
 
 <style>
     #Title {
@@ -48,7 +48,7 @@
         <div id="Title" class="row">
             <div id="JOBTAG_Title_Text" class="col-md-12">
                 <h2 style="color:black;">
-                    Poltician Voting Classifier
+                    Poltician Voting Classifier <button class="btn btn-primary btn-large" onclick="window.open('https://nbviewer.jupyter.org/github/mrciolino/Test-Repo/blob/master/xeval/US%20Map%20Example.ipynb' + location.search)">Notebook</button>
                 </h2>
                 <p style="max-width: 500px; color:black;">
                     We takes past bills and clustering them based on the topics they contain. We take those clusters and attached them to a politicains voting record. From this we trained a support vector classifier (SVC) to predict how they are
@@ -127,7 +127,9 @@
                     <h2 id="JOBTAG_padding"> <span id="vote_yes" class="badge badge-primary">Vote Yes</span></h2>
                     <h2 id="JOBTAG_padding"> <span id="vote_no" class="badge badge-primary">Vote No</span></h2>
                 </div>
-                <div id="poltician_feature_importance"><strong> Feature Importance </strong></div>
+                <div class="container-fluid" id='FI'>
+                    <!-- Plotly chart will be drawn inside this DIV -->
+                </div>
             </div>
         </div>
     </div>
@@ -135,3 +137,292 @@
 </body>
 
 </html>
+
+<script>
+    var data_Kamala = [{
+        y: ['topic_17',
+            'topic_19',
+            "sponser_parties_{'I', 'D'}",
+            'topic_3',
+            'topic_20',
+            'bill_type_JR',
+            'topic_24',
+            'topic_12',
+            "sponser_parties_{'I', 'D', 'R'}",
+            'topic_14',
+            "sponser_parties_{'R'}",
+            "sponser_parties_{'D', 'R'}",
+            'topic_8',
+            'topic_23',
+            'bill_type_CR',
+            'bill_type_B',
+            'topic_18',
+            'topic_16',
+            'topic_10',
+            'history'
+        ],
+        x: [2.5027592420841867,
+            2.2279979922559834,
+            1.8276309509972704,
+            1.0569155369547174,
+            0.9485576191621508,
+            0.9120323961377679,
+            0.8264037082646043,
+            0.8236267947014797,
+            0.6515823371039833,
+            0.6480885884531282,
+            0.5930235609793755,
+            0.5830250529139249,
+            0.5558926953379562,
+            0.5400166309596461,
+            0.5327178214470898,
+            0.4346793859791802,
+            0.4068182327116791,
+            0.40144882955546835,
+            0.34298783250817466,
+            0.31252803108748495
+        ],
+        type: 'bar',
+        orientation: 'h'
+    }];
+    var data_Sanders = [{
+        y: ['history',
+            "sponser_parties_{'I', 'D'}",
+            'topic_3',
+            'topic_20',
+            'topic_18',
+            'topic_23',
+            'topic_24',
+            'topic_19',
+            'topic_6',
+            'bill_type_CR',
+            'topic_1',
+            "sponser_parties_{'I', 'D', 'R'}",
+            'sponsors',
+            "sponser_parties_{'D', 'R'}",
+            'topic_14',
+            'bill_type_B',
+            'status_1',
+            'topic_22',
+            'bill_type_JR',
+            "sponser_parties_{'D'}"
+        ],
+        x: [2.394988981877951,
+            1.183742986055492,
+            1.168855825409584,
+            1.109809839845012,
+            1.0772425851285115,
+            0.8238748615532168,
+            0.7993643466110374,
+            0.7445057569952476,
+            0.7134183640625522,
+            0.6782820335699284,
+            0.6729886841362713,
+            0.6663294802492974,
+            0.5954109071506668,
+            0.5729262063101039,
+            0.5092018813810588,
+            0.5084495740117632,
+            0.4814039277195672,
+            0.45708953637261934,
+            0.43640867410573847,
+            0.4123568501996182
+        ],
+        type: 'bar',
+        orientation: 'h'
+    }];
+    var data_Elizabeth_Warren = [{
+        y: ['topic_17',
+            'topic_19',
+            "sponser_parties_{'I', 'D'}",
+            'topic_3',
+            'bill_type_JR',
+            'topic_12',
+            'topic_24',
+            "sponser_parties_{'I', 'D', 'R'}",
+            'topic_20',
+            'topic_14',
+            'topic_23',
+            "sponser_parties_{'D', 'R'}",
+            "sponser_parties_{'R'}",
+            'topic_8',
+            'bill_type_B',
+            'bill_type_CR',
+            'topic_10',
+            'topic_18',
+            'status_4',
+            'topic_16'
+        ],
+        x: [2.401918635976539,
+            2.1761346082879696,
+            1.864659532609134,
+            1.001190032863528,
+            0.9480337953213169,
+            0.8270682817106436,
+            0.7925065382531562,
+            0.6843080061796503,
+            0.6715836427502748,
+            0.666943948232434,
+            0.6514477112101007,
+            0.6019119010579672,
+            0.5784396253715158,
+            0.5285618475365129,
+            0.5069352418802993,
+            0.40977697184064965,
+            0.3886007540599153,
+            0.26842297187597086,
+            0.25333723966208765,
+            0.24810764385550232
+        ],
+        type: 'bar',
+        orientation: 'h'
+    }];
+    var data_John_Thune = [{
+        y: ['topic_17',
+            "sponser_parties_{'I', 'D'}",
+            'bill_type_CR',
+            'topic_24',
+            'bill_type_B',
+            'bill_type_JR',
+            "sponser_parties_{'I', 'D', 'R'}",
+            'topic_3',
+            'topic_23',
+            "sponser_parties_{'D', 'R'}",
+            'status_1',
+            'topic_20',
+            'topic_6',
+            "sponser_parties_{'R'}",
+            'topic_14',
+            'topic_16',
+            'topic_7',
+            'status_2',
+            'topic_0',
+            "sponser_parties_{'D'}"
+        ],
+        x: [1.6425914438392368,
+            1.4958633141930642,
+            1.2421676401703527,
+            0.6963883628968067,
+            0.5969156025763453,
+            0.5345904240821024,
+            0.5234177163876881,
+            0.47420458795319825,
+            0.46239606992643406,
+            0.43069637138170336,
+            0.3744460008705648,
+            0.3706730380950082,
+            0.3449572018556629,
+            0.3365682229609348,
+            0.31884364329056736,
+            0.2647397553825203,
+            0.26257385449206466,
+            0.2424461300164804,
+            0.2124628984455141,
+            0.20518100346274937
+        ],
+        type: 'bar',
+        orientation: 'h'
+    }];
+    var data_Mike_Rounds = [{
+        y: ["sponser_parties_{'I', 'D'}",
+            'bill_type_CR',
+            'topic_17',
+            'bill_type_B',
+            'topic_24',
+            'bill_type_JR',
+            "sponser_parties_{'I', 'D', 'R'}",
+            'topic_6',
+            'topic_3',
+            "sponser_parties_{'D', 'R'}",
+            'topic_16',
+            "sponser_parties_{'R'}",
+            'status_1',
+            'topic_19',
+            "sponser_parties_{'D'}",
+            'topic_7',
+            'topic_20',
+            'status_3',
+            'bill_type_R',
+            'topic_0'
+        ],
+        x: [1.5487254478878403,
+            1.3539083556744718,
+            1.2616108888507267,
+            0.6204286339523293,
+            0.60636703191382,
+            0.49274878830150115,
+            0.4674506057683736,
+            0.44633773608819904,
+            0.4096000427488288,
+            0.3961131103893152,
+            0.38344728734103883,
+            0.3691487538728282,
+            0.3476071382347836,
+            0.34596277692086524,
+            0.3160129778573233,
+            0.31344992282532963,
+            0.3077626111904601,
+            0.29279365197428486,
+            0.24073093342065058,
+            0.2071605333521684
+        ],
+        type: 'bar',
+        orientation: 'h'
+    }];
+    var data_Lindsey_Graham = [{
+        y: ["sponser_parties_{'I', 'D'}",
+            'bill_type_CR',
+            'bill_type_B',
+            'bill_type_JR',
+            'bill_type_R',
+            "sponser_parties_{'I', 'D', 'R'}",
+            "sponser_parties_{'D', 'R'}",
+            "sponser_parties_{'R'}",
+            "sponser_parties_{'D'}",
+            'topic_17',
+            'topic_20',
+            'topic_6',
+            'topic_3',
+            'topic_7',
+            'topic_14',
+            'topic_16',
+            'topic_0',
+            'topic_23',
+            'topic_4',
+            'topic_19'
+        ],
+        x: [1.5867956379787305,
+            1.4729885193496237,
+            0.5192345656881798,
+            0.5098002479614365,
+            0.4439537057000065,
+            0.41526315280391835,
+            0.4016854450066196,
+            0.3972212862702378,
+            0.3726257538979547,
+            0.2892669054343049,
+            0.21987061985712297,
+            0.19187328605514808,
+            0.18925352661615946,
+            0.18550758539285606,
+            0.15330553348396098,
+            0.11196576489986199,
+            0.10484841735038586,
+            0.08892160090488432,
+            0.06861318304621045,
+            0.0684155340158421
+        ],
+        type: 'bar',
+        orientation: 'h'
+    }];
+    var layout = {
+        title: 'Feature Importance',
+        'hovermode': 'closest',
+        font: {
+            size: 12
+        }
+    };
+    var config = {
+        responsive: true
+    }
+</script>

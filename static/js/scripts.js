@@ -206,7 +206,7 @@ function display_jobtag_result(data) {
 
     var everyChild = document.querySelectorAll("#JOBTAGS span");
     console.log(everyChild)
-    for (var i = 0; i<everyChild.length; i++) {
+    for (var i = 0; i < everyChild.length; i++) {
         remove_class(everyChild[i].id)
     }
 
@@ -263,6 +263,10 @@ function submit_bill_features() {
             }, 0);
             return data;
         },
+        error: function(){
+            // if no data flash fail
+            alert("Vote Prediction Failed. Try a differnt input.")
+        },
         contentType: "application/json",
         dataType: 'json'
     });
@@ -276,7 +280,6 @@ function display_vote_result(data) {
     document.getElementById("vote_yes").className = "badge badge-primary";
 
     var vote_result = Object.values(data)[0][0];
-
     if (vote_result == "vote_yes") {
         document.getElementById("vote_yes").className = "badge badge-success";
     }
@@ -285,14 +288,13 @@ function display_vote_result(data) {
     }
 
     var name = Object.values(data)[0][1];
-    document.getElementById("poltician_feature_importance").innerHTML = "<strong> Feature Importance </strong>";
-
-    function image(thisImg) {
-        var img = document.createElement("IMG");
-        img.src = "static/refs/poltician_feature_importance/" + thisImg + ".png";
-        img.height = 600;
-        img.width = 400;
-        document.getElementById('poltician_feature_importance').appendChild(img);
+    var model_politician_map = {
+        'Kamala Harris': data_Kamala,
+        'Bernie Sanders': data_Sanders,
+        'Elizabeth Warren': data_Elizabeth_Warren,
+        'John Thune': data_John_Thune,
+        'Mike Rounds': data_Mike_Rounds,
+        'Lindsey Graham': data_Lindsey_Graham
     }
-    image(name)
+    Plotly.newPlot('FI', model_politician_map[name], layout, config);
 }
