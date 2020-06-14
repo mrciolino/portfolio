@@ -1,4 +1,6 @@
 from flask import Flask, request, render_template, jsonify, send_file
+from apscheduler.schedulers.background import BackgroundScheduler
+import json
 import sys
 import os
 
@@ -8,10 +10,15 @@ sys.path.append(os.getcwd() + "/projects/job_tag_classifier")
 import predict_job_tag
 sys.path.append(os.getcwd() + "/projects/politican_classifier")
 from predict_politican import predict_vote
+sys.path.append(os.getcwd() + "/projects/wikipedia_web_traffic_live")
+from wikipedia import update_wikipedia
 sys.path.append(os.getcwd() + "/static/contact")
 from contact import send_simple_message
 
 app = Flask(__name__, static_url_path='/static')
+scheduler = BackgroundScheduler()
+scheduler.add_job(func=update_wikipedia, trigger="interval", seconds=86400)
+scheduler.start()
 
 
 @app.route('/')
@@ -32,6 +39,12 @@ def job_tag_classifier():
 @app.route('/politician_classifier')
 def politician_classifier():
     return render_template('politicians.html')
+
+@app.route('/wikipedia_traffic')
+def wikipedia_traffic():
+    with open("static/refs/wikipedia/wikipedia.json") as handle:
+        data = json.load(handle)
+    return render_template('wikipedia_traffic.html', data=data)
 
 
 @app.route('/spie_presentation')

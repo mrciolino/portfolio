@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Wikipedia Web Traffic Predictions</title>
+    {% include 'icon.html' %}
+
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap-social.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet">
+
+</head>
+
+<script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/scripts.js')}}"></script>
+<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+
+<style>
+    #Title {
+        background-image: url(static/refs/home_background_bluish.jpg);
+        background-size: cover;
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+</style>
+
+<body>
+    <div class="container-fluid">
+        <div id="Header" class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="col-md-12">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#JOBTAG_IO">Project</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="Content" class="container-fluid">
+        <div id="Title" class="row">
+            <div id="JOBTAG_Title_Text" class="col-md-12">
+                <h2 style="color:black;">
+                    Live Wikipedia Web Traffic Forcaster <button class="btn btn-primary btn-large" onclick="window.open('https://github.com/mrciolino/Kaggle-Competitions/tree/master/Wikipedia%20Web%20Traffic' + location.search)">Github</button>
+                </h2>
+                <p style="max-width: 500px; color:black;">
+                    As an extension to the Wikipedia traffic prediction Kaggle competition, this live demo interactively plots all-time Wikipedia web traffic data and tries to forecast the time series data into the future. The data and the forecast
+                    are updated once a day.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-12" style="padding:15px;">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+                        Page Views
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
+                        Unique Devices
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="container-fluid" id='wikipedia1'>
+                        <!-- Plotly chart will be drawn inside this DIV -->
+                    </div>
+                </div>
+                <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="container-fluid" id='wikipedia2'>
+                        <!-- Plotly chart will be drawn inside this DIV -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    var data = JSON.parse('{{ data | tojson | safe}}');
+
+    var trace = {
+        name: 'Actual price',
+        mode: 'markers',
+        x: list(df_forecast['ds']),
+        y: list(df['y']),
+        marker: {
+            "color": '#FFBAD2',
+            "line": {
+                "width": 1
+            }
+        },
+        type: "scatter"
+    };
+    var trace1 = {
+        name: 'trend',
+        mode: 'lines',
+        x: list(df_forecast['ds']),
+        y: list(df_forecast['yhat']),
+        marker: {
+            "color": 'red',
+            "line": {
+                "width": 3
+            }
+        },
+        type: "scatter"
+    };
+    var upper_band = {
+        name: 'upper band',
+        mode: 'lines',
+        x: list(df_forecast['ds']),
+        y: list(df_forecast['yhat_upper']),
+        line: {
+            "color": '#57b88f'
+        },
+        fill: 'tonexty',
+        type: "scatter"
+    };
+    var lower_band = {
+        name: 'lower band',
+        mode: 'lines',
+        x: list(df_forecast['ds']),
+        y: list(df_forecast['yhat_lower']),
+        line: {
+            "color": '#1705ff'
+        },
+        type: "scatter"
+    };
+    var tracex = {
+        name: 'Actual price',
+        mode: 'markers',
+        x: list(df2['ds']),
+        y: list(df2['y']),
+        marker: {
+            "color": 'black',
+            "line": {
+                "width": 2
+            }
+        },
+        type: "scatter"
+    };
+    var layout = {
+        title: 'Feature Importance',
+        'hovermode': 'closest',
+        font: {
+            size: 12
+        }
+    };
+    var config = {
+        responsive: true
+    }
+    $('#home-tab').on('shown.bs.tab', function() {
+        Plotly.Plots.resize(
+            Plotly.d3.select("div[id='wikipedia1']").node()
+        );
+    });
+    $('#profile-tab').on('shown.bs.tab', function() {
+        Plotly.Plots.resize(
+            Plotly.d3.select("div[id='wikipedia2']").node()
+        );
+    });
+    Plotly.newPlot('wikipedia1', [tracex, trace1, lower_band, upper_band, trace], layout, config);
+    Plotly.newPlot('wikipedia2', data, layout, config);
+</script>

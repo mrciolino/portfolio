@@ -10,3 +10,4 @@ sendgrid==6.0.5
 gensim==3.8.0
 textblob==0.15.3
 newrelic==5.2.1.129
+APScheduler==3.6.3
