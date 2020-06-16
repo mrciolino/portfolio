@@ -88,13 +88,13 @@
 </html>
 
 <script>
-    var data = JSON.parse('{{ data | tojson | safe}}');
+    var data = {{ data | tojson | safe}};
 
-    var trace = {
-        name: 'Actual price',
+    var vtrace = {
+        name: 'Actual Views',
         mode: 'markers',
-        x: list(df_forecast['ds']),
-        y: list(df['y']),
+        x: data.views_forcast_ds,
+        y: data.views_y,
         marker: {
             "color": '#FFBAD2',
             "line": {
@@ -103,11 +103,11 @@
         },
         type: "scatter"
     };
-    var trace1 = {
+    var vtrace1 = {
         name: 'trend',
         mode: 'lines',
-        x: list(df_forecast['ds']),
-        y: list(df_forecast['yhat']),
+        x: data.views_forcast_ds,
+        y: data.views_forcast_yhat,
         marker: {
             "color": 'red',
             "line": {
@@ -116,32 +116,32 @@
         },
         type: "scatter"
     };
-    var upper_band = {
+    var vupper_band = {
         name: 'upper band',
         mode: 'lines',
-        x: list(df_forecast['ds']),
-        y: list(df_forecast['yhat_upper']),
+        x: data.views_forcast_ds,
+        y: data.views_forcast_yhat_upper,
         line: {
             "color": '#57b88f'
         },
         fill: 'tonexty',
         type: "scatter"
     };
-    var lower_band = {
+    var vlower_band = {
         name: 'lower band',
         mode: 'lines',
-        x: list(df_forecast['ds']),
-        y: list(df_forecast['yhat_lower']),
+        x: data.views_forcast_ds,
+        y: data.views_forcast_yhat_lower,
         line: {
             "color": '#1705ff'
         },
         type: "scatter"
     };
-    var tracex = {
-        name: 'Actual price',
+    var vtracex = {
+        name: 'Actual Views',
         mode: 'markers',
-        x: list(df2['ds']),
-        y: list(df2['y']),
+        x: data.views_ds,
+        y: data.views_y,
         marker: {
             "color": 'black',
             "line": {
@@ -150,13 +150,82 @@
         },
         type: "scatter"
     };
-    var layout = {
-        title: 'Feature Importance',
-        'hovermode': 'closest',
+    var page_layout = {
+        title: 'PageViews',
+        'hovermode': 'compare',
         font: {
             size: 12
         }
     };
+    // -----------------------------------
+    var dtrace = {
+        name: 'Actual Count',
+        mode: 'markers',
+        x: data.device_forcast_ds,
+        y: data.device_y,
+        marker: {
+            "color": '#FFBAD2',
+            "line": {
+                "width": 1
+            }
+        },
+        type: "scatter"
+    };
+    var dtrace1 = {
+        name: 'trend',
+        mode: 'lines',
+        x: data.device_forcast_ds,
+        y: data.device_forcast_yhat,
+        marker: {
+            "color": 'red',
+            "line": {
+                "width": 3
+            }
+        },
+        type: "scatter"
+    };
+    var dupper_band = {
+        name: 'upper band',
+        mode: 'lines',
+        x: data.device_forcast_ds,
+        y: data.device_forcast_yhat_upper,
+        line: {
+            "color": '#57b88f'
+        },
+        fill: 'tonexty',
+        type: "scatter"
+    };
+    var dlower_band = {
+        name: 'lower band',
+        mode: 'lines',
+        x: data.device_forcast_ds,
+        y: data.device_forcast_yhat_lower,
+        line: {
+            "color": '#1705ff'
+        },
+        type: "scatter"
+    };
+    var dtracex = {
+        name: 'Actual Count',
+        mode: 'markers',
+        x: data.device_ds,
+        y: data.device_y,
+        marker: {
+            "color": 'black',
+            "line": {
+                "width": 2
+            }
+        },
+        type: "scatter"
+    };
+    var device_layout = {
+        title: 'Unique Devices',
+        'hovermode': 'compare',
+        font: {
+            size: 12
+        }
+    };
+    // -----------------------------------
     var config = {
         responsive: true
     }
@@ -170,6 +239,8 @@
             Plotly.d3.select("div[id='wikipedia2']").node()
         );
     });
-    Plotly.newPlot('wikipedia1', [tracex, trace1, lower_band, upper_band, trace], layout, config);
-    Plotly.newPlot('wikipedia2', data, layout, config);
+    Plotly.newPlot('wikipedia1', [vtracex, vtrace1, vlower_band, vupper_band, vtrace], page_layout, config);
+    Plotly.newPlot('wikipedia2',  [dtracex, dtrace1, dlower_band, dupper_band, dtrace], device_layout, config);
+
+
 </script>
