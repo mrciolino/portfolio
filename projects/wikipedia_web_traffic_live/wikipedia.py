@@ -7,7 +7,6 @@ import pickle
 import json
 import os
 
-
 def grab_wikipedia_dataframe():
     # YYYYMMDD
     date = datetime.datetime.now()
@@ -64,9 +63,17 @@ def update_wikipedia():
 
     page_df, device_df = grab_wikipedia_dataframe()
     data = forcast_prophet(page_df, device_df)
-    wikipedia_data = {"page_df": data['pageviews']['page_df'].reset_index().to_json(),
-                      "forecastv": data['pageviews']['forecastv'].reset_index().to_json(),
-                      "device_df": data['device']['device_df'].reset_index().to_json(),
-                      "forecastd": data['device']['forecastd'].reset_index().to_json()}
+    wikipedia_data = {"views_y" : data['pageviews']['page_df'].y.to_list(),
+                     "views_ds" : data['pageviews']['page_df'].ds.to_list(),
+                     "views_forcast_ds" :  data['pageviews']['forecastv'].ds.apply(lambda x: str(x).split(" ")[0]).to_list(),
+                     "views_forcast_yhat" : data['pageviews']['forecastv'].yhat.to_list(),
+                     "views_forcast_yhat_upper" : data['pageviews']['forecastv'].yhat_upper.to_list(),
+                     "views_forcast_yhat_lower" : data['pageviews']['forecastv'].yhat_lower.to_list(),
+                     "device_y" : data['device']['device_df'].y.to_list(),
+                     "device_ds" : data['device']['device_df'].ds.to_list(),
+                     "device_forcast_ds" :data['device']['forecastd'].ds.apply(lambda x: str(x).split(" ")[0]).to_list(),
+                     "device_forcast_yhat" : data['device']['forecastd'].yhat.to_list(),
+                     "device_forcast_yhat_upper" : data['device']['forecastd'].yhat_upper.to_list(),
+                     "device_forcast_yhat_lower" : data['device']['forecastd'].yhat_lower.to_list()}
     with open("static/refs/wikipedia/wikipedia.json", "w") as write_file:
         json.dump(wikipedia_data, write_file)
