@@ -1,5 +1,4 @@
 from flask import Flask, request, render_template, jsonify, send_file
-from apscheduler.schedulers.background import BackgroundScheduler
 import json
 import sys
 import os
@@ -16,9 +15,7 @@ sys.path.append(os.getcwd() + "/static/contact")
 from contact import send_simple_message
 
 app = Flask(__name__, static_url_path='/static')
-scheduler = BackgroundScheduler()
-scheduler.add_job(func=update_wikipedia, trigger="interval", seconds=86400/2)
-scheduler.start()
+update_wikipedia()
 
 
 @app.route('/')
