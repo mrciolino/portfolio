@@ -17,7 +17,7 @@ from contact import send_simple_message
 
 app = Flask(__name__, static_url_path='/static')
 scheduler = BackgroundScheduler()
-scheduler.add_job(func=update_wikipedia, trigger="interval", seconds=86400)
+scheduler.add_job(func=update_wikipedia, trigger="interval", seconds=86400/2)
 scheduler.start()
 
 
