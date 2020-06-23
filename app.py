@@ -16,12 +16,12 @@ sys.path.append(os.getcwd() + "/static/contact")
 from contact import send_simple_message
 
 app = Flask(__name__, static_url_path='/static')
-_ = requests.get('https://deepfakeservice.herokuapp.com')
 update_wikipedia()
 
 
 @app.route('/')
 def index():
+    _ = requests.get('https://deepfakeservice.herokuapp.com')
     return render_template('index.html')
 
 
