@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, jsonify, send_file
-import requests
+import subprocess
 import json
 import sys
 import os
@@ -21,7 +21,10 @@ update_wikipedia()
 
 @app.route('/')
 def index():
-    _ = requests.get('https://deepfakeservice.herokuapp.com')
+    subprocess.Popen(['curl https://deepfakeservice.herokuapp.com'],
+                 stdout=subprocess.PIPE,
+                 stderr=subprocess.PIPE,
+                 shell=True)
     return render_template('index.html')
 
 
