@@ -109,12 +109,13 @@
             <div class="col-md-8">
                 <h3>
                     Papers
+                    <button id="papers_button" class="btn btn-primary btn-sm" style=" background-color:#85BC8F; border-color:#85BC8F;" onclick="toggle_papers();">Show More</button>
                 </h3>
             </div>
             <div class="col-md-4">
             </div>
         </div>
-        <div class="row" style="height:500px; overflow-y: hidden; padding-left:50px; padding-right:50px; align:center; text-align:left;">
+        <div id="papers" class="row" style="height: 400px; overflow-y: hidden; padding-left:50px; padding-right:50px; align:center; text-align:left;">
             <div id="arxivfeed" style="background: #f3f3f3;">Loading Papers...</div>
         </div>
         <div id="Projects" class="row">
@@ -370,6 +371,24 @@
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+    var papers_state = "short";
+    function toggle_papers(){
+        var papers = document.getElementById("papers")
+        var papers_button = document.getElementById("papers_button")
+        if (papers_state == "short") {
+          papers_state = "long"
+          papers.style.height = "100%"
+          papers_button.innerHTML = "Show Less"
+        }
+        else if (papers_state == "long") {
+          papers_state = "short"
+          papers.style.height = "400px"
+          papers_button.innerHTML = "Show More"
+        }
+    }
+    </script>
 
     <script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
     <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
