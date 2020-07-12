@@ -15,6 +15,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
+<script type="text/javascript">
+    var arxiv_authorid = "ciolino_m_1";
+    var arxiv_format = "arxiv";
+    var arxiv_includeTitle = 1;
+    var arxiv_includeComments = 1;
+    var arxiv_includeSummary = 1;
+</script>
+<script type="text/javascript" src="https://arxiv.org/js/myarticles.js"></script>
+
 <style>
     #Title {
         background-image: url(static/refs/home_background_bluish.jpg);
@@ -58,6 +67,7 @@
     .jumbotron6:after {content:"";position: absolute;z-index: 1;top: 0;left: 0;right: 0;bottom: 0;
       background:url('static/refs/jumbotron/logo.ico');background-size: cover;background-repeat: no-repeat;background-position: center center;
       -webkit-filter: blur(2px);filter: blur(2px); width: 100%; -webkit-transform: scale(1.1); transform: scale(1.1);}
+
 </style>
 
 <body>
@@ -67,6 +77,9 @@
                 <ul class="nav nav-pills">
                     <li class="nav-item">
                         <a class="nav-link" href="#Header">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Papers">Papers</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#Projects">Projects</a>
@@ -91,6 +104,18 @@
                     Data Science Portfolio
                 </p>
             </div>
+        </div>
+        <div id="Papers" style="padding-top:10px;" class="row">
+            <div class="col-md-8">
+                <h3>
+                    Papers
+                </h3>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+        <div class="row" style="height:500px; overflow-y: hidden; padding-left:50px; padding-right:50px; align:center; text-align:left;">
+            <div id="arxivfeed" style="background: #f3f3f3;">Loading Papers...</div>
         </div>
         <div id="Projects" class="row">
             <div class="col-md-8">
