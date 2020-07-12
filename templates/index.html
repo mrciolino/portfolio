@@ -115,7 +115,7 @@
             <div class="col-md-4">
             </div>
         </div>
-        <div id="papers" class="row" style="height: 400px; overflow-y: hidden; padding-left:50px; padding-right:50px; align:center; text-align:left;">
+        <div id="papers" class="row" style="height: 400px; overflow-y: hidden; padding-left:20px; padding-right:20px; align:center; text-align:left;">
             <div id="arxivfeed" style="background: #f3f3f3;">Loading Papers...</div>
         </div>
         <div id="Projects" class="row">
@@ -234,7 +234,7 @@
                         </p>
                     </div>
                 </div>
-                <!-- <div class="jumbotron">
+                <!-- <div class="jumbotron"> XEVAL - TESTing - ???
                     <div class="container">
                         <h2>
                             Testing
@@ -373,21 +373,21 @@
     </div>
 
     <script type="text/javascript">
-    var papers_state = "short";
-    function toggle_papers(){
-        var papers = document.getElementById("papers")
-        var papers_button = document.getElementById("papers_button")
-        if (papers_state == "short") {
-          papers_state = "long"
-          papers.style.height = "100%"
-          papers_button.innerHTML = "Show Less"
+        var papers_state = "short";
+
+        function toggle_papers() {
+            var papers = document.getElementById("papers")
+            var papers_button = document.getElementById("papers_button")
+            if (papers_state == "short") {
+                papers_state = "long"
+                papers.style.height = "100%"
+                papers_button.innerHTML = "Show Less"
+            } else if (papers_state == "long") {
+                papers_state = "short"
+                papers.style.height = "400px"
+                papers_button.innerHTML = "Show More"
+            }
         }
-        else if (papers_state == "long") {
-          papers_state = "short"
-          papers.style.height = "400px"
-          papers_button.innerHTML = "Show More"
-        }
-    }
     </script>
 
     <script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
