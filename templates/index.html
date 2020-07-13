@@ -374,17 +374,16 @@
 
     <script type="text/javascript">
         var papers_state = "short";
-
         function toggle_papers() {
             var papers = document.getElementById("papers")
             var papers_button = document.getElementById("papers_button")
             if (papers_state == "short") {
                 papers_state = "long"
-                papers.style.height = "100%"
+                $("#papers").animate({height:"100%"})
                 papers_button.innerHTML = "Show Less"
             } else if (papers_state == "long") {
                 papers_state = "short"
-                papers.style.height = "400px"
+                $("#papers").animate({height:'400px'})
                 papers_button.innerHTML = "Show More"
             }
         }
