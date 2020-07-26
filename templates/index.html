@@ -32,42 +32,193 @@
         padding-bottom: 200px;
     }
 
-    .jumbotron1 {position: relative;overflow: hidden;min-width: 30vw; border: solid rgba(204, 204, 204, 0.1);border-width: 5px;}
-    .jumbotron1 .container { position: relative; z-index: 2; color: #00000; background-color: rgba(204, 204, 204, 0.65); border-radius: 5px; padding:5px;}
-    .jumbotron1:after {content:"";position: absolute;z-index: 1;top: 0;left: 0;right: 0;bottom: 0;
-      background:url('static/refs/jumbotron/srgan.png');background-size: cover;background-repeat: no-repeat;background-position: center center;
-      -webkit-filter: blur(2px);filter: blur(2px); width: 100%; -webkit-transform: scale(1.1); transform: scale(1.1);}
+    .jumbotron {
+        position: relative;
+        overflow: hidden;
+        min-width: 30vw;
+        border: solid rgba(204, 204, 204, 0.1);
+        border-width: 5px;
+    }
 
-    .jumbotron2 {position: relative;overflow: hidden;min-width: 30vw; border: solid rgba(204, 204, 204, 0.1);border-width: 5px;}
-    .jumbotron2 .container { position: relative; z-index: 2; color: #00000; background-color: rgba(204, 204, 204, 0.65); border-radius: 5px; padding:5px;}
-    .jumbotron2:after {content:"";position: absolute;z-index: 1;top: 0;left: 0;right: 0;bottom: 0;
-      background:url('static/refs/jumbotron/jobtag.png');background-size: cover;background-repeat: no-repeat;background-position: center center;
-      -webkit-filter: blur(2px);filter: blur(2px); width: 100%; -webkit-transform: scale(1.1); transform: scale(1.1);}
+    .jumbotron .container {
+        position: relative;
+        z-index: 2;
+        color: #00000;
+        background-color: rgba(204, 204, 204, 0.65);
+        border-radius: 5px;
+        padding: 5px;
+    }
 
-    .jumbotron3 {position: relative;overflow: hidden;min-width: 30vw; border: solid rgba(204, 204, 204, 0.1);border-width: 5px;}
-    .jumbotron3 .container { position: relative; z-index: 2; color: #00000; background-color: rgba(204, 204, 204, 0.65); border-radius: 5px; padding:5px;}
-    .jumbotron3:after {content:"";position: absolute;z-index: 1;top: 0;left: 0;right: 0;bottom: 0;
-      background:url('static/refs/jumbotron/politics.png');background-size: cover;background-repeat: no-repeat;background-position: center center;
-      -webkit-filter: blur(2px);filter: blur(2px); width: 100%; -webkit-transform: scale(1.1); transform: scale(1.1);}
+    .jumbotronSR:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('static/refs/jumbotron/srgan.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        -webkit-filter: blur(2px);
+        filter: blur(2px);
+        width: 100%;
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
 
-    .jumbotron4 {position: relative;overflow: hidden;min-width: 30vw; border: solid rgba(204, 204, 204, 0.1);border-width: 5px;}
-    .jumbotron4 .container { position: relative; z-index: 2; color: #00000; background-color: rgba(204, 204, 204, 0.65); border-radius: 5px; padding:5px;}
-    .jumbotron4:after {content:"";position: absolute;z-index: 1;top: 0;left: 0;right: 0;bottom: 0;
-      background:url('static/refs/jumbotron/stocks.png');background-size: cover;background-repeat: no-repeat;background-position: center center;
-      -webkit-filter: blur(2px);filter: blur(2px); width: 100%; -webkit-transform: scale(1.1); transform: scale(1.1);}
+    .jumbotronJobTag:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('static/refs/jumbotron/jobtag.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        -webkit-filter: blur(2px);
+        filter: blur(2px);
+        width: 100%;
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
 
-    .jumbotron5 {position: relative;overflow: hidden;min-width: 30vw; border: solid rgba(204, 204, 204, 0.1);border-width: 5px;}
-    .jumbotron5 .container { position: relative; z-index: 2; color: #00000; background-color: rgba(204, 204, 204, 0.65); border-radius: 5px; padding:5px;}
-    .jumbotron5:after {content:"";position: absolute;z-index: 1;top: 0;left: 0;right: 0;bottom: 0;
-      background:url('static/refs/jumbotron/portfolio.png');background-size: cover;background-repeat: no-repeat;background-position: center center;
-      -webkit-filter: blur(2px);filter: blur(2px); width: 100%; -webkit-transform: scale(1.1); transform: scale(1.1);}
+    .jumbotronVoting:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('static/refs/jumbotron/politics.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        -webkit-filter: blur(2px);
+        filter: blur(2px);
+        width: 100%;
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
 
-    .jumbotron6 {position: relative;overflow: hidden;min-width: 30vw; border: solid rgba(204, 204, 204, 0.1);border-width: 5px;}
-    .jumbotron6 .container { position: relative; z-index: 2; color: #00000; background-color: rgba(204, 204, 204, 0.65); border-radius: 5px; padding:5px;}
-    .jumbotron6:after {content:"";position: absolute;z-index: 1;top: 0;left: 0;right: 0;bottom: 0;
-      background:url('static/refs/jumbotron/logo.ico');background-size: cover;background-repeat: no-repeat;background-position: center center;
-      -webkit-filter: blur(2px);filter: blur(2px); width: 100%; -webkit-transform: scale(1.1); transform: scale(1.1);}
+    .jumbotronWikipedia:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('static/refs/jumbotron/stocks.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        -webkit-filter: blur(2px);
+        filter: blur(2px);
+        width: 100%;
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
 
+    .jumbotronPortfolio:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('static/refs/jumbotron/portfolio.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        -webkit-filter: blur(2px);
+        filter: blur(2px);
+        width: 100%;
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    .jumbotronDeepfake:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('static/refs/jumbotron/logo.ico');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        -webkit-filter: blur(2px);
+        filter: blur(2px);
+        width: 100%;
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    .jumbotronXeval:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('static/refs/jumbotron/xeval.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        -webkit-filter: blur(2px);
+        filter: blur(2px);
+        width: 100%;
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    .jumbotronChess:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('static/refs/jumbotron/transformer.gif');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        -webkit-filter: blur(2px);
+        filter: blur(2px);
+        width: 100%;
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+
+    .jumbotronTest:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('static/refs/jumbotron/testing.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        -webkit-filter: blur(2px);
+        filter: blur(2px);
+        width: 100%;
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
 </style>
 
 <body>
@@ -109,13 +260,16 @@
             <div class="col-md-8">
                 <h3>
                     Papers
-                    <button id="papers_button" class="btn btn-primary btn-sm" style=" background-color:#85BC8F; border-color:#85BC8F;" onclick="toggle_papers();">Show More</button>
+                    <button id="papers_button" class="btn btn-primary btn-sm"
+                        style=" background-color:#85BC8F; border-color:#85BC8F;" onclick="toggle_papers();">Show
+                        More</button>
                 </h3>
             </div>
             <div class="col-md-4">
             </div>
         </div>
-        <div id="papers" class="row" style="height: 400px; overflow-y: hidden; padding-left:20px; padding-right:20px; align:center; text-align:left;">
+        <div id="papers" class="row"
+            style="height: 400px; overflow-y: hidden; padding-left:20px; padding-right:20px; align:center; text-align:left;">
             <div id="arxivfeed" style="background: #f3f3f3;">Loading Papers...</div>
         </div>
         <div id="Projects" class="row">
@@ -129,7 +283,7 @@
         </div>
         <div class="row">
             <div class="col-md-3">
-                <div class="jumbotron jumbotron1">
+                <div class="jumbotron jumbotronSR">
                     <div class="container">
                         <h2>
                             Single Image Super Resolution
@@ -138,8 +292,10 @@
                             Maritime Super Resolution Paper and Tiled SRGAN demo
                         </p>
                         <p>
-                            <button class="btn btn-primary btn-large" onclick="window.open('https://nbviewer.jupyter.org/github/mrciolino/portfolio-site/blob/master/projects/_notebooks/sisr/SISR%20Example.ipynb' + location.search)">Notebook</button>
-                            <button class="btn btn-primary btn-large" onclick="window.open('https://arxiv.org/abs/1911.07934' + location.search)">Paper</button>
+                            <button class="btn btn-primary btn-large"
+                                onclick="window.open('https://nbviewer.jupyter.org/github/mrciolino/portfolio-site/blob/master/projects/_notebooks/sisr/SISR%20Example.ipynb' + location.search)">Notebook</button>
+                            <button class="btn btn-primary btn-large"
+                                onclick="window.open('https://arxiv.org/abs/1911.07934' + location.search)">Paper</button>
                             <a class="btn btn-primary btn-large" href="{{ url_for('spie_presentation') }}">PPT</a>
                         </p>
                     </div>
@@ -148,7 +304,7 @@
             <div class="col-md-1">
             </div>
             <div class="col-md-3">
-                <div class="jumbotron jumbotron6">
+                <div class="jumbotron jumbotronDeepfake">
                     <div class="container">
                         <h2>
                             Deepfake Service
@@ -157,7 +313,8 @@
                             First Order Model (video) + Adaptive Voice Conversion (audio) for effective deepfakes
                         </p>
                         <p>
-                            <button class="btn btn-primary btn-large" onclick="window.open('https://deepfakeservice.herokuapp.com' + location.search)">Website</button>
+                            <button class="btn btn-primary btn-large"
+                                onclick="window.open('https://deepfakeservice.herokuapp.com' + location.search)">Website</button>
                         </p>
                     </div>
                 </div>
@@ -165,7 +322,7 @@
             <div class="col-md-1">
             </div>
             <div class="col-md-3">
-                <div class="jumbotron jumbotron3">
+                <div class="jumbotron jumbotronVoting">
                     <div class="container">
                         <h2>
                             Politician Voting Classifier
@@ -175,7 +332,8 @@
                         </p>
                         <p>
                             <a class="btn btn-primary btn-large" href="{{ url_for('politician_classifier') }}">Demo</a>
-                            <button class="btn btn-primary btn-large" onclick="window.open('https://nbviewer.jupyter.org/github/mrciolino/Test-Repo/blob/master/xeval/US%20Map%20Example.ipynb' + location.search)">Notebook</button>
+                            <button class="btn btn-primary btn-large"
+                                onclick="window.open('https://nbviewer.jupyter.org/github/mrciolino/Test-Repo/blob/master/xeval/US%20Map%20Example.ipynb' + location.search)">Notebook</button>
                         </p>
                     </div>
                 </div>
@@ -185,7 +343,7 @@
         </div>
         <div class="row">
             <div class="col-md-3">
-                <div class="jumbotron jumbotron4">
+                <div class="jumbotron jumbotronWikipedia">
                     <div class="container">
                         <h2>
                             Wikipedia Traffic Time Series
@@ -195,7 +353,8 @@
                         </p>
                         <p>
                             <a class="btn btn-primary btn-large" href="{{ url_for('wikipedia_traffic') }}">Demo</a>
-                            <button class="btn btn-primary btn-large" onclick="window.open('https://github.com/mrciolino/Kaggle-Competitions/tree/master/Wikipedia%20Web%20Traffic' + location.search)">Github</button>
+                            <button class="btn btn-primary btn-large"
+                                onclick="window.open('https://github.com/mrciolino/Kaggle-Competitions/tree/master/Wikipedia%20Web%20Traffic' + location.search)">Github</button>
                         </p>
                     </div>
                 </div>
@@ -203,7 +362,7 @@
             <div class="col-md-1">
             </div>
             <div class="col-md-3">
-                <div class="jumbotron jumbotron5">
+                <div class="jumbotron jumbotronPortfolio">
                     <div class="container">
                         <h2>
                             Portfolio Website
@@ -212,7 +371,8 @@
                             Code for this website - Open Sourced
                         </p>
                         <p>
-                            <button class="btn btn-primary btn-large" onclick="window.open('https://github.com/mrciolino/portfolio-site' + location.search)">Github</button>
+                            <button class="btn btn-primary btn-large"
+                                onclick="window.open('https://github.com/mrciolino/portfolio-site' + location.search)">Github</button>
                         </p>
                     </div>
                 </div>
@@ -220,7 +380,7 @@
             <div class="col-md-1">
             </div>
             <div class="col-md-3">
-                <div class="jumbotron jumbotron2">
+                <div class="jumbotron jumbotronJobTag">
                     <div class="container">
                         <h2>
                             Novel Job Tag Classifier
@@ -230,14 +390,57 @@
                         </p>
                         <p>
                             <a class="btn btn-primary btn-large" href="{{ url_for('job_tag_classifier') }}">Demo</a>
-                            <button class="btn btn-primary btn-large" onclick="window.open('https://github.com/mrciolino/Job-Tag-Classifier' + location.search)">Github</button>
+                            <button class="btn btn-primary btn-large"
+                                onclick="window.open('https://github.com/mrciolino/Job-Tag-Classifier' + location.search)">Github</button>
                         </p>
                     </div>
                 </div>
-                <!-- <div class="jumbotron"> XEVAL - TESTing - ???
+            </div>
+            <div class="col-md-1">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="jumbotron jumbotronXeval">
                     <div class="container">
                         <h2>
-                            Testing
+                            Xeval
+                        </h2>
+                        <p>
+                            Legislation monitoring and alert tool
+                        </p>
+                        <p>
+                            <button class="btn btn-primary btn-large"
+                                onclick="window.open('https://www.xeval.io' + location.search)">Website</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-3">
+                <div class="jumbotron jumbotronChess">
+                    <div class="container">
+                        <h2>
+                            Chess Transformer
+                        </h2>
+                        <p>
+                            Play chess aginast a Language Model
+                        </p>
+                        <p>
+                            <button class="btn btn-primary btn-large"
+                                onclick="window.open('https://colab.research.google.com/drive/1-Q6VePtF8YYQ6PPk-wZq0E9_CFEQp0kb' + location.search)">Colab</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-3">
+                <div class="jumbotron jumbotronTest">
+                    <div class="container">
+                        <h2>
+                            Test Project
                         </h2>
                         <p>
                             Location to try new things
@@ -246,7 +449,7 @@
                             <a class="btn btn-primary btn-large" href="{{ url_for('test_project') }}">Demo</a>
                         </p>
                     </div>
-                </div> -->
+                </div>
             </div>
             <div class="col-md-1">
             </div>
@@ -264,18 +467,22 @@
                         <div class="card">
                             <div class="card-header" id="headingOne">
                                 <h2 class="mb-0">
-                                    <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne">View Resume</button>
+                                    <button type="button" class="btn btn-link" data-toggle="collapse"
+                                        data-target="#collapseOne">View Resume</button>
                                     <button type="button" class="btn btn-link">
-                                        <a href="{{url_for('static',filename='refs/Ciolino Resume.pdf')}}" download="Ciolino Resume.pdf">
+                                        <a href="{{url_for('static',filename='refs/Ciolino Resume.pdf')}}"
+                                            download="Ciolino Resume.pdf">
                                             Download Resume
                                         </a>
                                     </button>
                                 </h2>
                             </div>
-                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                data-parent="#accordionExample">
                                 <div class="card-body" style="display:table; margin-left:auto; margin-right:auto;">
                                     <p>
-                                        <embed src="{{url_for('static',filename='refs/Ciolino Resume.pdf')}}" width="800px" height="1040px">
+                                        <embed src="{{url_for('static',filename='refs/Ciolino Resume.pdf')}}"
+                                            width="800px" height="1040px">
                                     </p>
                                 </div>
                             </div>
@@ -295,14 +502,16 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="form_name">Name *</label>
-                                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Name" required="required" data-error="Firstname is required.">
+                                    <input id="form_name" type="text" name="name" class="form-control"
+                                        placeholder="Name" required="required" data-error="Firstname is required.">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="form_lastname">Company *</label>
-                                    <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Company" required="required" data-error="Lastname is required.">
+                                    <input id="form_lastname" type="text" name="surname" class="form-control"
+                                        placeholder="Company" required="required" data-error="Lastname is required.">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
@@ -311,14 +520,16 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="form_email">Email *</label>
-                                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Email" required="required" data-error="Valid email is required.">
+                                    <input id="form_email" type="email" name="email" class="form-control"
+                                        placeholder="Email" required="required" data-error="Valid email is required.">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="form_need">Reason</label>
-                                    <select id="form_need" name="need" class="form-control" data-error="Please specify your need.">
+                                    <select id="form_need" name="need" class="form-control"
+                                        data-error="Please specify your need.">
                                         <option value=" "></option>
                                         <option value="Looking to Recruit">Looking to Recruit</option>
                                         <option value="Introducing Yourself">Introducing Yourself</option>
@@ -333,12 +544,15 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="form_message">Message *</label>
-                                    <textarea id="form_message" name="message" class="form-control" placeholder="Message" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                                    <textarea id="form_message" name="message" class="form-control"
+                                        placeholder="Message" rows="4" required="required"
+                                        data-error="Please, leave us a message."></textarea>
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <input id="mail_submit_button" type="submit" class="btn btn-primary" value="Send Message">
+                                <input id="mail_submit_button" type="submit" class="btn btn-primary"
+                                    value="Send Message">
                             </div>
                         </div>
                         <div class="row">
@@ -353,17 +567,22 @@
                     Contact Info
                 </h2>
                 <p>
-                    Feel free to contact me or to check on my code yourself. Anything you see on this website is open source and you may use it as well!
+                    Feel free to contact me or to check on my code yourself. Anything you see on this website is open
+                    source and you may use it as well!
                 </p>
                 <div id="social_buttons">
                     <!--Linkedin-->
-                    <button type="button" onclick="window.open('https://www.linkedin.com/in/mrciolino/' + location.search)" class="btn btn-social-icon btn-linkedin"><i class="fa fa-linkedin"></i></button>
+                    <button type="button"
+                        onclick="window.open('https://www.linkedin.com/in/mrciolino/' + location.search)"
+                        class="btn btn-social-icon btn-linkedin"><i class="fa fa-linkedin"></i></button>
                     <p id="spacer"></p>
                     <!--Github-->
-                    <button type="button" onclick="window.open('https://github.com/mrciolino' + location.search)" class="btn btn-social-icon btn-github"><i class="fa fa-github"></i></button>
+                    <button type="button" onclick="window.open('https://github.com/mrciolino' + location.search)"
+                        class="btn btn-social-icon btn-github"><i class="fa fa-github"></i></button>
                     <p id="spacer"></p>
                     <!-- Twitter -->
-                    <button type="button" onclick="window.open('https://twitter.com/CioBazzert' + location.search)" class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></button>
+                    <button type="button" onclick="window.open('https://twitter.com/CioBazzert' + location.search)"
+                        class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></button>
                     <p id="spacer"></p>
                     <a href="mailto:mrciolino@alum.lehigh.edu" target="_blank" class="btn btn-primary">Email</a>
                     <p id="spacer"></p>
@@ -379,11 +598,11 @@
             var papers_button = document.getElementById("papers_button")
             if (papers_state == "short") {
                 papers_state = "long"
-                $("#papers").animate({height:"100%"})
+                $("#papers").animate({ height: "100%" })
                 papers_button.innerHTML = "Show Less"
             } else if (papers_state == "long") {
                 papers_state = "short"
-                $("#papers").animate({height:'400px'})
+                $("#papers").animate({ height: '400px' })
                 papers_button.innerHTML = "Show More"
             }
         }
