@@ -12,3 +12,4 @@ model/*
 projects/job_tag_classifier/model/new_model/classifier
 projects/job_tag_classifier/model/new_model/doc2vec
 *.pyc
+keys.sh

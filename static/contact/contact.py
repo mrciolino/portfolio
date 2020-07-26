@@ -27,7 +27,7 @@ def send_simple_message(name, company, email, reason, message):
                 """
                  % (time.ctime(), name, company, email, email, reason, message))
 
-    message = Mail(from_email='app138263545@heroku.com',
+    message = Mail(from_email='mc10164@gmail.com',
                    to_emails='mrciolino@alum.lehigh.edu',
                    subject=subject,
                    html_content=html_note)
