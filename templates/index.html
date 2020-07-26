@@ -260,198 +260,208 @@
             <div class="col-md-8">
                 <h3>
                     Papers
-                    <button id="papers_button" class="btn btn-primary btn-sm"
-                        style=" background-color:#85BC8F; border-color:#85BC8F;" onclick="toggle_papers();">Show
-                        More</button>
+                    <button id="papers_button" class="btn btn-sm btn-danger" onclick="toggle_papers();">
+                        Show More
+                    </button>
                 </h3>
             </div>
             <div class="col-md-4">
             </div>
-        </div>
-        <div id="papers" class="row"
-            style="height: 400px; overflow-y: hidden; padding-left:20px; padding-right:20px; align:center; text-align:left;">
-            <div id="arxivfeed" style="background: #f3f3f3;">Loading Papers...</div>
+            <div id="papers" class="row"
+                style="height: 400px; overflow-y: hidden; padding-left:30px; padding-right:30px; text-align:left;">
+                <div id="arxivfeed" style="background: #f3f3f3;">Loading Papers...</div>
+            </div>
         </div>
         <div id="Projects" class="row">
             <div class="col-md-8">
                 <h3>
                     Projects
+                    <button id="projects_button" class="btn btn-sm btn-danger" onclick="toggle_projects();">
+                        Show More
+                    </button>
                 </h3>
             </div>
             <div class="col-md-4">
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="jumbotron jumbotronSR">
-                    <div class="container">
-                        <h2>
-                            Single Image Super Resolution
-                        </h2>
-                        <p>
-                            Maritime Super Resolution Paper and Tiled SRGAN demo
-                        </p>
-                        <p>
-                            <button class="btn btn-primary btn-large"
-                                onclick="window.open('https://nbviewer.jupyter.org/github/mrciolino/portfolio-site/blob/master/projects/_notebooks/sisr/SISR%20Example.ipynb' + location.search)">Notebook</button>
-                            <button class="btn btn-primary btn-large"
-                                onclick="window.open('https://arxiv.org/abs/1911.07934' + location.search)">Paper</button>
-                            <a class="btn btn-primary btn-large" href="{{ url_for('spie_presentation') }}">PPT</a>
-                        </p>
+            <div id="projects" class="row" style="padding-left:30px; padding-right:30px;">
+                <div class="row" id="project_row_1">
+                    <div class="col-md-3">
+                        <div class="jumbotron jumbotronChess">
+                            <div class="container">
+                                <h2>
+                                    Chess Transformer
+                                </h2>
+                                <p>
+                                    Play chess aginast a Language Model
+                                </p>
+                                <p>
+                                    <button class="btn btn-primary btn-large"
+                                        onclick="window.open('https://colab.research.google.com/drive/1-Q6VePtF8YYQ6PPk-wZq0E9_CFEQp0kb' + location.search)">Colab</button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-3">
+                        <div class="jumbotron jumbotronDeepfake">
+                            <div class="container">
+                                <h2>
+                                    Deepfake Service
+                                </h2>
+                                <p>
+                                    First Order Model (video) + Adaptive Voice Conversion (audio) for effective
+                                    deepfakes
+                                </p>
+                                <p>
+                                    <button class="btn btn-primary btn-large"
+                                        onclick="window.open('https://deepfakeservice.herokuapp.com' + location.search)">Website</button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-3">
+                        <div class="jumbotron jumbotronXeval">
+                            <div class="container">
+                                <h2>
+                                    Xeval
+                                </h2>
+                                <p>
+                                    Legislation monitoring and alert tool
+                                </p>
+                                <p>
+                                    <button class="btn btn-primary btn-large"
+                                        onclick="window.open('https://www.xeval.io' + location.search)">Website</button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
                     </div>
                 </div>
-            </div>
-            <div class="col-md-1">
-            </div>
-            <div class="col-md-3">
-                <div class="jumbotron jumbotronDeepfake">
-                    <div class="container">
-                        <h2>
-                            Deepfake Service
-                        </h2>
-                        <p>
-                            First Order Model (video) + Adaptive Voice Conversion (audio) for effective deepfakes
-                        </p>
-                        <p>
-                            <button class="btn btn-primary btn-large"
-                                onclick="window.open('https://deepfakeservice.herokuapp.com' + location.search)">Website</button>
-                        </p>
+                <div class="row" id="project_row_2">
+                    <div class="col-md-3">
+                        <div class="jumbotron jumbotronSR">
+                            <div class="container">
+                                <h2>
+                                    Single Image Super Resolution
+                                </h2>
+                                <p>
+                                    Maritime Super Resolution Paper and Tiled SRGAN demo
+                                </p>
+                                <p>
+                                    <button class="btn btn-primary btn-large"
+                                        onclick="window.open('https://nbviewer.jupyter.org/github/mrciolino/portfolio-site/blob/master/projects/_notebooks/sisr/SISR%20Example.ipynb' + location.search)">Notebook</button>
+                                    <button class="btn btn-primary btn-large"
+                                        onclick="window.open('https://arxiv.org/abs/1911.07934' + location.search)">Paper</button>
+                                    <a class="btn btn-primary btn-large"
+                                        href="{{ url_for('spie_presentation') }}">PPT</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-3">
+                        <div class="jumbotron jumbotronPortfolio">
+                            <div class="container">
+                                <h2>
+                                    Portfolio Website
+                                </h2>
+                                <p>
+                                    Code for this website - Open Sourced
+                                </p>
+                                <p>
+                                    <button class="btn btn-primary btn-large"
+                                        onclick="window.open('https://github.com/mrciolino/portfolio-site' + location.search)">Github</button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-3">
+                        <div class="jumbotron jumbotronJobTag">
+                            <div class="container">
+                                <h2>
+                                    Novel Job Tag Classifier
+                                </h2>
+                                <p>
+                                    Predict job tag (i.e. frontend) from Job Description
+                                </p>
+                                <p>
+                                    <a class="btn btn-primary btn-large"
+                                        href="{{ url_for('job_tag_classifier') }}">Demo</a>
+                                    <button class="btn btn-primary btn-large"
+                                        onclick="window.open('https://github.com/mrciolino/Job-Tag-Classifier' + location.search)">Github</button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
                     </div>
                 </div>
-            </div>
-            <div class="col-md-1">
-            </div>
-            <div class="col-md-3">
-                <div class="jumbotron jumbotronVoting">
-                    <div class="container">
-                        <h2>
-                            Politician Voting Classifier
-                        </h2>
-                        <p>
-                            Predict how a politican is going to vote on a bill
-                        </p>
-                        <p>
-                            <a class="btn btn-primary btn-large" href="{{ url_for('politician_classifier') }}">Demo</a>
-                            <button class="btn btn-primary btn-large"
-                                onclick="window.open('https://nbviewer.jupyter.org/github/mrciolino/Test-Repo/blob/master/xeval/US%20Map%20Example.ipynb' + location.search)">Notebook</button>
-                        </p>
+                <div class="row" id="project_row_3" style="display: none;">
+                    <div class="col-md-3">
+                        <div class="jumbotron jumbotronVoting">
+                            <div class="container">
+                                <h2>
+                                    Politician Voting Classifier
+                                </h2>
+                                <p>
+                                    Predict how a politican is going to vote on a bill
+                                </p>
+                                <p>
+                                    <a class="btn btn-primary btn-large"
+                                        href="{{ url_for('politician_classifier') }}">Demo</a>
+                                    <button class="btn btn-primary btn-large"
+                                        onclick="window.open('https://nbviewer.jupyter.org/github/mrciolino/Test-Repo/blob/master/xeval/US%20Map%20Example.ipynb' + location.search)">Notebook</button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-3">
+                        <div class="jumbotron jumbotronWikipedia">
+                            <div class="container">
+                                <h2>
+                                    Wikipedia Traffic Time Series
+                                </h2>
+                                <p>
+                                    Forcasting wikipedia article traffic 60 days out
+                                </p>
+                                <p>
+                                    <a class="btn btn-primary btn-large"
+                                        href="{{ url_for('wikipedia_traffic') }}">Demo</a>
+                                    <button class="btn btn-primary btn-large"
+                                        onclick="window.open('https://github.com/mrciolino/Kaggle-Competitions/tree/master/Wikipedia%20Web%20Traffic' + location.search)">Github</button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-3">
+                        <div class="jumbotron jumbotronTest">
+                            <div class="container">
+                                <h2>
+                                    Test Project
+                                </h2>
+                                <p>
+                                    Location to try new things
+                                </p>
+                                <p>
+                                    <a class="btn btn-primary btn-large" href="{{ url_for('test_project') }}">Demo</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
                     </div>
                 </div>
-            </div>
-            <div class="col-md-1">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="jumbotron jumbotronWikipedia">
-                    <div class="container">
-                        <h2>
-                            Wikipedia Traffic Time Series
-                        </h2>
-                        <p>
-                            Forcasting wikipedia article traffic 60 days out
-                        </p>
-                        <p>
-                            <a class="btn btn-primary btn-large" href="{{ url_for('wikipedia_traffic') }}">Demo</a>
-                            <button class="btn btn-primary btn-large"
-                                onclick="window.open('https://github.com/mrciolino/Kaggle-Competitions/tree/master/Wikipedia%20Web%20Traffic' + location.search)">Github</button>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-1">
-            </div>
-            <div class="col-md-3">
-                <div class="jumbotron jumbotronPortfolio">
-                    <div class="container">
-                        <h2>
-                            Portfolio Website
-                        </h2>
-                        <p>
-                            Code for this website - Open Sourced
-                        </p>
-                        <p>
-                            <button class="btn btn-primary btn-large"
-                                onclick="window.open('https://github.com/mrciolino/portfolio-site' + location.search)">Github</button>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-1">
-            </div>
-            <div class="col-md-3">
-                <div class="jumbotron jumbotronJobTag">
-                    <div class="container">
-                        <h2>
-                            Novel Job Tag Classifier
-                        </h2>
-                        <p>
-                            Predict job tag (i.e. frontend) from Job Description
-                        </p>
-                        <p>
-                            <a class="btn btn-primary btn-large" href="{{ url_for('job_tag_classifier') }}">Demo</a>
-                            <button class="btn btn-primary btn-large"
-                                onclick="window.open('https://github.com/mrciolino/Job-Tag-Classifier' + location.search)">Github</button>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-1">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="jumbotron jumbotronXeval">
-                    <div class="container">
-                        <h2>
-                            Xeval
-                        </h2>
-                        <p>
-                            Legislation monitoring and alert tool
-                        </p>
-                        <p>
-                            <button class="btn btn-primary btn-large"
-                                onclick="window.open('https://www.xeval.io' + location.search)">Website</button>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-1">
-            </div>
-            <div class="col-md-3">
-                <div class="jumbotron jumbotronChess">
-                    <div class="container">
-                        <h2>
-                            Chess Transformer
-                        </h2>
-                        <p>
-                            Play chess aginast a Language Model
-                        </p>
-                        <p>
-                            <button class="btn btn-primary btn-large"
-                                onclick="window.open('https://colab.research.google.com/drive/1-Q6VePtF8YYQ6PPk-wZq0E9_CFEQp0kb' + location.search)">Colab</button>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-1">
-            </div>
-            <div class="col-md-3">
-                <div class="jumbotron jumbotronTest">
-                    <div class="container">
-                        <h2>
-                            Test Project
-                        </h2>
-                        <p>
-                            Location to try new things
-                        </p>
-                        <p>
-                            <a class="btn btn-primary btn-large" href="{{ url_for('test_project') }}">Demo</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-1">
             </div>
         </div>
         <div id="Resume" class="row">
@@ -491,7 +501,6 @@
                 </div>
             </div>
         </div>
-
         <div id="Contact" class="row">
             <div class="col-md-8">
                 <form id="contact-form" method="post" onSubmit="submit_mail_features()" role="form">
@@ -509,9 +518,9 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="form_lastname">Company *</label>
-                                    <input id="form_lastname" type="text" name="surname" class="form-control"
-                                        placeholder="Company" required="required" data-error="Lastname is required.">
+                                    <label for="form_company">Company</label>
+                                    <input id="form_company" type="text" name="company" class="form-control"
+                                        placeholder="Company" data-error="company is required.">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
@@ -604,6 +613,20 @@
                 papers_state = "short"
                 $("#papers").animate({ height: '400px' })
                 papers_button.innerHTML = "Show More"
+            }
+        }
+
+        function toggle_projects() {
+            var projects = document.getElementById("project_row_3");
+            var projects_button = document.getElementById("projects_button")
+            console.log(projects.style.display)
+            if (projects.style.display == "none") {
+                projects.style.display = "";
+                projects_button.innerHTML = "Show Less";
+            }
+            else if (projects.style.display == "") {
+                projects.style.display = "none";
+                projects_button.innerHTML = "Show More";
             }
         }
     </script>

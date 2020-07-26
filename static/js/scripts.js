@@ -21,7 +21,7 @@ function submit_mail_features() {
     // grab the values
     var features = [{
         Feature_1: document.getElementById('form_name').value, //name
-        Feature_2: document.getElementById('form_lastname').value, //company
+        Feature_2: document.getElementById('form_company').value, //company
         Feature_3: document.getElementById('form_email').value, //email
         Feature_4: document.getElementById('form_need').value, //reason
         Feature_5: document.getElementById('form_message').value, //message
