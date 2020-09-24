@@ -56,6 +56,12 @@ def spie_presentation():
                      as_attachment=False,
                      attachment_filename="Ciolino SPIE Presentation.pdf")
 
+@app.route('/go_ppt')
+def spie_presentation():
+    return send_file("static/refs/GoPaperPPTai4i.pdf",
+                     'application/pdf',
+                     as_attachment=False,
+                     attachment_filename="GoPaperPPTai4i.pdf")
 
 @app.route('/predict_iris', methods=['POST'])
 def predict_iris():
