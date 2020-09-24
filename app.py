@@ -16,7 +16,7 @@ sys.path.append(os.getcwd() + "/static/contact")
 from contact import send_simple_message
 
 app = Flask(__name__, static_url_path='/static')
-update_wikipedia()
+# update_wikipedia()
 
 
 @app.route('/')
@@ -57,7 +57,7 @@ def spie_presentation():
                      attachment_filename="Ciolino SPIE Presentation.pdf")
 
 @app.route('/go_ppt')
-def spie_presentation():
+def go_ppt():
     return send_file("static/refs/GoPaperPPTai4i.pdf",
                      'application/pdf',
                      as_attachment=False,
