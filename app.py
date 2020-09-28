@@ -10,8 +10,8 @@ sys.path.append(os.getcwd() + "/projects/job_tag_classifier")
 import predict_job_tag
 sys.path.append(os.getcwd() + "/projects/politican_classifier")
 from predict_politican import predict_vote
-sys.path.append(os.getcwd() + "/projects/wikipedia_web_traffic_live")
-from wikipedia import update_wikipedia
+# sys.path.append(os.getcwd() + "/projects/wikipedia_web_traffic_live")
+# from wikipedia import update_wikipedia
 sys.path.append(os.getcwd() + "/static/contact")
 from contact import send_simple_message
 
