@@ -3,6 +3,9 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="description" content="Data Science Portfolio with published papers, personal projects, and my resume. Contains demos, githubs, and notebooks about my data science journey.">
+    <meta name="keywords" content="Matthew Ciolino, Portfolio, Deep Learning, Super Resolution, Transformers, Job">
+    <meta name="author" content="Matthew Ciolino">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -338,34 +341,18 @@
                     <div class="col-md-1">
                     </div>
                     <div class="col-md-3">
-                        <div class="row jumbotron jumbotronWebsites">
-                            <div class="col-6">
-                                <div class="container">
-                                    <h2>
-                                        Deepfake Service
-                                    </h2>
-                                    <p>
-                                        First Order Model for effective deepfakes
-                                    </p>
-                                    <p>
-                                        <button class="btn btn-primary btn-large mb-1"
-                                            onclick="window.open('https://deepfakeservice.herokuapp.com' + location.search)">Website</button>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="container">
-                                    <h2>
-                                        Xeval
-                                    </h2>
-                                    <p>
-                                        Legislation monitoring and alert tool
-                                    </p>
-                                    <p>
-                                        <button class="btn btn-primary btn-large mb-1"
-                                            onclick="window.open('https://www.xeval.io' + location.search)">Website</button>
-                                    </p>
-                                </div>
+                        <div class="row jumbotron jumbotronXeval">
+                            <div class="container">
+                                <h2>
+                                    Xeval
+                                </h2>
+                                <p>
+                                    Legislation monitoring and alert tool
+                                </p>
+                                <p>
+                                    <button class="btn btn-primary btn-large mb-1"
+                                        onclick="window.open('https://www.xeval.io' + location.search)">Website</button>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -395,17 +382,17 @@
                     </div>
                     <div class="row" id="project_row_2">
                         <div class="col-md-3">
-                            <div class="jumbotron jumbotronTest">
+                            <div class="jumbotron jumbotronDeepfake">
                                 <div class="container">
                                     <h2>
-                                        Test Project
+                                        Deepfake Generator
                                     </h2>
                                     <p>
-                                        Location to try new things
+                                        Convicing deepfakes using First-Order-Model
                                     </p>
                                     <p>
-                                        <a class="btn btn-primary btn-large mb-1"
-                                            href="{{ url_for('test_project') }}">Demo</a>
+                                        <button class="btn btn-primary btn-large mb-1"
+                                        onclick="window.open('https://deepfakeservice.herokuapp.com/' + location.search)">Website</button>
                                     </p>
                                 </div>
                             </div>
@@ -493,17 +480,18 @@
                         <div class="col-md-1">
                         </div>
                         <div class="col-md-3">
-                            <div class="jumbotron ">
+                            <div class="jumbotron jumbotronTest">
                                 <div class="container">
                                     <h2>
-                                        Empty Project
+                                        Test Project
                                     </h2>
-                                    <!-- <p>
-                                    Location to try new things
-                                </p>
-                                <p>
-                                    <a class="btn btn-primary btn-large mb-1" href="{{ url_for('test_project') }}">Demo</a>
-                                </p> -->
+                                    <p>
+                                        Location to try new things
+                                    </p>
+                                    <p>
+                                        <a class="btn btn-primary btn-large mb-1"
+                                            href="{{ url_for('test_project') }}">Demo</a>
+                                    </p>
                                 </div>
                             </div>
                         </div>
