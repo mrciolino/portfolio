@@ -1,6 +1,11 @@
 /* ---------------------------------------------------- */
+
+
 /* SPALSH PAGE CSS */
+
+
 /* ---------------------------------------------------- */
+
 #Header {
     overflow: hidden;
     background-color: #333;
@@ -26,7 +31,7 @@
     padding-top: 50px;
 }
 
-#social_buttons {
+projects #social_buttons {
     text-align: center;
     transform: scale(1.25);
 }
@@ -45,9 +50,15 @@
     padding: 5px;
 }
 
+
 /* ---------------------------------------------------- */
+
+
 /* IRIS PAGE CSS */
+
+
 /* ---------------------------------------------------- */
+
 #Iris_IO {
     padding-top: 100px;
     padding-bottom: 200px;
@@ -67,9 +78,15 @@
     padding-bottom: 50px;
 }
 
+
 /* ---------------------------------------------------- */
+
+
 /* JOB TAG PAGE CSS */
+
+
 /* ---------------------------------------------------- */
+
 #JOBTAG_IO {
     padding-top: 50px;
     padding-bottom: 50px;

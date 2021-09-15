@@ -15,6 +15,7 @@
     <link href="{{ url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/bootstrap-social.css')}}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/portfolio.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -25,223 +26,8 @@
     var arxiv_includeComments = 1;
     var arxiv_includeSummary = 1;
 </script>
+
 <script type="text/javascript" src="https://arxiv.org/js/myarticles.js"></script>
-
-<style>
-    #Title {
-        background-image: url(static/refs/home_background_bluish.jpg);
-        background-size: cover;
-        padding-top: 150px;
-        padding-bottom: 200px;
-    }
-
-    .jumbotron {
-        position: relative;
-        overflow: hidden;
-        min-width: 30vw;
-        border: solid rgba(204, 204, 204, 0.1);
-        border-width: 5px;
-    }
-
-    .jumbotron .container {
-        position: relative;
-        z-index: 2;
-        color: #00000;
-        background-color: rgba(204, 204, 204, 0.65);
-        border-radius: 5px;
-        padding: 5px;
-    }
-
-    .jumbotronSR:after {
-        content: "";
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('static/refs/jumbotron/srgan.png');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        -webkit-filter: blur(2px);
-        filter: blur(2px);
-        width: 100%;
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
-    }
-
-    .jumbotronJobTag:after {
-        content: "";
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('static/refs/jumbotron/jobtag.png');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        -webkit-filter: blur(2px);
-        filter: blur(2px);
-        width: 100%;
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
-    }
-
-    .jumbotronVoting:after {
-        content: "";
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('static/refs/jumbotron/politics.png');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        -webkit-filter: blur(2px);
-        filter: blur(2px);
-        width: 100%;
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
-    }
-
-    .jumbotronWikipedia:after {
-        content: "";
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('static/refs/jumbotron/stocks.png');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        -webkit-filter: blur(2px);
-        filter: blur(2px);
-        width: 100%;
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
-    }
-
-    .jumbotronPortfolio:after {
-        content: "";
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('static/refs/jumbotron/portfolio.png');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        -webkit-filter: blur(2px);
-        filter: blur(2px);
-        width: 100%;
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
-    }
-
-    .jumbotronDeepfake:after {
-        content: "";
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('static/refs/jumbotron/logo.ico');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        -webkit-filter: blur(2px);
-        filter: blur(2px);
-        width: 100%;
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
-    }
-
-    .jumbotronXeval:after {
-        content: "";
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('static/refs/jumbotron/xeval.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        -webkit-filter: blur(2px);
-        filter: blur(2px);
-        width: 100%;
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
-    }
-
-    .jumbotronChess:after {
-        content: "";
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('static/refs/jumbotron/transformer.gif');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        -webkit-filter: blur(2px);
-        filter: blur(2px);
-        width: 100%;
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
-    }
-
-    .jumbotronWebsites:after {
-        content: "";
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('static/refs/jumbotron/websites.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        -webkit-filter: blur(2px);
-        filter: blur(2px);
-        width: 100%;
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
-    }
-
-    .jumbotronTest:after {
-        content: "";
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('static/refs/jumbotron/testing.png');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        -webkit-filter: blur(2px);
-        filter: blur(2px);
-        width: 100%;
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
-    }
-</style>
 
 <body>
     <div class="container-fluid">
@@ -289,8 +75,7 @@
             </div>
             <div class="col-md-4">
             </div>
-            <div id="papers" class="row"
-                style="height: 400px; overflow-y: hidden; padding-left:30px; padding-right:30px; text-align:left;">
+            <div id="papers" class="row" style="height: 600px; overflow-y: hidden; padding-left:30px; padding-right:30px; text-align:left;">
                 <div id="arxivfeed" style="background: #f3f3f3;">Loading Papers...</div>
             </div>
         </div>
@@ -317,20 +102,15 @@
                                     Play popular games aginast a Language Model
                                 </p>
                                 <p>
-                                    <button class="btn btn-primary btn-large mb-1"
-                                        onclick="window.open('https://colab.research.google.com/drive/1-Q6VePtF8YYQ6PPk-wZq0E9_CFEQp0kb' + location.search)">Chess
+                                    <button class="btn btn-primary btn-large mb-1" onclick="window.open('https://colab.research.google.com/drive/1-Q6VePtF8YYQ6PPk-wZq0E9_CFEQp0kb' + location.search)">Chess
                                         Colab</button>
-                                    <button class="btn btn-primary btn-large mb-1"
-                                        onclick="window.open('https://colab.research.google.com/drive/1rHXluEFvtz5nplU7QhZVzo09-hJfruSH?usp=sharing' + location.search)">Checkers
+                                    <button class="btn btn-primary btn-large mb-1" onclick="window.open('https://colab.research.google.com/drive/1rHXluEFvtz5nplU7QhZVzo09-hJfruSH?usp=sharing' + location.search)">Checkers
                                         Colab</button>
-                                    <button class="btn btn-primary btn-large mb-1"
-                                        onclick="window.open('https://arxiv.org/abs/2008.04057' + location.search)">Chess
+                                    <button class="btn btn-primary btn-large mb-1" onclick="window.open('https://arxiv.org/abs/2008.04057' + location.search)">Chess
                                         Paper</button>
-                                    <button class="btn btn-primary btn-large mb-1"
-                                        onclick="window.open('https://arxiv.org/abs/2007.03500v2' + location.search)">Go
+                                    <button class="btn btn-primary btn-large mb-1" onclick="window.open('https://arxiv.org/abs/2007.03500v2' + location.search)">Go
                                         Paper</button>
-                                    <button class="btn btn-primary btn-large mb-1"
-                                        onclick="window.open('https://deeperbrain.com/demo/dual.html' + location.search)">Example
+                                    <button class="btn btn-primary btn-large mb-1" onclick="window.open('https://deeperbrain.com/demo/dual.html' + location.search)">Example
                                         Games</button>
                                     <a class="btn btn-primary btn-large mb-1" href="{{ url_for('go_ppt') }}">Go
                                         Powerpoint</a>
@@ -350,8 +130,7 @@
                                     Legislation monitoring and alert tool
                                 </p>
                                 <p>
-                                    <button class="btn btn-primary btn-large mb-1"
-                                        onclick="window.open('https://www.xeval.io' + location.search)">Website</button>
+                                    <button class="btn btn-primary btn-large mb-1" onclick="window.open('https://www.xeval.io' + location.search)">Website</button>
                                 </p>
                             </div>
                         </div>
@@ -368,314 +147,336 @@
                                     Maritime Super Resolution Paper and Tiled SRGAN demo
                                 </p>
                                 <p>
-                                    <button class="btn btn-primary btn-large mb-1"
-                                        onclick="window.open('https://nbviewer.jupyter.org/github/mrciolino/portfolio-site/blob/master/projects/_notebooks/sisr/SISR%20Example.ipynb' + location.search)">Notebook</button>
-                                    <button class="btn btn-primary btn-large mb-1"
-                                        onclick="window.open('https://arxiv.org/abs/1911.07934' + location.search)">Paper</button>
-                                    <a class="btn btn-primary btn-large mb-1"
-                                        href="{{ url_for('spie_presentation') }}">Powerpoint</a>
+                                    <button class="btn btn-primary btn-large mb-1" onclick="window.open('https://nbviewer.jupyter.org/github/mrciolino/portfolio-site/blob/master/projects/_notebooks/sisr/SISR%20Example.ipynb' + location.search)">Notebook</button>
+                                    <button class="btn btn-primary btn-large mb-1" onclick="window.open('https://arxiv.org/abs/1911.07934' + location.search)">Paper</button>
+                                    <a class="btn btn-primary btn-large mb-1" href="{{ url_for('spie_presentation') }}">Powerpoint</a>
                                 </p>
                             </div>
                         </div>
                         <div class="col-md-1">
                         </div>
                     </div>
-                    <div class="row" id="project_row_2">
-                        <div class="col-md-3">
-                            <div class="jumbotron jumbotronDeepfake">
-                                <div class="container">
-                                    <h2>
-                                        Deepfake Generator
-                                    </h2>
-                                    <p>
-                                        Convicing deepfakes using First-Order-Model
-                                    </p>
-                                    <p>
-                                        <button class="btn btn-primary btn-large mb-1"
-                                        onclick="window.open('https://deepfakeservice.herokuapp.com/' + location.search)">Website</button>
-                                    </p>
-                                </div>
+                    <div class="col-md-3">
+                        <div class="jumbotron jumbotronDeepfake">
+                            <div class="container">
+                                <h2>
+                                    Deepfake Generator
+                                </h2>
+                                <p>
+                                    Convicing deepfakes using First-Order-Model
+                                </p>
+                                <p>
+                                    <button class="btn btn-primary btn-large mb-1" onclick="window.open('https://deepfakeservice.herokuapp.com/' + location.search)">Website</button>
+                                </p>
                             </div>
-                        </div>
-                        <div class="col-md-1">
-                        </div>
-                        <div class="col-md-3">
-                            <div class="jumbotron jumbotronPortfolio">
-                                <div class="container">
-                                    <h2>
-                                        Portfolio Website
-                                    </h2>
-                                    <p>
-                                        Code for this website - Open Sourced
-                                    </p>
-                                    <p>
-                                        <button class="btn btn-primary btn-large mb-1"
-                                            onclick="window.open('https://github.com/mrciolino/portfolio-site' + location.search)">Github</button>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-1">
-                        </div>
-                        <div class="col-md-3">
-                            <div class="jumbotron jumbotronJobTag">
-                                <div class="container">
-                                    <h2>
-                                        Novel Job Tag Classifier
-                                    </h2>
-                                    <p>
-                                        Predict job tag (i.e. frontend) from Job Description
-                                    </p>
-                                    <p>
-                                        <a class="btn btn-primary btn-large mb-1"
-                                            href="{{ url_for('job_tag_classifier') }}">Demo</a>
-                                        <button class="btn btn-primary btn-large mb-1"
-                                            onclick="window.open('https://github.com/mrciolino/Job-Tag-Classifier' + location.search)">Github</button>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-1">
                         </div>
                     </div>
-                    <div class="row" id="project_row_3" style="display: none;">
-                        <div class="col-md-3">
-                            <div class="jumbotron jumbotronVoting">
-                                <div class="container">
-                                    <h2>
-                                        Politician Voting Classifier
-                                    </h2>
-                                    <p>
-                                        Predict how a politican is going to vote on a bill
-                                    </p>
-                                    <p>
-                                        <a class="btn btn-primary btn-large mb-1"
-                                            href="{{ url_for('politician_classifier') }}">Demo</a>
-                                        <button class="btn btn-primary btn-large mb-1"
-                                            onclick="window.open('https://nbviewer.jupyter.org/github/mrciolino/Test-Repo/blob/master/xeval/US%20Map%20Example.ipynb' + location.search)">Notebook</button>
-                                    </p>
-                                </div>
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-3">
+                        <div class="jumbotron jumbotronPortfolio">
+                            <div class="container">
+                                <h2>
+                                    Portfolio Website
+                                </h2>
+                                <p>
+                                    Code for this website - Open Sourced
+                                </p>
+                                <p>
+                                    <button class="btn btn-primary btn-large mb-1" onclick="window.open('https://github.com/mrciolino/portfolio-site' + location.search)">Github</button>
+                                </p>
                             </div>
                         </div>
-                        <div class="col-md-1">
-                        </div>
-                        <div class="col-md-3">
-                            <div class="jumbotron jumbotronWikipedia">
-                                <div class="container">
-                                    <h2>
-                                        Wikipedia Traffic Time Series
-                                    </h2>
-                                    <p>
-                                        Forcasting wikipedia article traffic 60 days out
-                                    </p>
-                                    <p>
-                                        <a class="btn btn-primary btn-large mb-1"
-                                            href="{{ url_for('wikipedia_traffic') }}">Demo</a>
-                                        <button class="btn btn-primary btn-large mb-1"
-                                            onclick="window.open('https://github.com/mrciolino/Kaggle-Competitions/tree/master/Wikipedia%20Web%20Traffic' + location.search)">Github</button>
-                                    </p>
-                                </div>
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-3">
+                        <div class="jumbotron jumbotronJobTag">
+                            <div class="container">
+                                <h2>
+                                    Novel Job Tag Classifier
+                                </h2>
+                                <p>
+                                    Predict job tag (i.e. frontend) from Job Description
+                                </p>
+                                <p>
+                                    <button class="btn btn-primary btn-large mb-1" onclick="window.open('https://github.com/mrciolino/Job-Tag-Classifier' + location.search)">Github</button>
+                                </p>
                             </div>
                         </div>
-                        <div class="col-md-1">
-                        </div>
-                        <div class="col-md-3">
-                            <div class="jumbotron jumbotronTest">
-                                <div class="container">
-                                    <h2>
-                                        Test Project
-                                    </h2>
-                                    <p>
-                                        Location to try new things
-                                    </p>
-                                    <p>
-                                        <a class="btn btn-primary btn-large mb-1"
-                                            href="{{ url_for('test_project') }}">Demo</a>
-                                    </p>
-                                </div>
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-3">
+                        <div class="jumbotron jumbotronCooking">
+                            <div class="container">
+                                <h2>
+                                    Sea of Thieves Cooking Timer
+                                </h2>
+                                <p>
+                                    Sea of Thieves pirate game cooking timer to keep track and notify user when their meat is done cooking.
+                                </p>
+                                <p>
+                                    <button class="btn btn-primary btn-large mb-1" onclick="window.open('https://sea-of-thieves-cooking-app.herokuapp.com/' + location.search)">Website</button>
+                                    <button class="btn btn-primary btn-large mb-1" onclick="window.open('https://github.com/mrciolino/SoT_Fishing_Timer' + location.search)">Github</button>
+                                </p>
                             </div>
                         </div>
-                        <div class="col-md-1">
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-3">
+                        <div class="jumbotron jumbotronDND">
+                            <div class="container">
+                                <h2>
+                                    DND AI Map Generation
+                                </h2>
+                                <p>
+                                    Autogenerate new maps for DND use OpenAI's DALLE.
+                                </p>
+                                <p>
+                                    <button class="btn btn-primary btn-large mb-1" onclick="window.open('https://aidndgen.herokuapp.com/' + location.search)">Website</button>
+                                    <button class="btn btn-primary btn-large mb-1" onclick="window.open('https://github.com/mrciolino/AIDNDGEN' + location.search)">Github</button> </p>
+                            </div>
                         </div>
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-3">
+                        <div class="jumbotron jumbotronWikipedia">
+                            <div class="container">
+                                <h2>
+                                    Wikipedia Traffic Time Series
+                                </h2>
+                                <p>
+                                    Forcasting wikipedia article traffic 60 days out
+                                </p>
+                                <p>
+                                    <button class="btn btn-primary btn-large mb-1" onclick="window.open('https://github.com/mrciolino/Kaggle-Competitions/tree/master/Wikipedia%20Web%20Traffic' + location.search)">Github</button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                </div>
+                <div class="row" id="project_row_2" style="display: none;">
+                    <div class="col-md-3">
+                        <div class="jumbotron jumbotronVoting">
+                            <div class="container">
+                                <h2>
+                                    Politician Voting Classifier
+                                </h2>
+                                <p>
+                                    Predict how a politican is going to vote on a bill
+                                </p>
+                                <p>
+                                    <button class="btn btn-primary btn-large mb-1" onclick="window.open('https://nbviewer.jupyter.org/github/mrciolino/Test-Repo/blob/master/xeval/US%20Map%20Example.ipynb' + location.search)">Notebook</button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-3">
+                        <div class="jumbotron jumbotronTest">
+                            <div class="container">
+                                <h2>
+                                    Test Project
+                                </h2>
+                                <p>
+                                    Location to try new things
+                                </p>
+                                <p>
+                                    <a class="btn btn-primary btn-large mb-1" href="{{ url_for('test_project') }}">Demo</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-3">
+                        <div class="jumbotron jumbotronTest">
+                            <div class="container">
+                                <h2>
+                                    Test Project
+                                </h2>
+                                <p>
+                                    Location to try new things
+                                </p>
+                                <p>
+                                    <a class="btn btn-primary btn-large mb-1" href="{{ url_for('test_project') }}">Demo</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1">
                     </div>
                 </div>
             </div>
         </div>
-        <div id="Resume" class="row">
-                <div class="col-md-12">
-                    <h2>
-                        Resume
-                    </h2>
-                    <p>
-                        Below is my current resume, press view resume to see it.
-                    </p>
-                    <div class="bs-example">
-                        <div class="accordion" id="accordionExample">
-                            <div class="card">
-                                <div class="card-header" id="headingOne">
-                                    <h2 class="mb-0">
-                                        <button type="button" class="btn btn-link" data-toggle="collapse"
-                                            data-target="#collapseOne">View Resume</button>
-                                        <button type="button" class="btn btn-link">
+    </div>
+    <div id="Resume" class="row">
+        <div class="col-md-12">
+            <h2>
+                Resume
+            </h2>
+            <p>
+                Below is my current resume, press view resume to see it.
+            </p>
+            <div class="bs-example">
+                <div class="accordion" id="accordionExample">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h2 class="mb-0">
+                                <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne">View Resume</button>
+                                <button type="button" class="btn btn-link">
                                             <a href="{{url_for('static',filename='refs/Ciolino Resume.pdf')}}"
                                                 download="Ciolino Resume.pdf">
                                                 Download Resume
                                             </a>
                                         </button>
-                                    </h2>
-                                </div>
-                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
-                                    data-parent="#accordionExample">
-                                    <div class="card-body" style="display:table; margin-left:auto; margin-right:auto;">
-                                        <p>
-                                            <embed src="{{url_for('static',filename='refs/Ciolino Resume.pdf')}}"
-                                                width="800px" height="1040px">
-                                        </p>
-                                    </div>
-                                </div>
+                            </h2>
+                        </div>
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div class="card-body" style="display:table; margin-left:auto; margin-right:auto;">
+                                <p>
+                                    <embed src="{{url_for('static',filename='refs/Ciolino Resume.pdf')}}" width="800px" height="1040px">
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="Contact" class="row">
-                <div class="col-md-8">
-                    <form id="contact-form" method="post" onSubmit="submit_mail_features()" role="form">
-                        <h2> Contact </h2>
-                        <div class="messages"></div>
-                        <div class="controls">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="form_name">Name *</label>
-                                        <input id="form_name" type="text" name="name" class="form-control"
-                                            placeholder="Name" required="required" data-error="Firstname is required.">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="form_company">Company</label>
-                                        <input id="form_company" type="text" name="company" class="form-control"
-                                            placeholder="Company" data-error="company is required.">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
+        </div>
+    </div>
+    <div id="Contact" class="row">
+        <div class="col-md-8">
+            <form id="contact-form" method="post" onSubmit="submit_mail_features()" role="form">
+                <h2> Contact </h2>
+                <div class="messages"></div>
+                <div class="controls">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_name">Name *</label>
+                                <input id="form_name" type="text" name="name" class="form-control" placeholder="Name" required="required" data-error="Firstname is required.">
+                                <div class="help-block with-errors"></div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="form_email">Email *</label>
-                                        <input id="form_email" type="email" name="email" class="form-control"
-                                            placeholder="Email" required="required"
-                                            data-error="Valid email is required.">
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="form_need">Reason</label>
-                                        <select id="form_need" name="need" class="form-control"
-                                            data-error="Please specify your need.">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_company">Company</label>
+                                <input id="form_company" type="text" name="company" class="form-control" placeholder="Company" data-error="company is required.">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_email">Email *</label>
+                                <input id="form_email" type="email" name="email" class="form-control" placeholder="Email" required="required" data-error="Valid email is required.">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_need">Reason</label>
+                                <select id="form_need" name="need" class="form-control" data-error="Please specify your need.">
                                             <option value=" "></option>
                                             <option value="Looking to Recruit">Looking to Recruit</option>
                                             <option value="Introducing Yourself">Introducing Yourself</option>
                                             <option value="Seeking your Opinion">Seeking your Opinion</option>
                                             <option value="Testing your Website">Testing your Website</option>
                                         </select>
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="form_message">Message *</label>
-                                        <textarea id="form_message" name="message" class="form-control"
-                                            placeholder="Message" rows="4" required="required"
-                                            data-error="Please, leave us a message."></textarea>
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <input id="mail_submit_button" type="submit" class="btn btn-primary"
-                                        value="Send Message">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <p>
+                                <div class="help-block with-errors"></div>
                             </div>
                         </div>
-
-                    </form>
-                </div>
-                <div id="social" class="col-md-4">
-                    <h2>
-                        Contact Info
-                    </h2>
-                    <p>
-                        Feel free to contact me or to check on my code yourself. Anything you see on this website is
-                        open
-                        source and you may use it as well!
-                    </p>
-                    <div id="social_buttons">
-                        <!--Linkedin-->
-                        <button type="button"
-                            onclick="window.open('https://www.linkedin.com/in/mrciolino/' + location.search)"
-                            class="btn btn-social-icon btn-linkedin"><i class="fa fa-linkedin"></i></button>
-                        <p id="spacer"></p>
-                        <!--Github-->
-                        <button type="button" onclick="window.open('https://github.com/mrciolino' + location.search)"
-                            class="btn btn-social-icon btn-github"><i class="fa fa-github"></i></button>
-                        <p id="spacer"></p>
-                        <!-- Twitter -->
-                        <button type="button" onclick="window.open('https://twitter.com/CioBazzert' + location.search)"
-                            class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></button>
-                        <p id="spacer"></p>
-                        <a href="mailto:mrciolino@alum.lehigh.edu" target="_blank" class="btn btn-primary">Email</a>
-                        <p id="spacer"></p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="form_message">Message *</label>
+                                <textarea id="form_message" name="message" class="form-control" placeholder="Message" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <input id="mail_submit_button" type="submit" class="btn btn-primary" value="Send Message">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p>
                     </div>
                 </div>
+
+            </form>
+        </div>
+        <div id="social" class="col-md-4">
+            <h2>
+                Contact Info
+            </h2>
+            <p>
+                Feel free to contact me or to check on my code yourself. Anything you see on this website is open source and you may use it as well!
+            </p>
+            <div id="social_buttons">
+                <!--Linkedin-->
+                <button type="button" onclick="window.open('https://www.linkedin.com/in/mrciolino/' + location.search)" class="btn btn-social-icon btn-linkedin"><i class="fa fa-linkedin"></i></button>
+                <p id="spacer"></p>
+                <!--Github-->
+                <button type="button" onclick="window.open('https://github.com/mrciolino' + location.search)" class="btn btn-social-icon btn-github"><i class="fa fa-github"></i></button>
+                <p id="spacer"></p>
+                <!-- Twitter -->
+                <button type="button" onclick="window.open('https://twitter.com/CioBazzert' + location.search)" class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></button>
+                <p id="spacer"></p>
+                <a href="mailto:mrciolino@alum.lehigh.edu" target="_blank" class="btn btn-primary">Email</a>
+                <p id="spacer"></p>
             </div>
         </div>
+    </div>
+    </div>
 
-        <script type="text/javascript">
-            var papers_state = "short";
+    <script type="text/javascript">
+        var papers_state = "short";
 
-            function toggle_papers() {
-                var papers = document.getElementById("papers")
-                var papers_button = document.getElementById("papers_button")
-                if (papers_state == "short") {
-                    papers_state = "long"
-                    $("#papers").animate({
-                        height: "100%"
-                    })
-                    papers_button.innerHTML = "Show Less"
-                } else if (papers_state == "long") {
-                    papers_state = "short"
-                    $("#papers").animate({
-                        height: '400px'
-                    })
-                    papers_button.innerHTML = "Show More"
-                }
+        function toggle_papers() {
+            var papers = document.getElementById("papers")
+            var papers_button = document.getElementById("papers_button")
+            if (papers_state == "short") {
+                papers_state = "long"
+                $("#papers").animate({
+                    height: "100%"
+                })
+                papers_button.innerHTML = "Show Less"
+            } else if (papers_state == "long") {
+                papers_state = "short"
+                $("#papers").animate({
+                    height: '400px'
+                })
+                papers_button.innerHTML = "Show More"
             }
+        }
 
-            function toggle_projects() {
-                var projects = document.getElementById("project_row_3");
-                var projects_button = document.getElementById("projects_button")
-                if (projects.style.display == "none") {
-                    projects.style.display = "";
-                    projects_button.innerHTML = "Show Less";
-                } else if (projects.style.display == "") {
-                    projects.style.display = "none";
-                    projects_button.innerHTML = "Show More";
-                }
+        function toggle_projects() {
+            console.log("toggle_projects")
+            var projects2 = document.getElementById("project_row_2");
+            var projects_button = document.getElementById("projects_button")
+            if (projects2.style.display == "none") {
+                projects2.style.display = "";
+                projects_button.innerHTML = "Show Less";
+            } else if (projects2.style.display == "") {
+                projects2.style.display = "none";
+                projects_button.innerHTML = "Show More";
             }
-        </script>
+        }
+    </script>
 
-        <script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
-        <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
-        <script src="{{ url_for('static', filename='js/scripts.js')}}"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js')}}"></script>
 </body>
 
 </html>

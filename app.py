@@ -6,25 +6,30 @@ import os
 
 sys.path.append(os.getcwd() + "/projects/iris_classifier")
 from predict_iris import run_iris
-sys.path.append(os.getcwd() + "/projects/job_tag_classifier")
-import predict_job_tag
-sys.path.append(os.getcwd() + "/projects/politican_classifier")
-from predict_politican import predict_vote
-# sys.path.append(os.getcwd() + "/projects/wikipedia_web_traffic_live")
-# from wikipedia import update_wikipedia
 sys.path.append(os.getcwd() + "/static/contact")
 from contact import send_simple_message
 
-app = Flask(__name__, static_url_path='/static')
+###### old projects - dont support anymore
+# sys.path.append(os.getcwd() + "/projects/job_tag_classifier")
+# import predict_job_tag
+# sys.path.append(os.getcwd() + "/projects/politican_classifier")
+# from predict_politican import predict_vote
+# sys.path.append(os.getcwd() + "/projects/wikipedia_web_traffic_live")
+# from wikipedia import update_wikipedia
 # update_wikipedia()
+
+app = Flask(__name__, static_url_path='/static')
 
 
 @app.route('/')
 def index():
-    subprocess.Popen(['curl https://deepfakeservice.herokuapp.com'],
-                 stdout=subprocess.PIPE,
-                 stderr=subprocess.PIPE,
-                 shell=True)
+    for website in ["https://deepfakeservice.herokuapp.com",
+                    "https://sea-of-thieves-cooking-app.herokuapp.com/",
+                    "https://aidndgen.herokuapp.com/"]:
+        subprocess.Popen(['curl ' + website],
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.PIPE,
+                    shell=True)
     return render_template('index.html')
 
 
