@@ -15,7 +15,9 @@ app = Flask(__name__, static_url_path='/static')
 def index():
     for website in ["https://deepfakeservice.herokuapp.com",
                     "https://sea-of-thieves-cooking-app.herokuapp.com/",
-                    "https://aidndgen.herokuapp.com/"]:
+                    "https://aidndgen.herokuapp.com/",
+                    "https://share.streamlit.io/mrciolino/crowd-counter/main/main.py",
+                    "https://share.streamlit.io/mrciolino/yolov3_deepsort/main.py"]:
         subprocess.Popen(['curl ' + website],
                          stdout=subprocess.PIPE,
                          stderr=subprocess.PIPE,
