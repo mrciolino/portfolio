@@ -3,12 +3,14 @@
   "name": "startbootstrap-sb-admin-2",
   "version": "4.1.1",
   "engines": {
-    "node": "16.14.2"
+    "node": "16.14.2",
+    "npm": "8.5.5"
   },
   "scripts": {
     "build": "npm install",
     "start": "gulp watch"
   },
+  "postinstall": "npm rebuild node-sass && npm install --unsafe-perm -f node-sass",
   "description": "An open source Bootstrap 4 admin theme.",
   "keywords": [
     "css",
