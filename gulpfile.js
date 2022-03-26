@@ -12,6 +12,7 @@ const plumber = require("gulp-plumber");
 const rename = require("gulp-rename");
 const sass = require("gulp-sass");
 const uglify = require("gulp-uglify");
+const mysql = require('mysql');
 require('dotenv').config()
 
 // Load package.json for banner
@@ -38,7 +39,21 @@ function browserSync(done) {
     notify: false,
     ghostMode: false,
     open: false,
-    port: process.env.PORT || 8081
+    port: process.env.PORT || 8081,
+    middleware: [{
+      route: "/record",
+      handle: function (req, res) {
+        anyBody(req, res, function (err, body) {
+          if (err) {
+            res.statusCode = 500
+            return res.end("ERROR")
+          }
+          sendSql(body.email)
+          res.statusCode = 200
+          return res.end("OK")
+        })
+      }
+    }]
   });
   done();
 }
@@ -150,3 +165,16 @@ exports.vendor = vendor;
 exports.build = build;
 exports.watch = watch;
 exports.default = build;
+
+
+/////////////////////////////////////// ENDPOINTS ///////////////////////////////////////////////
+
+function sendSql(email) {
+  let sql = "INSERT INTO `aidndgen-emails` (`email`) VALUES ('" + email + "')";
+  var connection = mysql.createConnection(process.env.JAWSDB_MARIA_URL);
+  connection.connect();
+  connection.query(sql, function (error, results, fields) {
+    if (error) throw error;
+  });
+  connection.end();
+}
