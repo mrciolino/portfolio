@@ -11,7 +11,6 @@
     "postinstall": "gulp default",
     "start": "gulp watch"
   },
-  "postinstall": "npm rebuild node-sass && npm install --unsafe-perm -f node-sass",
   "description": "An open source Bootstrap 4 admin theme.",
   "keywords": [
     "css",
