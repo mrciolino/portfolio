@@ -1,0 +1,9 @@
+{
+    "apps": [
+        {
+        "name": "xeval-web-app-dev-new",
+        "script": "npm",
+        "args" : "start"
+        }
+    ]
+}
