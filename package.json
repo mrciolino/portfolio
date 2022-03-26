@@ -3,12 +3,13 @@
   "name": "startbootstrap-sb-admin-2",
   "version": "4.1.1",
   "engines": {
-    "node": "14",
+    "node": "14.x",
     "npm": "8.5.5"
   },
   "scripts": {
     "build": "npm install",
     "postinstall": "gulp default",
+    "heroku-postbuild": "npm install gulp && gulp",
     "start": "gulp watch"
   },
   "description": "An open source Bootstrap 4 admin theme.",
