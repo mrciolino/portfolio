@@ -1,12 +1,15 @@
 {
-  "title": "SB Admin 2",
-  "name": "startbootstrap-sb-admin-2",
-  "version": "4.1.1",
+  "title": "Resume",
+  "name": "matthew-ciolino-resume",
+  "version": "1.0",
+  "engines": {
+    "node": "16.14.2"
+  },
   "scripts": {
     "build": "npm install",
     "start": "gulp watch"
   },
-  "description": "An open source Bootstrap 4 admin theme.",
+  "description": "Bootstrap 5 App",
   "keywords": [
     "css",
     "sass",
@@ -17,20 +20,6 @@
     "admin",
     "app"
   ],
-  "homepage": "https://startbootstrap.com/themes/sb-admin-2",
-  "bugs": {
-    "url": "https://github.com/StartBootstrap/startbootstrap-sb-admin-2/issues",
-    "email": "feedback@startbootstrap.com"
-  },
-  "license": "MIT",
-  "author": "Start Bootstrap",
-  "contributors": [
-    "David Miller (http://davidmiller.io/)"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/StartBootstrap/startbootstrap-sb-admin-2.git"
-  },
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.13.1",
     "body": "^5.1.0",
