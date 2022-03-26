@@ -1,0 +1,473 @@
+/* HERO */
+
+#hero {
+    background: url("../img/hero-bg-ds.png") top right no-repeat;
+    background-size: cover;
+}
+
+/* PORTFOLIO */
+
+.Transformers-inside:hover>.Transformers {
+    transform: scale(0.9, 0.9);
+    animation: fadeIn 2s !important;
+    -webkit-animation: fadeIn 2s !important;
+    background: url("../img/transformer.gif") !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: cover !important;
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+    content: "";
+    position: absolute !important;
+    z-index: -1 !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.xEval-inside:hover>.xEval {
+    transform: scale(0.9, 0.9);
+    animation: fadeIn 2s !important;
+    -webkit-animation: fadeIn 2s !important;
+    background: url("../img/xeval.jpg") !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: cover !important;
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+    content: "";
+    position: absolute !important;
+    z-index: -1 !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.sisr-inside:hover>.sisr {
+    transform: scale(0.9, 0.9);
+    animation: fadeIn 2s !important;
+    -webkit-animation: fadeIn 2s !important;
+    background: url("../img/srgan.png") !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: cover !important;
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+    content: "";
+    position: absolute !important;
+    z-index: -1 !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.Deepfake-inside:hover>.Deepfake {
+    transform: scale(0.9, 0.9);
+    animation: fadeIn 2s !important;
+    -webkit-animation: fadeIn 2s !important;
+    background: url("../img/deepfake.ico") !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: cover !important;
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+    content: "";
+    position: absolute !important;
+    z-index: -1 !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.Portfolio-inside:hover>.Portfolio {
+    transform: scale(0.9, 0.9);
+    animation: fadeIn 2s !important;
+    -webkit-animation: fadeIn 2s !important;
+    background: url("../icons/favicon.ico") !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: cover !important;
+    -webkit-filter: blur(1px);
+    filter: blur(1px);
+    content: "";
+    position: absolute !important;
+    z-index: -1 !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.JobTag-inside:hover>.JobTag {
+    transform: scale(0.9, 0.9);
+    animation: fadeIn 2s !important;
+    -webkit-animation: fadeIn 2s !important;
+    background: url("../img/jobtag.png") !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: cover !important;
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+    content: "";
+    position: absolute !important;
+    z-index: -1 !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.Cooking-inside:hover>.Cooking {
+    transform: scale(0.9, 0.9);
+    animation: fadeIn 2s !important;
+    -webkit-animation: fadeIn 2s !important;
+    background: url("../img/seaofthieves.png") !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: cover !important;
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+    content: "";
+    position: absolute !important;
+    z-index: -1 !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.dnd-inside:hover>.dnd {
+    transform: scale(0.9, 0.9);
+    animation: fadeIn 2s !important;
+    -webkit-animation: fadeIn 2s !important;
+    background: url("../img/dnd.png") !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: cover !important;
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+    content: "";
+    position: absolute !important;
+    z-index: -1 !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.wikipedia-inside:hover>.wikipedia {
+    transform: scale(0.9, 0.9);
+    animation: fadeIn 2s !important;
+    -webkit-animation: fadeIn 2s !important;
+    background: url("../img/wikipedia.png") !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: cover !important;
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+    content: "";
+    position: absolute !important;
+    z-index: -1 !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.politics-inside:hover>.politics {
+    transform: scale(0.9, 0.9);
+    animation: fadeIn 2s !important;
+    -webkit-animation: fadeIn 2s !important;
+    background: url("../img/politics.png") !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: cover !important;
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+    content: "";
+    position: absolute !important;
+    z-index: -1 !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.tracking-inside:hover>.tracking {
+    transform: scale(0.9, 0.9);
+    animation: fadeIn 2s !important;
+    -webkit-animation: fadeIn 2s !important;
+    background: url("../img/tokyo_ppl.jpeg") !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: cover !important;
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+    content: "";
+    position: absolute !important;
+    z-index: -1 !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.testing-inside:hover>.testing {
+    transform: scale(0.9, 0.9);
+    animation: fadeIn 2s !important;
+    -webkit-animation: fadeIn 2s !important;
+    background: url("../img/testing.png") !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: cover !important;
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+    content: "";
+    position: absolute !important;
+    z-index: -1 !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.services .icon-box {
+    background: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* RESUME */
+
+@media only screen and (max-width: 1026px) {
+    #hide_on_small_only {
+        display: none;
+    }
+}
+
+/* COLORS */
+
+.orange {
+    background-color: var(--bs-orange);
+    border-color: var(--bs-orange);
+}
+
+.orange:hover {
+    background-color: #ffa500;
+    border-color: #ffa500;
+}
+
+.orange:focus {
+    background-color: #ffa500 !important;
+    border-color: #ffa500;
+}
+
+.pink {
+    background-color: var(--bs-pink);
+    border-color: var(--bs-pink);
+}
+
+.pink:hover {
+    background-color: #ff69b4;
+    border-color: #ff69b4;
+}
+
+.pink:focus {
+    background-color: #ff69b4 !important;
+    border-color: #ff69b4;
+}
+
+.yellow {
+    background-color: var(--bs-yellow);
+    border-color: var(--bs-yellow);
+}
+
+.yellow:hover {
+    background-color: #b1b100;
+    border-color: #b1b100;
+}
+
+.yellow:focus {
+    background-color: #b1b100 !important;
+    border-color: #b1b100;
+}
+
+.red {
+    background-color: var(--bs-red);
+    border-color: var(--bs-red);
+}
+
+.red:hover {
+    background-color: #ff0000;
+    border-color: #ff0000;
+}
+
+.red:focus {
+    background-color: #ff0000 !important;
+    border-color: #ff0000;
+}
+
+.teal {
+    background-color: var(--bs-teal);
+    border-color: var(--bs-teal);
+}
+
+.teal:hover {
+    background-color: #008080;
+    border-color: #008080;
+}
+
+.teal:focus {
+    background-color: #008080 !important;
+    border-color: #008080;
+}
+
+.green {
+    background-color: var(--bs-green);
+    border-color: var(--bs-green);
+}
+
+.green:hover {
+    background-color: #008000;
+    border-color: #008000;
+}
+
+.green:focus {
+    background-color: #008000 !important;
+    border-color: #008000;
+}
+
+.indigo {
+    background-color: var(--bs-indigo);
+    border-color: var(--bs-indigo);
+}
+
+.indigo:hover {
+    background-color: #4b0082;
+    border-color: #4b0082;
+}
+
+.indigo:focus {
+    background-color: #4b0082 !important;
+    border-color: #4b0082;
+}
+
+.services .iconbox-blue i {
+    color: var(--bs-blue);
+}
+
+.services .iconbox-blue:hover .icon i {
+    color: #fff;
+}
+
+.services .iconbox-blue:hover .icon path {
+    fill: var(--bs-blue);
+}
+
+.services .iconbox-orange i {
+    color: var(--bs-orange);
+}
+
+.services .iconbox-orange:hover .icon i {
+    color: #fff;
+}
+
+.services .iconbox-orange:hover .icon path {
+    fill: var(--bs-orange);
+}
+
+.services .iconbox-pink i {
+    color: var(--bs-pink);
+}
+
+.services .iconbox-pink:hover .icon i {
+    color: #fff;
+}
+
+.services .iconbox-pink:hover .icon path {
+    fill: var(--bs-pink);
+}
+
+.services .iconbox-yellow i {
+    color: var(--bs-yellow);
+}
+
+.services .iconbox-yellow:hover .icon i {
+    color: #fff;
+}
+
+.services .iconbox-yellow:hover .icon path {
+    fill: var(--bs-yellow);
+}
+
+.services .iconbox-red i {
+    color: var(--bs-red);
+}
+
+.services .iconbox-red:hover .icon i {
+    color: #fff;
+}
+
+.services .iconbox-red:hover .icon path {
+    fill: var(--bs-red);
+}
+
+.services .iconbox-teal i {
+    color: var(--bs-teal)
+}
+
+.services .iconbox-teal:hover .icon i {
+    color: #fff;
+}
+
+.services .iconbox-teal:hover .icon path {
+    fill: var(--bs-teal)
+}
+
+.services .iconbox-green i {
+    color: var(--bs-green);
+}
+
+.services .iconbox-green:hover .icon i {
+    color: #fff;
+}
+
+.services .iconbox-green:hover .icon path {
+    fill: var(--bs-green);
+}
+
+.services .iconbox-indigo i {
+    color: var(--bs-indigo);
+}
+
+.services .iconbox-indigo:hover .icon i {
+    color: #fff;
+}
+
+.services .iconbox-indigo:hover .icon path {
+    fill: var(--bs-indigo);
+}
+
+.services .iconbox-dark i {
+    color: var(--bs-gray-900);
+}
+
+.services .iconbox-dark:hover .icon i {
+    color: #fff;
+}
+
+.services .iconbox-dark:hover .icon path {
+    fill: var(--bs-gray-900);
+}
