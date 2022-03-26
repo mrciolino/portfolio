@@ -9,7 +9,7 @@
   "scripts": {
     "build": "npm install",
     "postinstall": "npm -g install gulp-cli && npm -g install gulp && npm install gulp-cli && npm install gulp && npm link gulp",
-    "start": "node_modules/.bin/gulp watch"
+    "start": "gulp watch"
   },
   "description": "An open source Bootstrap 4 admin theme.",
   "keywords": [
