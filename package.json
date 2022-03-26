@@ -8,7 +8,7 @@
   },
   "scripts": {
     "build": "npm install",
-    "start": "npm start"
+    "start": "npm run start"
   },
   "description": "An open source Bootstrap 4 admin theme.",
   "keywords": [
