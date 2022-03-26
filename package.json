@@ -8,8 +8,7 @@
   },
   "scripts": {
     "build": "npm install",
-    "postinstall": "npm install gulp && gulp",
-    "start": "gulp watch"
+    "start": "npm start"
   },
   "description": "An open source Bootstrap 4 admin theme.",
   "keywords": [
