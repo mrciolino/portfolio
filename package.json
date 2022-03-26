@@ -8,7 +8,8 @@
   },
   "scripts": {
     "build": "npm install",
-    "start": "npm run start"
+    "heroku-postbuild": "npm install --global gulp-cli",
+    "start": "gulp watch"
   },
   "description": "An open source Bootstrap 4 admin theme.",
   "keywords": [
