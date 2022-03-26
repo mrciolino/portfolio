@@ -8,6 +8,7 @@
   },
   "scripts": {
     "build": "npm install",
+    "postinstall": "gulp default",
     "start": "gulp watch"
   },
   "description": "An open source Bootstrap 4 admin theme.",
