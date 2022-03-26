@@ -13,7 +13,6 @@ const rename = require("gulp-rename");
 const sass = require("gulp-sass");
 const uglify = require("gulp-uglify");
 const mysql = require('mysql');
-require('dotenv').config()
 
 // Load package.json for banner
 const pkg = require('./package.json');
