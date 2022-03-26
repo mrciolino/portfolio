@@ -3,7 +3,7 @@
   "name": "startbootstrap-sb-admin-2",
   "version": "4.1.1",
   "engines": {
-    "node": "16.14.2",
+    "node": "12.19",
     "npm": "8.5.5"
   },
   "scripts": {
