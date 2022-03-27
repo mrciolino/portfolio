@@ -5,13 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function order_portfolio() {
 
-    // copy the elemnts into a new array
-    var copied_jumbotrons = [];
-    var jumbotrons = document.getElementById("portfolio_array").children;
-    for (var i = 0; i < jumbotrons.length; i++) {
-        copied_jumbotrons.push(jumbotrons[i].cloneNode(true));
-    }
-
     // sort them
     // 0 : Transformers
     // 1 : xEval
@@ -25,13 +18,20 @@ function order_portfolio() {
     // 9 : poltics
     // 10 : crowd
     // 11 : testing
-    order = [10, 0, 1, 2, 5, 8, 6, 7, 4, 3, 9, 11]
 
-    // remove all children from portfolio_array
+    // declare variables
+    var copied_jumbotrons = [];
+    var order = [10, 0, 1, 2, 5, 8, 6, 7, 4, 3, 9, 11];
+    var jumbotrons = document.getElementById("portfolio_array").children;
     var portfolio_array = document.getElementById("portfolio_array");
-    portfolio_array.innerHTML = '';
+
+    // copy the elemnts into a new array
+    for (var i = 0; i < jumbotrons.length; i++) {
+        copied_jumbotrons.push(jumbotrons[i].cloneNode(true));
+    }
 
     // put them in the right order
+    portfolio_array.innerHTML = '';
     for (var i = 0; i < order.length; i++) {
         portfolio_array.appendChild(copied_jumbotrons[order[i]]);
     }

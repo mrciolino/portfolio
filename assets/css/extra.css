@@ -3,6 +3,7 @@
 #hero {
     background: url("../img/hero-bg-ds.png") top right no-repeat;
     background-size: cover;
+    scale: 1.25
 }
 
 /* PORTFOLIO */
