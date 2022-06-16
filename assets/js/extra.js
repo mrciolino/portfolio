@@ -11,8 +11,8 @@ function order_portfolio() {
     // 2 : sisr
     // 3 : deepfake
     // 4 : portfolio
-    // 5 : jobtag
-    // 6 : sot
+    // 5 : jobtag -> features (replaces 8,9)
+    // 6 : sot -> features (replaces 7)
     // 7 : dnd
     // 8 : wikipedia
     // 9 : poltics
@@ -21,7 +21,7 @@ function order_portfolio() {
 
     // declare variables
     var copied_jumbotrons = [];
-    var order = [10, 0, 1, 2, 5, 8, 6, 7, 4, 3, 9, 11];
+    var order = [10, 0, 1, 2, 5, 6, 4, 3, 11];
     var jumbotrons = document.getElementById("portfolio_array").children;
     var portfolio_array = document.getElementById("portfolio_array");
 
