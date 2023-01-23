@@ -26,7 +26,6 @@ const banner = ['/*!\n',
 ].join('');
 
 var anyBody = require("body/any")
-var http = require("http")
 
 // BrowserSync
 function browserSync(done) {

@@ -6,5 +6,7 @@ Code for my machine learning portfolio. Contains projects that i have done over 
 
 Visit the website: https://www.matthewciolino.com/
 
-<!-- docker run -it --rm -p 8081:8081 -v C:\\Users\\matt.ciolino\\OneDrivePPT\\Documents\\portfolio:/portfolio malteautopi/python2-nodejs:latest bash --> 
+<!-- docker run -it --rm -p 8081:8081 -v C:\\Users\\matt.ciolino\\OneDrivePPT\\Documents\\portfolio:/portfolio portfolio bash --> 
+<!-- docker build -t portfolio . -->
+
 
