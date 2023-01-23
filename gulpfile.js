@@ -12,7 +12,6 @@ const plumber = require("gulp-plumber");
 const rename = require("gulp-rename");
 const sass = require("gulp-sass");
 const uglify = require("gulp-uglify");
-const mysql = require('mysql');
 
 // Load package.json for banner
 const pkg = require('./package.json');
@@ -81,10 +80,10 @@ function modules() {
     .pipe(gulp.dest('./vendor/chart.js'));
   // dataTables
   var dataTables = gulp.src([
-      './node_modules/datatables.net/js/*.js',
-      './node_modules/datatables.net-bs4/js/*.js',
-      './node_modules/datatables.net-bs4/css/*.css'
-    ])
+    './node_modules/datatables.net/js/*.js',
+    './node_modules/datatables.net-bs4/js/*.js',
+    './node_modules/datatables.net-bs4/css/*.css'
+  ])
     .pipe(gulp.dest('./vendor/datatables'));
   // Font Awesome
   var fontAwesome = gulp.src('./node_modules/@fortawesome/**/*')
@@ -94,9 +93,9 @@ function modules() {
     .pipe(gulp.dest('./vendor/jquery-easing'));
   // jQuery
   var jquery = gulp.src([
-      './node_modules/jquery/dist/*',
-      '!./node_modules/jquery/dist/core.js'
-    ])
+    './node_modules/jquery/dist/*',
+    '!./node_modules/jquery/dist/core.js'
+  ])
     .pipe(gulp.dest('./vendor/jquery'));
   return merge(bootstrapJS, bootstrapSCSS, chartJS, dataTables, fontAwesome, jquery, jqueryEasing);
 }
@@ -164,16 +163,3 @@ exports.vendor = vendor;
 exports.build = build;
 exports.watch = watch;
 exports.default = build;
-
-
-/////////////////////////////////////// ENDPOINTS ///////////////////////////////////////////////
-
-function sendSql(email) {
-  let sql = "INSERT INTO `aidndgen-emails` (`email`) VALUES ('" + email + "')";
-  var connection = mysql.createConnection(process.env.JAWSDB_MARIA_URL);
-  connection.connect();
-  connection.query(sql, function (error, results, fields) {
-    if (error) throw error;
-  });
-  connection.end();
-}
