@@ -96,7 +96,9 @@
                 "Job Tag Github": "https://github.com/mrciolino/Job-Tag-Classifier",
                 "Wikipedia Traffic Github": "https://github.com/mrciolino/Kaggle-Competitions/tree/master/Wikipedia%20Web%20Traffic",
                 "Politician Voting Notebook": "https://nbviewer.jupyter.org/github/mrciolino/Test-Repo/blob/master/xeval/US%20Map%20Example.ipynb"
-            }
+            },
+            "modal_title": "Job Tag Classifier (Featured Project)",
+            "modal_readme": "/assets/jobtag/README.md"
         },
         "Crowd Counter & Tracker": {
             "title": "Crowd Counter & Tracker",

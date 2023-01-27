@@ -2,11 +2,12 @@ import Accordion from 'react-bootstrap/Accordion';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Card from 'react-bootstrap/Card';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Icon } from '@iconify/react';
 import { Link } from "react-scroll";
 import Typed from 'typed.js';
 
+import ReactMarkdown from 'react-markdown'
 
 const SectionIntro = (props) => {
     return (
@@ -54,6 +55,17 @@ const ProjectCards = (props) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const [markdown, setMarkdown] = useState(null);
+    useEffect(() => {
+        fetch(props.modal_readme).then((response) => response.text()).then((text) => { setMarkdown(text); })
+            .catch((error) => { setMarkdown("Could not fetch" + error); });
+    }, [props.modal_readme]);
+
+    // fix button clicking activating modal
+    // add readmes to the project cards for modals
+    // add indicator that u can click project cards
+    // check out old portfolio commits - flask - node - react to add to a readme
+
     return (
         <>
             <Card className='project col-sm-12 col-md-4 col-lg-3 flex-grow-1' onClick={handleShow}>
@@ -67,10 +79,10 @@ const ProjectCards = (props) => {
 
             <Modal size="lg" show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
+                    <Modal.Title>{props.modal_title}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <iframe title="readme" src="https://github.com/mrciolino/Job-Tag-Classifier/blob/master/README.md" width="100%" height="100%" align="center" ></iframe>
+                    <ReactMarkdown children={markdown} components={{ img: ({ node, ...props }) => <img alt={props.modal_title} style={{ maxWidth: '100%' }}{...props} /> }} />
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="primary" onClick={handleClose}>
