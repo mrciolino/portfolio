@@ -68,7 +68,8 @@ const ProjectCards = (props) => {
 
     return (
         <>
-            <Card className='project col-sm-12 col-md-4 col-lg-3 flex-grow-1' onClick={handleShow}>
+            {/* <Card className='project col-sm-12 col-md-4 col-lg-3 flex-grow-1' onClick={handleShow}> */}
+            <Card className='project col-sm-12 col-md-4 col-lg-3 flex-grow-1'>
                 <Card.Img variant="top" src={props.image} style={{ objectFit: 'cover' }} height="150vw" />
                 <Card.Body>
                     <Card.Title>{props.title}</Card.Title>
