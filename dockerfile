@@ -1,5 +1,6 @@
-FROM node:14-alpine
-RUN apt-get update && apt-get install -y python2.7
-RUN git clone https://github.com/mrciolino/portfolio-site.git
-WORKDIR /portfolio-site
-RUN npm install
+FROM node:16-slim 
+WORKDIR /app
+COPY ./ /app
+EXPOSE 3000
+RUN apt-get update && apt-get install -y python2.7 openssh-client git curl
+RUN npm install && yarn build && yarn global add serve 
