@@ -1,13 +1,11 @@
 import Accordion from 'react-bootstrap/Accordion';
 import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
 import Card from 'react-bootstrap/Card';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Icon } from '@iconify/react';
 import { Link } from "react-scroll";
 import Typed from 'typed.js';
 
-import ReactMarkdown from 'react-markdown'
 
 const SectionIntro = (props) => {
     return (
@@ -20,6 +18,7 @@ const SectionIntro = (props) => {
 }
 
 class TypedReact extends React.Component {
+
     componentDidMount() {
         const { strings } = this.props;
         const options = {
@@ -50,25 +49,10 @@ class TypedReact extends React.Component {
 ////////////////////// Exported Componets Below ////////////////////////////////
 
 const ProjectCards = (props) => {
-
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-
-    const [markdown, setMarkdown] = useState(null);
-    useEffect(() => {
-        fetch(props.modal_readme).then((response) => response.text()).then((text) => { setMarkdown(text); })
-            .catch((error) => { setMarkdown("Could not fetch" + error); });
-    }, [props.modal_readme]);
-
-    // fix button clicking activating modal
-    // add readmes to the project cards for modals
-    // add indicator that u can click project cards
     // check out old portfolio commits - flask - node - react to add to a readme
 
     return (
         <>
-            {/* <Card className='project col-sm-12 col-md-4 col-lg-3 flex-grow-1' onClick={handleShow}> */}
             <Card className='project col-sm-12 col-md-4 col-lg-3 flex-grow-1'>
                 <Card.Img variant="top" src={props.image} style={{ objectFit: 'cover' }} height="150vw" />
                 <Card.Body>
@@ -77,20 +61,6 @@ const ProjectCards = (props) => {
                     {Object.entries(props.links).map(([key, value]) => (<Button className={`m-1 primary`} key={key} variant="primary" size="sm" href={value}>{key}</Button>))}
                 </Card.Body>
             </Card>
-
-            <Modal size="lg" show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title>{props.modal_title}</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <ReactMarkdown children={markdown} components={{ img: ({ node, ...props }) => <img alt={props.modal_title} style={{ maxWidth: '100%' }}{...props} /> }} />
-                </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="primary" onClick={handleClose}>
-                        Close
-                    </Button>
-                </Modal.Footer>
-            </Modal>
         </>
     );
 }
@@ -114,6 +84,14 @@ const Papers = (props) => {
 }
 
 const Resume = (props) => {
+
+    useEffect(() => {
+        let padding = 1.32;
+        let aspect_ratio = 8.5 / 11;
+        let width = document.getElementById("resume").clientWidth;
+        document.getElementById("resume_pdf").style.height = (width * aspect_ratio * padding) + "px";
+    });
+
     return (
         <Accordion className='col-12 accordion'>
             <Accordion.Item eventKey="0">
@@ -126,7 +104,7 @@ const Resume = (props) => {
                         <div className="d-grid gap-2 pb-2">
                             <Button className='m1 text-white' variant="primary" size="sm" href={props.pdf}>Download Resume</Button>
                         </div>
-                        <object data={props.pdf + "#toolbar=0&navpanes=0&scrollbar=0"} type='application/pdf' width="100%" height="700px">
+                        <object id="resume_pdf" data={"assets/docs/Matthew_Ciolino_Resume.pdf#toolbar=0&navpanes=0&scrollbar=0"} type='application/pdf' width="100%" height="700px">
                             Unable to load the resume at this time.
                         </object>
                     </div>
@@ -139,7 +117,7 @@ const Resume = (props) => {
 
 const Hero = (props) => {
     return (
-        <section id="hero" className="d-flex flex-column justify-content-center" data-aos="zoom-in" data-aos-delay="50">
+        <section id="hero" className="d-flex flex-column justify-content-center" data-aos="zoom-in" data-aos-delay="50" style={{ backgroundImage: "url(assets/images/hero-bg-ds.png)" }}>
             <div className="container" style={{ margin: `0 0 5% 0` }} data-aos="fade-right" data-aos-delay="500">
                 <h1>Matthew Ciolino</h1>
                 <TypedReact strings={props.titles} />

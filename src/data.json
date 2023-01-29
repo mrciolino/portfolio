@@ -51,8 +51,7 @@
             "description": "A brief account of my professional experience, my past projects, my continuing education, and my technical skills. Feel free to use this document for job application purposes. Click on the below accordion to view or download my resume."
         },
         "accordion_text": "View or Download Resume",
-        "accordion_text_muted": "(December 2022)",
-        "pdf": "assets/docs/Matthew_Ciolino_Resume.pdf"
+        "accordion_text_muted": "(December 2022)"
     },
     "Papers": {
         "PapersIntro": {
@@ -60,12 +59,12 @@
             "description": "A running history of my past research experience. Contains various topics including Image Classification, Object Detection, Natural Language Processing, Generative Adversarial Networks, Adversarial AI, Super Resolution and Game Agents."
         },
         "accordion_text": "View Papers",
-        "accordion_text_muted": "(3 of 16 shown)"
+        "accordion_text_muted": "(2 of 16 shown)"
     },
     "Projects": {
         "ProjectsIntro": {
             "title": "Projects",
-            "description": "A compilation of different personal and professional projects that went above and beyond to display past experiences."
+            "description": "A compilation of different personal and professional projects that went above and beyond to display past experiences. Click on a Project Card to view more information."
         },
         "xEval": {
             "title": "xEval",
