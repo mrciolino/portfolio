@@ -4,13 +4,15 @@ import React from 'react';
 import './App.scss';
 
 const App = () => {
+
+
   return (
     <Container>
       <HeaderView />
       <HeroView />
       <AboutView />
-      <ProjectView />
       <PaperResumeView />
+      <ProjectView />
       <FooterView />
     </Container >
   )

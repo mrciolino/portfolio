@@ -1,9 +1,42 @@
 /*--------------------------------------------------------------
+Varibles
+--------------------------------------------------------------*/
+
+// constant colors
+$strong-color: #0563bb;
+$off-strong-color: #0a6ecb;
+
+// // light mode
+// $bg-color:           rgb(255, 255, 255);
+// $off-bg-color:       #e9e9e9;
+// $light-color:        #45505b;
+// $dark-shadow:        rgba(0, 0, 0, 0.2);
+// $hero-blur:          rgba(255, 255, 255, 0.8);
+// $text-color:         #000000;
+
+// // dark mode
+// $bg-color-dark:      rgb(33, 33, 33);
+// $off-bg-color-dark:  rgb(66, 66, 66);
+// $light-color-dark:   #fefefe;
+// $dark-shadow-dark:   rgba(255, 255, 255, 0.2);
+// $hero-blur-dark:     rgba(33, 33, 33, 0.6);
+// $text-color-dark:    #fefefe;
+
+/*--------------------------------------------------------------
 General Section
 --------------------------------------------------------------*/
 
+#root {
+  background-color: var(--bg-color);
+}
+
 .accordion {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, .2);
+  box-shadow: 0 4px 8px var(--dark-shadow);
+}
+
+.accordion-body {
+  background-color: var(--off-bg-color);
+  color: var(--text-color);
 }
 
 #spinner {
@@ -17,6 +50,14 @@ General Section
   align-items: center;
 }
 
+// make the stick at the top left
+.darkmodeswitch {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
@@ -27,12 +68,12 @@ General Section
   background-position: center;
   background-size: cover;
   height: 100vh;
-  box-shadow: 0 0 20px 20px white inset;
+  box-shadow: 0 0 20px 20px var(--bg-color) inset;
 }
 
 #hero:before {
   content: "";
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--hero-blur);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -51,32 +92,32 @@ General Section
   font-size: 64px;
   font-weight: 700;
   line-height: 56px;
-  color: #45505b;
+  color: var(--light-color);
 }
 
 #hero p {
-  color: #45505b;
+  color: var(--light-color);
   margin: 15px 0 0 0;
   font-size: 26px;
   font-family: "Poppins", sans-serif;
 }
 
 #hero p span {
-  color: #0563bb;
+  color: var(--strong-color);
   letter-spacing: 1px;
 }
 
 #hero .social-links a {
   font-size: 24px;
   display: inline-block;
-  color: #45505b;
+  color: var(--light-color);
   line-height: 1;
   margin-right: 20px;
   transition: 0.3s;
 }
 
 #hero .social-links a:hover {
-  color: #0563bb;
+  color: var(--strong-color);
 }
 
 @media (max-width: 992px) {
@@ -104,15 +145,19 @@ General Section
 .project {
   text-align: center;
   margin: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, .2);
+  box-shadow: 0 4px 8px var(--dark-shadow);
   transition: all ease-in-out 0.3s;
   transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
-  background-color: #f5f5f5;
+  background-color: var(--off-bg-color);
 }
 
 .project:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+  box-shadow: 0 10px 20px var(--dark-shadow), 0 4px 8px var(--dark-shadow);
+}
+
+.project .card-body {
+  background-color: var(--off-bg-color);
 }
 
 
@@ -133,7 +178,7 @@ General Section
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
-  color: #45505b;
+  color: var(--light-color);
 }
 
 .section-title h1::before {
@@ -142,7 +187,7 @@ General Section
   display: block;
   width: 50%;
   height: 1px;
-  background: #ddd;
+  background: var(--bg-color);
   bottom: 1px;
   left: calc(50% - 25%);
 }
@@ -153,7 +198,7 @@ General Section
   display: block;
   width: 20%;
   height: 3px;
-  background: #0563bb;
+  background: var(--strong-color);
   bottom: 0;
   left: calc(50% - 10%);
 }
@@ -166,8 +211,8 @@ General Section
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: #f7f8f9;
-  color: #45505b;
+  background: var(--off-bg-color);
+  color: var(--light-color);
   font-size: 14px;
   text-align: center;
   padding: 30px 0;
@@ -196,8 +241,8 @@ General Section
 #footer .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #0563bb;
-  color: #fff;
+  background: var(--strong-color);
+  color: var(--bg-color);
   line-height: 1;
   padding: 8px 0;
   margin-right: 4px;
@@ -209,8 +254,8 @@ General Section
 }
 
 #footer .social-links a:hover {
-  background: #0678e3;
-  color: #fff;
+  background: var(--off-strong-color);
+  color: var(--bg-color);
   text-decoration: none;
 }
 
@@ -232,8 +277,8 @@ General Section
 @media (max-width: 992px) {
   #header {
     width: 300px;
-    background: #fff;
-    border-right: 1px solid #e6e9ec;
+    background: var(--bg-color);
+    border-right: 1px solid var(--off-strong-color);
     left: -300px;
   }
 }
@@ -267,13 +312,13 @@ General Section
 .nav-menu a:focus {
   display: flex;
   align-items: center;
-  color: #45505b;
+  color: var(--light-color);
   padding: 10px 20px;
   margin-bottom: 8px;
   transition: 0.3s;
   font-size: 15px;
   border-radius: 50px;
-  background: #eeeded;
+  background: var(--off-bg-color);
   height: 56px;
   width: 100%;
   overflow: hidden;
@@ -288,7 +333,7 @@ General Section
 .nav-menu a span,
 .nav-menu a:focus span {
   padding: 0 5px 0 7px;
-  color: #45505b;
+  color: var(--light-color);
 }
 
 @media (min-width: 992px) {
@@ -301,7 +346,7 @@ General Section
   .nav-menu a span,
   .nav-menu a:focus span {
     display: none;
-    color: #fff;
+    color: var(--bg-color)
   }
 }
 
@@ -309,21 +354,21 @@ General Section
 .nav-menu .active,
 .nav-menu .active:focus,
 .nav-menu li:hover>a {
-  color: #fff;
-  background: #0563bb;
+  color: var(--bg-color);
+  background: var(--strong-color)
 }
 
 .nav-menu a:hover span,
 .nav-menu .active span,
 .nav-menu .active:focus span,
 .nav-menu li:hover>a span {
-  color: #fff;
+  color: var(--bg-color)
 }
 
 .nav-menu a:hover,
 .nav-menu li:hover>a {
   width: 100%;
-  color: #fff;
+  color: var(--bg-color)
 }
 
 .nav-menu a:hover span,

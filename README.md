@@ -1,6 +1,7 @@
-# Basic Example
+![](public\assets\icons\apple-icon.png)
 
-A simple [create-react-app](CRA-README.md) setup, showcasing one of the lastest React-Bootstrap components!
+# Portfolio
 
-<!-- docker run -it --rm -p 3000:3000 -v C:\\Users\\matt.ciolino\\OneDrivePPT\\Documents\\\newPortfolio:/portfolio portfolio -->
-<!-- npm rebuild node-sass && npm install -->
+Code for my machine learning portfolio. Contains projects that i have done over the years. You will find Websites, Githubs, Colabs, PowerPoints and Papers here.These are the specializations that I have made during my journey through data science.
+
+Visit the website: https://www.matthewciolino.com/

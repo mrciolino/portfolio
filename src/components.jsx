@@ -1,7 +1,8 @@
+import { DarkModeSwitch } from 'react-toggle-dark-mode';
+import React, { useEffect, useState } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import React, { useEffect } from 'react';
 import { Icon } from '@iconify/react';
 import { Link } from "react-scroll";
 import Typed from 'typed.js';
@@ -49,8 +50,6 @@ class TypedReact extends React.Component {
 ////////////////////// Exported Componets Below ////////////////////////////////
 
 const ProjectCards = (props) => {
-    // check out old portfolio commits - flask - node - react to add to a readme
-
     return (
         <>
             <Card className='project col-sm-12 col-md-4 col-lg-3 flex-grow-1'>
@@ -58,7 +57,10 @@ const ProjectCards = (props) => {
                 <Card.Body>
                     <Card.Title>{props.title}</Card.Title>
                     <Card.Text>{props.description}</Card.Text>
-                    {Object.entries(props.links).map(([key, value]) => (<Button className={`m-1 primary`} key={key} variant="primary" size="sm" href={value}>{key}</Button>))}
+                    {Object.entries(props.links).map(([key, value]) => (
+                        <Button className={`m-1 primary`} key={key} variant="primary" size="sm" href={value[0]}>
+                            <Icon className="m-1" icon={value[1]} /> {key}
+                        </Button>))}
                 </Card.Body>
             </Card>
         </>
@@ -84,14 +86,6 @@ const Papers = (props) => {
 }
 
 const Resume = (props) => {
-
-    useEffect(() => {
-        let padding = 1.32;
-        let aspect_ratio = 8.5 / 11;
-        let width = document.getElementById("resume").clientWidth;
-        document.getElementById("resume_pdf").style.height = (width * aspect_ratio * padding) + "px";
-    });
-
     return (
         <Accordion className='col-12 accordion'>
             <Accordion.Item eventKey="0">
@@ -104,7 +98,7 @@ const Resume = (props) => {
                         <div className="d-grid gap-2 pb-2">
                             <Button className='m1 text-white' variant="primary" size="sm" href={props.pdf}>Download Resume</Button>
                         </div>
-                        <object id="resume_pdf" data={"assets/docs/Matthew_Ciolino_Resume.pdf#toolbar=0&navpanes=0&scrollbar=0"} type='application/pdf' width="100%" height="700px">
+                        <object id="resume_pdf" data={"assets/docs/Matthew_Ciolino_Resume.pdf#toolbar=0&navpanes=0&scrollbar=0"} type='application/pdf' width="100%" height="500px">
                             Unable to load the resume at this time.
                         </object>
                     </div>
@@ -151,8 +145,21 @@ const Footer = () => {
 }
 
 const Header = (props) => {
+
+    const [darkTheme, setDarkTheme] = useState(false);
+    useEffect(() => {
+        const root = document.getElementById('root');
+        root?.style.setProperty("--bg-color", darkTheme ? 'rgb(33, 33, 33)' : 'rgb(255, 255, 255)');
+        root?.style.setProperty("--off-bg-color", darkTheme ? 'rgb(66, 66, 66)' : '#e9e9e9');
+        root?.style.setProperty("--light-color", darkTheme ? '#fefefe' : '#45505b');
+        root?.style.setProperty("--dark-shadow", darkTheme ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)');
+        root?.style.setProperty("--hero-blur", darkTheme ? 'rgba(33, 33, 33, 0.6)' : 'rgba(255, 255, 255, 0.8)');
+        root?.style.setProperty("--text-color", darkTheme ? '#fefefe' : '#000000');
+    }, [darkTheme]);
+
     return (
         <header id="header" className="d-flex flex-column justify-content-center">
+            <DarkModeSwitch className="darkmodeswitch m-4" onChange={setDarkTheme} checked={darkTheme} />
             <nav id="navbar" className="navbar nav-menu">
                 <ul>
                     {Object.entries(props).map(([key, value]) => (
