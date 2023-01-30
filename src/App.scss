@@ -60,6 +60,12 @@ General Section
   z-index: 9999;
 }
 
+.react-pdf__Page__textContent {
+  top: 0 !important;
+  left: 0 !important;
+  transform: none !important;
+}
+
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
