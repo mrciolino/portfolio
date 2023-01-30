@@ -2,9 +2,9 @@
 Varibles
 --------------------------------------------------------------*/
 
-// constant colors
-$strong-color: #0563bb;
-$off-strong-color: #0a6ecb;
+// // constant colors
+// $strong-color: #0563bb;
+// $off-strong-color: #0a6ecb;
 
 // // light mode
 // $bg-color:           rgb(255, 255, 255);
@@ -28,6 +28,8 @@ General Section
 
 #root {
   background-color: var(--bg-color);
+  --strong-color: #0563bb;
+  --off-strong-color: #0a6ecb;
 }
 
 .accordion {
@@ -158,6 +160,7 @@ General Section
 
 .project .card-body {
   background-color: var(--off-bg-color);
+  color: var(--text-color);
 }
 
 
@@ -187,7 +190,7 @@ General Section
   display: block;
   width: 50%;
   height: 1px;
-  background: var(--bg-color);
+  background: var(--light-color);
   bottom: 1px;
   left: calc(50% - 25%);
 }
@@ -205,6 +208,7 @@ General Section
 
 .section-title p {
   margin-bottom: 0;
+  color: var(--text-color);
 }
 
 /*--------------------------------------------------------------
@@ -242,7 +246,7 @@ General Section
   font-size: 18px;
   display: inline-block;
   background: var(--strong-color);
-  color: var(--bg-color);
+  color: white;
   line-height: 1;
   padding: 8px 0;
   margin-right: 4px;
@@ -354,7 +358,7 @@ General Section
 .nav-menu .active,
 .nav-menu .active:focus,
 .nav-menu li:hover>a {
-  color: var(--bg-color);
+  color: white;
   background: var(--strong-color)
 }
 
@@ -362,13 +366,13 @@ General Section
 .nav-menu .active span,
 .nav-menu .active:focus span,
 .nav-menu li:hover>a span {
-  color: var(--bg-color)
+  color: white;
 }
 
 .nav-menu a:hover,
 .nav-menu li:hover>a {
   width: 100%;
-  color: var(--bg-color)
+  color: white;
 }
 
 .nav-menu a:hover span,

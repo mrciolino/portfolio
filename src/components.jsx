@@ -146,7 +146,17 @@ const Footer = () => {
 
 const Header = (props) => {
 
-    const [darkTheme, setDarkTheme] = useState(false);
+
+    const setThemeInStorage = (theme) => {
+        localStorage.setItem('theme', theme)
+    }
+
+    const getThemeInStorage = () => {
+        return localStorage.getItem('theme') || 'light';
+    }
+
+    const [darkTheme, setDarkTheme] = useState(getThemeInStorage() === 'dark');
+
     useEffect(() => {
         const root = document.getElementById('root');
         root?.style.setProperty("--bg-color", darkTheme ? 'rgb(33, 33, 33)' : 'rgb(255, 255, 255)');
@@ -155,6 +165,7 @@ const Header = (props) => {
         root?.style.setProperty("--dark-shadow", darkTheme ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)');
         root?.style.setProperty("--hero-blur", darkTheme ? 'rgba(33, 33, 33, 0.6)' : 'rgba(255, 255, 255, 0.8)');
         root?.style.setProperty("--text-color", darkTheme ? '#fefefe' : '#000000');
+        setThemeInStorage(darkTheme ? 'dark' : 'light');
     }, [darkTheme]);
 
     return (
