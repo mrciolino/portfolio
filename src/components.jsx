@@ -53,7 +53,7 @@ const ProjectCards = (props) => {
     return (
         <>
             <Card className='project col-sm-12 col-md-4 col-lg-3 flex-grow-1'>
-                <Card.Img variant="top" src={props.image} style={{ objectFit: 'cover' }} height="150vw" />
+                <Card.Img variant="top" src={props.image} style={{ objectFit: 'cover' }} height="150vw" alt={props.title} />
                 <Card.Body>
                     <Card.Title>{props.title}</Card.Title>
                     <Card.Text>{props.description}</Card.Text>
@@ -111,7 +111,7 @@ const Resume = (props) => {
 
 const Hero = (props) => {
     return (
-        <section id="hero" className="d-flex flex-column justify-content-center" data-aos="zoom-in" data-aos-delay="50" style={{ backgroundImage: "url(assets/images/hero-bg-ds.png)" }}>
+        <section id="hero" className="d-flex flex-column justify-content-center" data-aos="zoom-in" data-aos-delay="50" style={{ backgroundImage: "url(assets/images/hero-bg-ds.webp)" }}>
             <div className="container" data-aos="fade-right" data-aos-delay="500">
                 <h1>Matthew Ciolino</h1>
                 <TypedReact strings={props.titles} />
@@ -174,8 +174,11 @@ const Header = (props) => {
             <nav id="navbar" className="navbar nav-menu">
                 <ul>
                     {Object.entries(props).map(([key, value]) => (
-                        <li key={key}><Link activeClass="active" duration={500} offset={-200} smooth="easeInOutSine" className="nav-link" spy to={value.div_id}>
-                            <Icon icon={value.icon} /><span>{value.text}</span></Link></li>))}
+                        <li key={key}>
+                            <Link activeClass="active" duration={500} offset={-200} smooth="easeInOutSine" className="nav-link" spy to={value.div_id}>
+                                <Icon icon={value.icon} /><span>{value.text}</span>
+                            </Link>
+                        </li>))}
                 </ul>
             </nav>
         </header>

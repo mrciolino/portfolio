@@ -69,7 +69,7 @@
         "xEval": {
             "title": "xEval",
             "description": "Legislation monitoring and alert tool for daily legislation updates",
-            "image": "assets/images/xeval.jpg",
+            "image": "assets/images/xeval.webp",
             "links": {
                 "xEval": [
                     "https://www.xeval.io",
@@ -80,7 +80,7 @@
         "Transformers": {
             "title": "Game Agent Transformers",
             "description": "Play popular games aginast a Language Model",
-            "image": "assets/images/chess.png",
+            "image": "assets/images/chess.webp",
             "links": {
                 "Chess Paper": [
                     "https://arxiv.org/abs/2008.04057",
@@ -111,7 +111,7 @@
         "Feature Projects": {
             "title": "Feature Projects",
             "description": "Job Tag Classifier (NLP/Active Learning), Wikipedia Time Series Forcasting (Traffic), Voting Classifer (Federal Bills)",
-            "image": "assets/images/wikipedia.png",
+            "image": "assets/images/wikipedia.webp",
             "links": {
                 "Job Tag Github": ["https://github.com/mrciolino/Job-Tag-Classifier", "simple-icons:github"],
                 "Wikipedia Traffic Github": ["https://github.com/mrciolino/Kaggle-Competitions/tree/master/Wikipedia%20Web%20Traffic", "simple-icons:github"],
@@ -121,7 +121,7 @@
         "Crowd Counter & Tracker": {
             "title": "Crowd Counter & Tracker",
             "description": "Point Crowd Detection and Object Detection Simialrity Tracker",
-            "image": "assets/images/tokyo_ppl.jpeg",
+            "image": "assets/images/tokyo_ppl.webp",
             "links": {
                 "Github Tracker": ["https://github.com/mrciolino/yolov3_deepsort", "simple-icons:github"],
                 "Github Counter": ["https://github.com/mrciolino/Crowd-Counter", "simple-icons:github"]
@@ -130,7 +130,7 @@
         "Portfolio Website": {
             "title": "Portfolio Website",
             "description": "The website you are on right now! Check out the source code below.",
-            "image": "assets/icons/apple-icon.png",
+            "image": "assets/images/portfolio.webp",
             "links": {
                 "Github": ["https://github.com/mrciolino/portfolio-site", "simple-icons:github"]
             }
@@ -138,7 +138,7 @@
         "Single Image Super Resolution": {
             "title": "Super Resolution",
             "description": "Single Image Super Resolution using GANs to increase Object Detection mAP scores",
-            "image": "assets/images/srgan.png",
+            "image": "assets/images/srgan.webp",
             "links": {
                 "Github": ["https://nbviewer.jupyter.org/github/mrciolino/portfolio-site/blob/master/projects/_notebooks/sisr/SISR%20Example.ipynb", "simple-icons:github"],
                 "Paper": ["https://arxiv.org/abs/1911.07934", "simple-icons:arxiv"],
