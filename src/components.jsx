@@ -112,7 +112,7 @@ const Resume = (props) => {
 const Hero = (props) => {
     return (
         <section id="hero" className="d-flex flex-column justify-content-center" data-aos="zoom-in" data-aos-delay="50" style={{ backgroundImage: "url(assets/images/hero-bg-ds.png)" }}>
-            <div className="container" style={{ margin: `0 0 5% 0` }} data-aos="fade-right" data-aos-delay="500">
+            <div className="container" data-aos="fade-right" data-aos-delay="500">
                 <h1>Matthew Ciolino</h1>
                 <TypedReact strings={props.titles} />
                 <div className="social-links">

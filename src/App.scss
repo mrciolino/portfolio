@@ -83,12 +83,6 @@ General Section
   right: 0;
 }
 
-@media (min-width: 992px) {
-  #hero {
-    padding-left: 5%;
-  }
-}
-
 #hero h1 {
   margin: 0;
   font-size: 64px;
@@ -122,20 +116,35 @@ General Section
   color: var(--strong-color);
 }
 
+@media (min-width: 992px) {
+  #hero {
+    padding-left: 5%;
+    margin: 0 0 5% 0;
+
+    .container {
+      margin: 0 0 5% 0
+    }
+  }
+}
+
 @media (max-width: 992px) {
   #hero {
     text-align: center;
-  }
 
-  #hero h1 {
-    font-size: 32px;
-    line-height: 36px;
-  }
+    .container {
+      margin-bottom: 10vh;
+    }
 
-  #hero p {
-    margin-top: 10px;
-    font-size: 20px;
-    line-height: 24px;
+    .h1 {
+      font-size: 32px;
+      line-height: 36px;
+    }
+
+    .p {
+      margin-top: 10px;
+      font-size: 20px;
+      line-height: 24px;
+    }
   }
 }
 
