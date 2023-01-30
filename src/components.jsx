@@ -56,7 +56,7 @@ const ProjectCards = (props) => {
             <Card className='project col-sm-12 col-md-4 col-lg-3 flex-grow-1'>
                 <Card.Img variant="top" src={props.image} style={{ objectFit: 'cover' }} height="150vw" alt={props.title} />
                 <Card.Body>
-                    <Card.Title>{props.title}</Card.Title>
+                    <Card.Title as="h4">{props.title}</Card.Title>
                     <Card.Text>{props.description}</Card.Text>
                     {Object.entries(props.links).map(([key, value]) => (
                         <Button className={`m-1 primary`} key={key} variant="primary" size="sm" href={value[0]}>
@@ -143,7 +143,7 @@ const Hero = (props) => {
                 <h1>Matthew Ciolino</h1>
                 <TypedReact strings={props.titles} />
                 <div className="social-links">
-                    {Object.entries(props.social).map(([link, icon]) => (<a href={link} key={link}><Icon icon={icon} /></a>))}
+                    {Object.entries(props.social).map(([link, icon]) => (<a aria-label={link} href={link} key={link}><Icon icon={icon} /></a>))}
                 </div>
             </div>
         </section >
@@ -156,15 +156,15 @@ const Footer = () => {
     return (
         <footer id="footer">
             <div className="container">
-                <h3>Matthew Ciolino</h3>
+                <h5>Matthew Ciolino</h5>
                 <p>Feel free to email me below for any opportunities. </p>
                 <div className="social-links">
-                    <a href="mailto:mrciolino@alum.lehigh.edu"><Icon icon="bx:bx-envelope" /></a>
+                    <a aria-label="email" href="mailto:mrciolino@alum.lehigh.edu"><Icon icon="bx:bx-envelope" /></a>
                 </div>
                 <div>
                     Made with <Icon icon="bx:bx-heart" color="#0275d8" /> and <Icon icon="bx:bx-code-alt" color="#0275d8" /> using
-                    &nbsp;<a href="https://reactjs.org/"><Icon icon="logos:react">React</Icon></a> and
-                    &nbsp;<a href="https://getbootstrap.com/"><Icon icon="logos:bootstrap">Bootstrap</Icon></a>.
+                    &nbsp;<a aria-label="React" href="https://reactjs.org/"><Icon icon="logos:react">React</Icon></a> and
+                    &nbsp;<a aria-label="Bootstrap" href="https://getbootstrap.com/"><Icon icon="logos:bootstrap">Bootstrap</Icon></a>.
                 </div>
             </div>
         </footer>

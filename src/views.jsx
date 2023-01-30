@@ -1,4 +1,5 @@
 import { SectionIntro, ProjectCards, Papers, Resume, Hero, Header, Footer } from "./components.jsx";
+import ClipLoader from "react-spinners/ClipLoader";
 import Container from 'react-bootstrap/Container';
 import Data from './data.json';
 import 'aos/dist/aos.css';
@@ -48,6 +49,14 @@ const ResumeView = () => {
 ////////////////////// Exported Componets Below ////////////////////////////////
 
 
+const LoadingView = () => {
+    return (
+        <div className="spinner">
+            <ClipLoader color={"#123abc"} loading={true} size={150} />
+        </div>
+    );
+}
+
 const ProjectView = () => {
     return (
         <Container id="projects" className="d-flex flex-wrap justify-content-center p-3 col-12" data-aos="zoom-in" data-aos-delay="100">
@@ -94,7 +103,7 @@ const HeroView = () => {
 
 const FooterView = () => {
     return (
-        <Container id="contact" className="col-12">
+        <Container id="contact" className="col-12 pt-5">
             <Footer />
         </Container>
     );
@@ -107,4 +116,4 @@ const HeaderView = () => {
 }
 
 
-export { ProjectView, PaperResumeView, AboutView, HeroView, FooterView, HeaderView };
+export { ProjectView, PaperResumeView, AboutView, HeroView, FooterView, HeaderView, LoadingView };
