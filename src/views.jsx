@@ -4,13 +4,26 @@ import Data from './data.json';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 
-
-AOS.init({
-    duration: 1000,
-    easing: 'ease-in-out',
-    once: true,
-    mirror: false
-});
+if (window.innerWidth >= 768) {
+    AOS.init({
+        duration: 1000,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false,
+        offset: 200,
+        delay: 0,
+    });
+}
+else {
+    AOS.init({
+        duration: 0,
+        easing: 'ease-in-out',
+        once: true,
+        mirror: false,
+        offset: 0,
+        delay: 0,
+    });
+}
 
 
 const PapersView = () => {
