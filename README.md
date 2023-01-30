@@ -1,4 +1,4 @@
-![](\public\assets\icons\apple-icon.png)
+![](/public/assets/icons/apple-icon.png)
 
 # Portfolio
 
@@ -21,10 +21,13 @@ Initially, the deployment of this portfolio was done on Heroku, utilizing its dy
 ### Overview
 
 Hero Section
-![](\public\assets\images\readme-hero.png)
+
+![](/public/assets/images/readme-hero.png)
 
 Research and Resume Section
-![](\public\assets\images\readme-resume.png)
+
+![](/public/assets/images/readme-resume.png)
 
 Projects Section
-![](\public\assets\images\readme-projects.png)
+
+![](/public/assets/images/readme-projects.png)
