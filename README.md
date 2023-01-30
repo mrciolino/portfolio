@@ -1,8 +1,8 @@
-![](public\assets\icons\apple-icon.png)
+![](\public\assets\icons\apple-icon.png)
 
 # Portfolio
 
-Code for my machine learning portfolio. Contains projects that i have done over the years. You will find Websites, Githubs, Colabs, PowerPoints and Papers here.These are the specializations that I have made during my journey through data science.
+Code for my machine learning portfolio. Contains projects that i have done over the years. You will find Websites, Githubs, Colabs, PowerPoints and Papers here. These are the specializations that I have made during my journey through data science.
 
 <center>
 
@@ -21,10 +21,10 @@ Initially, the deployment of this portfolio was done on Heroku, utilizing its dy
 ### Overview
 
 Hero Section
-![](public\assets\images\readme-hero.png)
+![](\public\assets\images\readme-hero.png)
 
 Research and Resume Section
-![](public\assets\images\readme-resume.png)
+![](\public\assets\images\readme-resume.png)
 
 Projects Section
-![](public\assets\images\readme-projects.png)
+![](\public\assets\images\readme-projects.png)
