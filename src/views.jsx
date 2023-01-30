@@ -64,13 +64,13 @@ const ProjectView = () => {
 
 const PaperResumeView = () => {
     return (
-        <Container className="d-flex flex-wrap justify-content-center p-3 col-12" data-aos="zoom-in" data-aos-delay="100">
-            <Container className="col-lg-6 col-sm-12">
+        <Container className="d-flex flex-wrap justify-content-center p-3" data-aos="zoom-in" data-aos-delay="100">
+            <div className="col-lg-6 col-sm-12">
                 <PapersView />
-            </Container>
-            <Container className="col-lg-6 col-sm-12">
+            </div>
+            <div className="col-lg-6 col-sm-12">
                 <ResumeView />
-            </Container>
+            </div>
         </Container>
     );
 }

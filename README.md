@@ -1,4 +1,4 @@
-![](/public/assets/icons/apple-icon.png)
+![](/public/assets/images/portfolio.webp)
 
 # Portfolio
 
@@ -13,21 +13,25 @@ Visit the website: https://www.matthewciolino.com/
 </center>
 
 ### Website Iterations
+🐍 Python & Flask → 💻 HTML, CSS, & JavaScript → 💥 React & Bootstrap 
+
  It's been some time since the first iteration of this simple web application using Python and Flask. Back then, it was just a basic platform for showcasing my work in the field of machine learning. But as time went on, I realized that I needed to upgrade and provide a better user experience for visitors. So, I decided to rewrite myself using HTML, CSS, and JavaScript. This allowed for a cleaner and more interactive interface and was definitely a step up from my previous version. But I wasn't content with just settling for good enough, and that brings us to today, where in its latest tieration, the portfolio uses React and Bootstrap. This has allowed for a more dynamic and responsive design, and I am very happy with the results. I hope you enjoy it as well.
 
 ### Deployment Iterations
+🚀 Heroku → 💥 AWS Amplify 
+
 Initially, the deployment of this portfolio was done on Heroku, utilizing its dynos for hosting the website. However, over time, I realized that there was room for improvement in terms of reliability and scalability. After some research, I decided to move to AWS Amplify, which offered a more robust and flexible hosting solution. With AWS Amplify, I now have access to a powerful cloud infrastructure that allows for seamless scalability, automatic backups, and improved performance. In addition to the benefits of scalability and reliability, the use of Docker container repositories on AWS has allowed me to easily manage and deploy updates to my portfolio with just a few clicks. In conclusion, my deployment journey has been a learning experience, and I am very satisfied with the end result.
 
 ### Overview
 
 Hero Section
 
-![](/public/assets/images/readme-hero.png)
+![](/public/assets/images/readme-hero.webp)
 
 Research and Resume Section
 
-![](/public/assets/images/readme-resume.png)
+![](/public/assets/images/readme-resume.webp)
 
 Projects Section
 
-![](/public/assets/images/readme-projects.png)
+![](/public/assets/images/readme-projects.webp)
