@@ -2,6 +2,7 @@ import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import React, { useEffect, useState } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 import Button from 'react-bootstrap/Button';
+import { Document, Page, pdfjs } from 'react-pdf';
 import Card from 'react-bootstrap/Card';
 import { Icon } from '@iconify/react';
 import { Link } from "react-scroll";
@@ -86,6 +87,29 @@ const Papers = (props) => {
 }
 
 const Resume = (props) => {
+
+    //eslint-disable-next-line
+    const [file, setFile] = useState('assets/docs/Matthew_Ciolino_Resume.pdf');
+    const options = { cMapUrl: 'cmaps/', cMapPacked: true, standardFontDataUrl: 'standard_fonts/', };
+    useEffect(() => { pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`; });
+
+    const pdfWrapperRef = React.useRef();
+    const [width, setWidth] = React.useState();
+
+    React.useEffect(() => {
+        const resizeObserver = new ResizeObserver((entries) => {
+            for (const entry of entries) {
+                setWidth(entry.target.clientWidth * 0.95);
+            }
+        });
+
+        resizeObserver.observe(pdfWrapperRef.current);
+
+        return () => {
+            resizeObserver.disconnect();
+        };
+    }, []);
+
     return (
         <Accordion className='col-12 accordion'>
             <Accordion.Item eventKey="0">
@@ -94,17 +118,20 @@ const Resume = (props) => {
                     <small className="text-muted">&nbsp;{props.accordion_text_muted}</small>
                 </Accordion.Header>
                 <Accordion.Body>
-                    <div className='col-12 text-center'>
-                        <div className="d-grid gap-2 pb-2">
-                            <Button className='m1 text-white' variant="primary" size="sm" href={props.pdf}>Download Resume</Button>
+                    <div className='col-12 text-center' ref={pdfWrapperRef}>
+                        <div className="d-grid gap-2 pb-2" id="resume_width_guide">
+                            <Button className='m1 text-white' variant="primary" size="sm" href={file}>Download Resume</Button>
                         </div>
-                        <object id="resume_pdf" data={"assets/docs/Matthew_Ciolino_Resume.pdf#toolbar=0&navpanes=0&scrollbar=0"} type='application/pdf' width="100%" height="500px">
-                            Unable to load the resume at this time.
-                        </object>
+                        <Document file={file} options={options} renderTextLayer={false} renderInteractiveForms={false}>
+                            <Page
+                                width={width || undefined}
+                                pageNumber={1}
+                            />
+                        </Document>
                     </div>
                 </Accordion.Body>
             </Accordion.Item>
-        </Accordion>
+        </Accordion >
     );
 }
 
