@@ -22,14 +22,14 @@ Varibles
 // $hero-blur-dark:     rgba(33, 33, 33, 0.6);
 // $text-color-dark:    #fefefe;
 
+// colors are change in the data.json file
+
 /*--------------------------------------------------------------
 General Section
 --------------------------------------------------------------*/
 
 #root {
   background-color: var(--bg-color);
-  --strong-color: #0563bb;
-  --off-strong-color: #0a6ecb;
 }
 
 .accordion {
@@ -108,6 +108,7 @@ General Section
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+
 #hero {
   width: 100%;
   height: 100vh;
@@ -116,83 +117,78 @@ General Section
   background-size: cover;
   height: 100vh;
   box-shadow: 0 0 20px 20px var(--bg-color) inset;
-}
 
-#hero:before {
-  content: "";
-  background: var(--hero-blur);
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-}
+  &:before {
+    content: "";
+    background: var(--hero-blur);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
 
-#hero h1 {
-  margin: 0;
-  font-size: 64px;
-  font-weight: 700;
-  line-height: 56px;
-  color: var(--light-color);
-}
+  h1 {
+    margin: 0;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 56px;
+    color: var(--light-color);
+  }
 
-#hero p {
-  color: var(--light-color);
-  margin: 15px 0 0 0;
-  font-size: 26px;
-  font-family: "Poppins", sans-serif;
-}
+  p {
+    color: var(--light-color);
+    margin: 15px 0 0 0;
+    font-size: 26px;
+    font-family: "Poppins", sans-serif;
 
-#hero p span {
-  color: var(--strong-color);
-  letter-spacing: 1px;
-}
+    span {
+      color: var(--strong-color);
+      letter-spacing: 1px;
+    }
+  }
 
-#hero .social-links a {
-  font-size: 24px;
-  display: inline-block;
-  color: var(--light-color);
-  line-height: 1;
-  margin-right: 20px;
-  transition: 0.3s;
-}
+  .social-links a {
+    font-size: 24px;
+    display: inline-block;
+    color: var(--light-color);
+    line-height: 1;
+    margin-right: 20px;
+    transition: 0.3s;
 
-#hero .social-links a:hover {
-  color: var(--strong-color);
-}
+    &:hover {
+      color: var(--strong-color);
+    }
+  }
 
-@media (min-width: 992px) {
-  #hero {
+  @media (min-width: 992px) {
     padding-left: 5%;
     margin: 0 0 5% 0;
 
     .container {
-      margin: 0 0 5% 0
+      margin: 0 0 5% 0;
     }
   }
-}
 
-@media (max-width: 992px) {
-  #hero {
+  @media (max-width: 992px) {
     text-align: center;
 
     .container {
       margin-bottom: 10vh;
     }
 
-    .h1 {
+    h1 {
       font-size: 32px;
       line-height: 36px;
     }
 
-    .p {
+    p {
       margin-top: 10px;
       font-size: 20px;
       line-height: 24px;
     }
   }
 }
-
 
 /*--------------------------------------------------------------
 # Project Section
@@ -205,18 +201,17 @@ General Section
   transition: all ease-in-out 0.3s;
   transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
   background-color: var(--off-bg-color);
-}
 
-.project:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px var(--dark-shadow), 0 4px 8px var(--dark-shadow);
-}
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px var(--dark-shadow), 0 4px 8px var(--dark-shadow);
+  }
 
-.project .card-body {
-  background-color: var(--off-bg-color);
-  color: var(--text-color);
+  .card-body {
+    background-color: var(--off-bg-color);
+    color: var(--text-color);
+  }
 }
-
 
 /*--------------------------------------------------------------
 # Section Title
@@ -226,96 +221,99 @@ General Section
 .section-title {
   text-align: center;
   padding-bottom: 30px;
+
+  h1 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    color: var(--light-color);
+
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 50%;
+      height: 1px;
+      background: var(--light-color);
+      bottom: 1px;
+      left: calc(50% - 25%);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 20%;
+      height: 3px;
+      background: var(--strong-color);
+      bottom: 0;
+      left: calc(50% - 10%);
+    }
+  }
+
+  p {
+    margin-bottom: 0;
+    color: var(--text-color);
+  }
 }
 
-.section-title h1 {
-  font-size: 32px;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  position: relative;
-  color: var(--light-color);
-}
-
-.section-title h1::before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 50%;
-  height: 1px;
-  background: var(--light-color);
-  bottom: 1px;
-  left: calc(50% - 25%);
-}
-
-.section-title h1::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 20%;
-  height: 3px;
-  background: var(--strong-color);
-  bottom: 0;
-  left: calc(50% - 10%);
-}
-
-.section-title p {
-  margin-bottom: 0;
-  color: var(--text-color);
-}
 
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
+
 #footer {
   background: var(--off-bg-color);
   color: var(--light-color);
   font-size: 14px;
   text-align: center;
   padding: 30px 0;
+
+  h3 {
+    font-size: 36px;
+    font-weight: 700;
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    padding: 0;
+    margin: 0 0 15px 0;
+  }
+
+  p {
+    font-size: 15;
+    font-style: italic;
+    padding: 0;
+    margin: 0 0 20px 0;
+  }
+
+  .social-links {
+    margin: 0 0 20px 0;
+
+    a {
+      font-size: 18px;
+      display: inline-block;
+      background: var(--strong-color);
+      color: white;
+      line-height: 1;
+      padding: 8px 0;
+      margin-right: 4px;
+      border-radius: 50%;
+      text-align: center;
+      width: 36px;
+      height: 36px;
+      transition: 0.3s;
+
+      &:hover {
+        background: var(--off-strong-color);
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
 }
 
-#footer h3 {
-  font-size: 36px;
-  font-weight: 700;
-  position: relative;
-  font-family: "Poppins", sans-serif;
-  padding: 0;
-  margin: 0 0 15px 0;
-}
-
-#footer p {
-  font-size: 15;
-  font-style: italic;
-  padding: 0;
-  margin: 0 0 20px 0;
-}
-
-#footer .social-links {
-  margin: 0 0 20px 0;
-}
-
-#footer .social-links a {
-  font-size: 18px;
-  display: inline-block;
-  background: var(--strong-color);
-  color: white;
-  line-height: 1;
-  padding: 8px 0;
-  margin-right: 4px;
-  border-radius: 50%;
-  text-align: center;
-  width: 36px;
-  height: 36px;
-  transition: 0.3s;
-}
-
-#footer .social-links a:hover {
-  background: var(--off-strong-color);
-  color: var(--bg-color);
-  text-decoration: none;
-}
 
 /*--------------------------------------------------------------
 # Header

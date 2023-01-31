@@ -76,7 +76,7 @@
     },
     "Papers": {
         "PapersIntro": {
-            "title": "Papers",
+            "title": "Research",
             "description": "A running history of my past research experience. Contains various topics including Image Classification, Object Detection, Natural Language Processing, Generative Adversarial Networks, Adversarial AI, Super Resolution and Game Agents."
         },
         "accordion_text": "View Papers",
@@ -193,5 +193,21 @@
                 ]
             }
         }
+    },
+    "Colors": {
+        "strong_color": "#0563bb",
+        "off_strong_color": "#0a6ecb",
+        "bg_color_light": "rgb(255, 255, 255)",
+        "off_bg_color_light": "#e9e9e9",
+        "light_color_light": "#45505b",
+        "dark_shadow_light": "rgba(0, 0, 0, 0.2)",
+        "hero_blur_light": "rgba(255, 255, 255, 0.8)",
+        "text_color_light": "#000000",
+        "bg_color_dark": "rgb(33, 33, 33)",
+        "off_bg_color_dark": "rgb(66, 66, 66)",
+        "light_color_dark": "#fefefe",
+        "dark_shadow_dark": "rgba(255, 255, 255, 0.2)",
+        "hero_blur_dark": "rgba(33, 33, 33, 0.6)",
+        "text_color_dark": "#fefefe"
     }
 }

@@ -172,7 +172,6 @@ const Footer = () => {
 
 const Header = (props) => {
 
-
     const setThemeInStorage = (theme) => {
         localStorage.setItem('theme', theme)
     }
@@ -182,24 +181,25 @@ const Header = (props) => {
     }
 
     const [darkTheme, setDarkTheme] = useState(getThemeInStorage() === 'dark');
-
     useEffect(() => {
         const root = document.getElementById('root');
-        root?.style.setProperty("--bg-color", darkTheme ? 'rgb(30, 30, 30)' : 'rgb(255, 255, 255)');
-        root?.style.setProperty("--off-bg-color", darkTheme ? 'rgb(45, 45, 45)' : '#e9e9e9');
-        root?.style.setProperty("--light-color", darkTheme ? '#fefefe' : '#45505b');
-        root?.style.setProperty("--dark-shadow", darkTheme ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)');
-        root?.style.setProperty("--hero-blur", darkTheme ? 'rgba(30, 30, 30, 0.6)' : 'rgba(255, 255, 255, 0.8)');
-        root?.style.setProperty("--text-color", darkTheme ? '#fefefe' : '#000000');
+        root?.style.setProperty("--bg-color", darkTheme ? props.colors.bg_color_dark : props.colors.bg_color_light);
+        root?.style.setProperty("--off-bg-color", darkTheme ? props.colors.off_bg_color_dark : props.colors.off_bg_color_light);
+        root?.style.setProperty("--light-color", darkTheme ? props.colors.light_color_dark : props.colors.light_color_light);
+        root?.style.setProperty("--dark-shadow", darkTheme ? props.colors.dark_shadow_dark : props.colors.dark_shadow_light);
+        root?.style.setProperty("--hero-blur", darkTheme ? props.colors.hero_blur_dark : props.colors.hero_blur_light);
+        root?.style.setProperty("--text-color", darkTheme ? props.colors.text_color_dark : props.colors.text_color_light);
+        root?.style.setProperty("--strong-color", props.colors.strong_color);
+        root?.style.setProperty("--off-strong-color", props.colors.off_strong_color);
         setThemeInStorage(darkTheme ? 'dark' : 'light');
-    }, [darkTheme]);
+    }, [darkTheme, props]);
 
     return (
         <header id="header" className="d-flex flex-column justify-content-center">
             <DarkModeSwitch className="darkmodeswitch m-4" onChange={setDarkTheme} checked={darkTheme} />
             <nav id="navbar" className="navbar nav-menu">
                 <ul>
-                    {Object.entries(props).map(([key, value]) => (
+                    {Object.entries(props.header).map(([key, value]) => (
                         <li key={key}>
                             <Link activeClass="active" duration={500} offset={-200} smooth="easeInOutSine" className="nav-link" spy to={value.div_id}>
                                 <Icon icon={value.icon} /><span>{value.text}</span>
@@ -216,8 +216,8 @@ const About = (props) => {
     return (
         <section id="about">
             <div className="d-flex flex-wrap justify-content-center p-3 container">
-                <div class="container d-flex col-6 rounded" style={{ backgroundColor: 'var(--off-bg-color)' }}>
-                    <div class="row justify-content-center align-self-center p-3">
+                <div className="container d-flex col-lg-6 col-sm-12 rounded" style={{ backgroundColor: 'var(--off-bg-color)' }}>
+                    <div className="row justify-content-center align-self-center p-3">
                         <h3> History </h3>
                         <hr />
                         <p>{props.about_paragraph}</p>
@@ -230,7 +230,7 @@ const About = (props) => {
                                 className="vertical-timeline-element--work"
                                 date={experience.date}
                                 contentArrowStyle={{ borderRight: '7px solid  var(--strong-color)' }}
-                                icon={<img src="assets/images/Cube.webp" alt="Cube" style={{ width: '100%' }} />}
+                                icon={<img src="assets/images/Cube.webp" alt="Cube" style={{ width: '100%', position: 'relative', top: '-2.5px' }} />}
                                 key={index}
                             >
                                 <h4 className="vertical-timeline-element-title">{experience.title}</h4>
