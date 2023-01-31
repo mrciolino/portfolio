@@ -43,7 +43,28 @@
         "AboutIntro": {
             "title": "About",
             "description": "Data Scientist at PeopleTec | Computer Vision | Natural Language Processing | Adversarial AI | MS Computer Science 2023 | BS Mechanical Engineering 2018"
-        }
+        },
+        "about_paragraph": "As a data scientist with experience in both computer vision and natural language processing, I have a proven track record of applying state-of-the-art deep learning algorithms to real-world problems. My background in mechanical engineering and current pursuit of a Master of Science in Computer Science from the Georgia Institute of Technology have equipped me with a unique skill set for tackling complex, interdisciplinary challenges. I have worked on projects ranging from object detection using TinyML, to adversarial AI and super resolution in computer vision. I am also an experienced software engineer, familiar with a variety of programming languages and development tools, and have presented my research at national and international machine learning conferences. My passion for solving problems through technology and drive for continual learning make me a strong asset to any team.",
+        "work_experience": [
+            {
+                "title": "Data Scientist",
+                "company": "PeopleTec Remote",
+                "date": "Nov 2020 - Present",
+                "description": "Applied state-of-the-art deep learning algorithms to investigate effectiveness in satellite imagery"
+            },
+            {
+                "title": "Machine Learning Engineer",
+                "company": "PeopleTec",
+                "date": "Nov 2019 - Nov 2020",
+                "description": "Developed Super-Resolution framework that increased precision (mAP) for various computer vision tasks by 15%"
+            },
+            {
+                "title": "Junior Engineer",
+                "company": "PeopleTec",
+                "date": "Nov 2018 - Nov 2019",
+                "description": "Developed fast, physics-based models for predicting damage and response of threat systems due to missile collisions"
+            }
+        ]
     },
     "Resume": {
         "ResumeIntro": {
@@ -113,9 +134,18 @@
             "description": "Job Tag Classifier (NLP/Active Learning), Wikipedia Time Series Forcasting (Traffic), Voting Classifer (Federal Bills)",
             "image": "assets/images/wikipedia.webp",
             "links": {
-                "Job Tag Github": ["https://github.com/mrciolino/Job-Tag-Classifier", "simple-icons:github"],
-                "Wikipedia Traffic Github": ["https://github.com/mrciolino/Kaggle-Competitions/tree/master/Wikipedia%20Web%20Traffic", "simple-icons:github"],
-                "Politician Voting Notebook": ["https://nbviewer.jupyter.org/github/mrciolino/Test-Repo/blob/master/xeval/US%20Map%20Example.ipynb", "simple-icons:jupyter"]
+                "Job Tag Github": [
+                    "https://github.com/mrciolino/Job-Tag-Classifier",
+                    "simple-icons:github"
+                ],
+                "Wikipedia Traffic Github": [
+                    "https://github.com/mrciolino/Kaggle-Competitions/tree/master/Wikipedia%20Web%20Traffic",
+                    "simple-icons:github"
+                ],
+                "Politician Voting Notebook": [
+                    "https://nbviewer.jupyter.org/github/mrciolino/Test-Repo/blob/master/xeval/US%20Map%20Example.ipynb",
+                    "simple-icons:jupyter"
+                ]
             }
         },
         "Crowd Counter & Tracker": {
@@ -123,8 +153,14 @@
             "description": "Point Crowd Detection and Object Detection Simialrity Tracker",
             "image": "assets/images/tokyo_ppl.webp",
             "links": {
-                "Github Tracker": ["https://github.com/mrciolino/yolov3_deepsort", "simple-icons:github"],
-                "Github Counter": ["https://github.com/mrciolino/Crowd-Counter", "simple-icons:github"]
+                "Github Tracker": [
+                    "https://github.com/mrciolino/yolov3_deepsort",
+                    "simple-icons:github"
+                ],
+                "Github Counter": [
+                    "https://github.com/mrciolino/Crowd-Counter",
+                    "simple-icons:github"
+                ]
             }
         },
         "Portfolio Website": {
@@ -132,7 +168,10 @@
             "description": "The website you are on right now! Check out the source code below.",
             "image": "assets/images/portfolio.webp",
             "links": {
-                "Github": ["https://github.com/mrciolino/portfolio-site", "simple-icons:github"]
+                "Github": [
+                    "https://github.com/mrciolino/portfolio-site",
+                    "simple-icons:github"
+                ]
             }
         },
         "Single Image Super Resolution": {
@@ -140,9 +179,18 @@
             "description": "Single Image Super Resolution using GANs to increase Object Detection mAP scores",
             "image": "assets/images/srgan.webp",
             "links": {
-                "Github": ["https://nbviewer.org/github/mrciolino/portfolio-site/blob/master/public/assets/docs/SISR_Example.ipynb", "simple-icons:github"],
-                "Paper": ["https://arxiv.org/abs/1911.07934", "simple-icons:arxiv"],
-                "Powerpoint": ["assets/docs/Super Resolution SPIE.pdf", "simple-icons:microsoftpowerpoint"]
+                "Github": [
+                    "https://nbviewer.org/github/mrciolino/portfolio-site/blob/master/public/assets/docs/SISR_Example.ipynb",
+                    "simple-icons:github"
+                ],
+                "Paper": [
+                    "https://arxiv.org/abs/1911.07934",
+                    "simple-icons:arxiv"
+                ],
+                "Powerpoint": [
+                    "assets/docs/Super Resolution SPIE.pdf",
+                    "simple-icons:microsoftpowerpoint"
+                ]
             }
         }
     }

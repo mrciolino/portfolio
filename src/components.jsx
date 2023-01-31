@@ -7,7 +7,8 @@ import Card from 'react-bootstrap/Card';
 import { Icon } from '@iconify/react';
 import { Link } from "react-scroll";
 import Typed from 'typed.js';
-
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
 
 const SectionIntro = (props) => {
     return (
@@ -162,7 +163,7 @@ const Footer = () => {
                     <a aria-label="email" href="mailto:mrciolino@alum.lehigh.edu"><Icon icon="bx:bx-envelope" /></a>
                 </div>
                 <div>
-                    Made with <Icon icon="bx:bx-heart" color="#0275d8" /> and <Icon icon="bx:bx-code-alt" color="#0275d8" /> using
+                    Made with <Icon icon="bx:bx-heart" color="var(--strong-color)" /> and <Icon icon="bx:bx-code-alt" color="var(--strong-color)" /> using
                     &nbsp;<a aria-label="React" href="https://reactjs.org/"><Icon icon="logos:react">React</Icon></a> and
                     &nbsp;<a aria-label="Bootstrap" href="https://getbootstrap.com/"><Icon icon="logos:bootstrap">Bootstrap</Icon></a>.
                 </div>
@@ -212,5 +213,39 @@ const Header = (props) => {
     );
 }
 
-export { ProjectCards, Papers, Resume, SectionIntro, Hero, Footer, Header };
+// about section - make half work history and half text
+const About = (props) => {
+    return (
+        <section id="about">
+            <div className="d-flex flex-wrap justify-content-center p-3 container">
+                <div className="col-lg-6 col-sm-12 p-3">
+                    <VerticalTimeline layout='1-column-left'>
+                        {props.work_experience.map((experience, index) => (
+                            <VerticalTimelineElement
+                                className="vertical-timeline-element--work"
+                                date={experience.date}
+                                icon={<img src="assets/images/Cube.webp" alt="Cube" style={{ width: '100%' }} />}
+                                key={index}
+                            >
+                                <h4 className="vertical-timeline-element-title">{experience.title}</h4>
+                                <h6 className="vertical-timeline-element-subtitle">{experience.company}</h6>
+                                <p>{experience.description}</p>
+                            </VerticalTimelineElement>
+                        ))}
+                    </VerticalTimeline>
+                </div>
+                {/* justify text and align it center */}
+                <div className="col-lg-6 col-sm-12 p-3">
+                    <h3> History </h3>
+                    <hr />
+                    <p>{props.about_paragraph}</p>
+                </div>
+            </div>
+        </section>
+    );
+}
+
+
+
+export { ProjectCards, Papers, Resume, SectionIntro, Hero, Footer, Header, About };
 

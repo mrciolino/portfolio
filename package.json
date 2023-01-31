@@ -16,6 +16,7 @@
     "react-scroll": "^1.8.9",
     "react-spinners": "^0.13.8",
     "react-toggle-dark-mode": "^1.1.1",
+    "react-vertical-timeline-component": "^3.6.0",
     "sass": "^1.57.1",
     "serve": "^14.2.0",
     "typed.js": "^2.0.12"

@@ -1,4 +1,4 @@
-import { SectionIntro, ProjectCards, Papers, Resume, Hero, Header, Footer } from "./components.jsx";
+import { SectionIntro, ProjectCards, Papers, Resume, Hero, Header, Footer, About } from "./components.jsx";
 import ClipLoader from "react-spinners/ClipLoader";
 import Container from 'react-bootstrap/Container';
 import Data from './data.json';
@@ -89,6 +89,7 @@ const AboutView = () => {
     return (
         <Container id="about" className="d-flex flex-wrap justify-content-center p-3" data-aos="zoom-in" data-aos-delay="100">
             <SectionIntro {...Data["About"]['AboutIntro']} />
+            <About {...Data["About"]} />
         </Container>
     );
 }
