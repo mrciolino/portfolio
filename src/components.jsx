@@ -103,9 +103,7 @@ const Resume = (props) => {
                 setWidth(entry.target.clientWidth * 0.95);
             }
         });
-
         resizeObserver.observe(pdfWrapperRef.current);
-
         return () => {
             resizeObserver.disconnect();
         };
@@ -187,11 +185,11 @@ const Header = (props) => {
 
     useEffect(() => {
         const root = document.getElementById('root');
-        root?.style.setProperty("--bg-color", darkTheme ? 'rgb(33, 33, 33)' : 'rgb(255, 255, 255)');
-        root?.style.setProperty("--off-bg-color", darkTheme ? 'rgb(66, 66, 66)' : '#e9e9e9');
+        root?.style.setProperty("--bg-color", darkTheme ? 'rgb(30, 30, 30)' : 'rgb(255, 255, 255)');
+        root?.style.setProperty("--off-bg-color", darkTheme ? 'rgb(45, 45, 45)' : '#e9e9e9');
         root?.style.setProperty("--light-color", darkTheme ? '#fefefe' : '#45505b');
         root?.style.setProperty("--dark-shadow", darkTheme ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)');
-        root?.style.setProperty("--hero-blur", darkTheme ? 'rgba(33, 33, 33, 0.6)' : 'rgba(255, 255, 255, 0.8)');
+        root?.style.setProperty("--hero-blur", darkTheme ? 'rgba(30, 30, 30, 0.6)' : 'rgba(255, 255, 255, 0.8)');
         root?.style.setProperty("--text-color", darkTheme ? '#fefefe' : '#000000');
         setThemeInStorage(darkTheme ? 'dark' : 'light');
     }, [darkTheme]);
@@ -218,12 +216,20 @@ const About = (props) => {
     return (
         <section id="about">
             <div className="d-flex flex-wrap justify-content-center p-3 container">
+                <div class="container d-flex col-6 rounded" style={{ backgroundColor: 'var(--off-bg-color)' }}>
+                    <div class="row justify-content-center align-self-center p-3">
+                        <h3> History </h3>
+                        <hr />
+                        <p>{props.about_paragraph}</p>
+                    </div>
+                </div>
                 <div className="col-lg-6 col-sm-12 p-3">
                     <VerticalTimeline layout='1-column-left'>
                         {props.work_experience.map((experience, index) => (
                             <VerticalTimelineElement
                                 className="vertical-timeline-element--work"
                                 date={experience.date}
+                                contentArrowStyle={{ borderRight: '7px solid  var(--strong-color)' }}
                                 icon={<img src="assets/images/Cube.webp" alt="Cube" style={{ width: '100%' }} />}
                                 key={index}
                             >
@@ -233,12 +239,6 @@ const About = (props) => {
                             </VerticalTimelineElement>
                         ))}
                     </VerticalTimeline>
-                </div>
-                {/* justify text and align it center */}
-                <div className="col-lg-6 col-sm-12 p-3">
-                    <h3> History </h3>
-                    <hr />
-                    <p>{props.about_paragraph}</p>
                 </div>
             </div>
         </section>
