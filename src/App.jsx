@@ -1,21 +1,19 @@
-import { ProjectView, PaperResumeView, AboutView, HeroView, FooterView, HeaderView, LoadingView } from "./views.jsx";
+import { ProjectView, PaperResumeView, AboutView, HeroView, FooterView, HeaderView } from "./views.jsx";
 import Container from 'react-bootstrap/Container';
-import React, { Suspense } from 'react';
+import React from 'react';
 import './App.scss';
 
 const App = () => {
 
   return (
-    <Suspense fallback={LoadingView}>
-      <Container>
-        <HeaderView />
-        <HeroView />
-        <AboutView />
-        <PaperResumeView />
-        <ProjectView />
-        <FooterView />
-      </Container>
-    </Suspense >
+    <Container>
+      <HeaderView />
+      <HeroView />
+      <AboutView />
+      <PaperResumeView />
+      <ProjectView />
+      <FooterView />
+    </Container>
   )
 };
 
