@@ -28,6 +28,10 @@ Hero Section
 
 ![](/public/assets/images/readme-hero.webp)
 
+About Section
+
+![](/public/assets/images/readme-about.webp)
+
 Research and Resume Section
 
 ![](/public/assets/images/readme-resume.webp)

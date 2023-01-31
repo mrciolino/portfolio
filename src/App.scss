@@ -52,7 +52,6 @@ General Section
   align-items: center;
 }
 
-// make the stick at the top left
 .darkmodeswitch {
   position: fixed;
   top: 0;
@@ -64,6 +63,46 @@ General Section
   top: 0 !important;
   left: 0 !important;
   transform: none !important;
+}
+
+/*--------------------------------------------------------------
+# About Section
+--------------------------------------------------------------*/
+
+#about {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.vertical-timeline {
+  padding: 0;
+
+  &::before {
+    background-color: var(--off-bg-color);
+  }
+
+  &-element {
+    margin: 0 0 3% 0;
+
+    &-content {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      padding: 0%;
+
+      &-arrow {
+        margin-right: 1.5%;
+      }
+    }
+
+    &-icon {
+      background-color: white;
+      color: var(--bg-color);
+    }
+
+    &-content .vertical-timeline-element-date {
+      padding: 0.4em 0;
+    }
+  }
 }
 
 /*--------------------------------------------------------------

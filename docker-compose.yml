@@ -1,9 +1,16 @@
 version: '3'
+name: portfolio-dev
 services:
   app:
-    build: .
+    build:
+      context: .
+      dockerfile: dockerfile.dev
+    volumes:
+      - ./:/app
+    working_dir: /app
     ports:
       - "3000:3000"
     environment:
       - PORT=3000
-    command: ["serve", "-s", "build"]
+      - CHOKIDAR_USEPOLLING=true
+    command: bash -c "npm install && npm start"
