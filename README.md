@@ -39,3 +39,7 @@ Research and Resume Section
 Projects Section
 
 ![](/public/assets/images/readme-projects.webp)
+
+Dark Mode
+
+![](/public/assets/images/readme-hero-dark.webp)
