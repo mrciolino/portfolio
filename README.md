@@ -15,7 +15,7 @@ Visit the website: https://www.matthewciolino.com/
 ## Website Iterations
 🐍 Python & Flask → 💻 HTML, CSS, & JavaScript → 💥 React & Bootstrap 
 
- It's been some time since the first iteration of this simple web application using Python and Flask. Back then, it was just a basic platform for showcasing my work in the field of machine learning. But as time went on, I realized that I needed to upgrade and provide a better user experience for visitors. So, I decided to rewrite myself using HTML, CSS, and JavaScript. This allowed for a cleaner and more interactive interface and was definitely a step up from my previous version. But I wasn't content with just settling for good enough, and that brings us to today, where in its latest tieration, the portfolio uses React and Bootstrap. This has allowed for a more dynamic and responsive design, and I am very happy with the results. I hope you enjoy it as well.
+ It's been some time since the first iteration of this simple web application using Python and Flask. Back then, it was just a basic platform for showcasing my work in the field of machine learning. But as time went on, I realized that I needed to upgrade and provide a better user experience for visitors. So, I decided to rewrite myself using HTML, CSS, and JavaScript. This allowed for a cleaner and more interactive interface and was definitely a step up from my previous version. But I wasn't content with just settling for good enough, and that brings us to today, where in its latest iteration, the portfolio uses React and Bootstrap. This has allowed for a more dynamic and responsive design, and I am very happy with the results. I hope you enjoy it as well.
 
 ## Deployment Iterations
 🚀 Heroku → 💥 AWS Amplify 
@@ -31,7 +31,7 @@ If you want to use this portfolio for your own, you can fork it and make it your
 3. src/(App/views/components): All the react code is stored here
 4. src/App.scss: All the style code is stored here
 
-To launch the app thorugh docker, run the following commands:
+To launch the app through docker, run the following commands:
 
 ```
 docker-compose up
@@ -47,8 +47,6 @@ To host the code I used AWS Amplify. You can use any hosting service you want. I
 7. Connect dockerfile to build settings
 8. Modify rules to include webp|pdf|... files
 9. Deploy and Enjoy 💥
-
-
 
 ## Overview
 
