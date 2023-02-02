@@ -88,10 +88,14 @@ General Section
 
 @media (max-width: 992px) {
   #scroll_to_top {
-    display: block;
-    background-color: var(--off-bg-color);
+    background-color: transparent;
     color: var(--text-color);
     border-color: var(--dark-shadow);
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 4vw;
+    font-size: 2rem;
   }
 
   #scroll_to_top:hover {

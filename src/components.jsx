@@ -278,8 +278,13 @@ const Header = (props) => {
     }
 
     const handleScrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+        const c = document.documentElement.scrollTop || document.body.scrollTop;
+        if (c > 0) {
+            window.requestAnimationFrame(handleScrollToTop);
+            window.scrollTo(0, c - c / 16);
+        }
+    };
+
     return (
         <header id="header" className="d-flex flex-column justify-content-center">
             <DarkModeSwitch className="darkmodeswitch m-4" onChange={setDarkTheme} checked={darkTheme} />
@@ -294,9 +299,7 @@ const Header = (props) => {
                 </ul>
             </nav>
             {scrollPosition > 1500 && (
-                <Button id="scroll_to_top" className="btn-scroll-top" size="sm" style={{ position: 'fixed', bottom: '15px', right: '15px' }} onClick={handleScrollToTop}>
-                    <Icon icon="bx:bx-up-arrow-alt" />
-                </Button>
+                <Icon icon="ic:sharp-arrow-circle-up" id="scroll_to_top" className='medium mt-4' onClick={handleScrollToTop} />
             )}
         </header>
     );
