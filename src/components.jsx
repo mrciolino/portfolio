@@ -1,14 +1,16 @@
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import 'react-vertical-timeline-component/style.min.css';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import React, { useEffect, useState } from 'react';
 import Accordion from 'react-bootstrap/Accordion';
-import Button from 'react-bootstrap/Button';
 import { Document, Page, pdfjs } from 'react-pdf';
+import Tooltip from 'react-bootstrap/Tooltip';
+import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Icon } from '@iconify/react';
 import { Link } from "react-scroll";
 import Typed from 'typed.js';
-import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
 
 const SectionIntro = (props) => {
     return (
@@ -49,6 +51,71 @@ class TypedReact extends React.Component {
     }
 }
 
+const LatestResearch = (props) => {
+    return (
+        <div className="col-12 pb-5 px-3">
+            <div id="latest_research" className='row p-2 justify-content-around rounded'>
+                <h4 className='text-center p-1 m-0'>Latest Research<hr /></h4>
+                <div className='col-4'>
+                    <img className="img rounded" alt="LatestResearchImage" src={props.latest_papers.image} />
+                </div>
+                <div className='col-8'>
+                    <Card>
+                        <Card.Body className='p-1'>
+                            <Card.Title as="h5">{props.latest_papers.title}</Card.Title>
+                            <Card.Subtitle className="mb-2 text-muted">{props.latest_papers.subtitle}</Card.Subtitle>
+                            <Card.Text as="small">{props.latest_papers.description}</Card.Text>
+                            <div className="d-grid gap-2 pt-1">
+                                <Button variant="primary" size="sm" href={props.latest_papers.Paper}>
+                                    <Icon className="m-1" icon="simple-icons:arxiv" /> Paper
+                                </Button>
+                            </div>
+                        </Card.Body>
+                    </Card>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+const Tools = (props) => {
+    return (
+        <div className="col-12 pb-5">
+            <div id="icon_list" className='d-flex flex-wrap p-3 justify-content-around rounded'>
+                <h4 className='col-12 text-center p-1'>Tools<hr /></h4>
+                {props.tools.map((tool) => (
+                    <OverlayTrigger key={tool["icon-name"]} placement="top" delay={{ show: 150, hide: 250 }} overlay={<Tooltip id="button-tooltip-2">{tool["icon-text"]}</Tooltip>}>
+                        <Icon className="m-1" icon={tool["icon-name"]} />
+                    </OverlayTrigger>
+                ))}
+            </div>
+        </div>
+    );
+}
+
+
+const AboutTimeline = (props) => {
+    return (
+        <div className="col-lg-6 col-sm-12 p-3">
+            <VerticalTimeline layout='1-column-left'>
+                {props.work_experience.map((experience, index) => (
+                    <VerticalTimelineElement
+                        className="vertical-timeline-element--work"
+                        date={experience.date}
+                        contentArrowStyle={{ borderRight: '7px solid  var(--strong-color)' }}
+                        icon={<img src="assets/images/Cube.webp" alt="Cube" style={{ width: '100%', position: 'relative', top: '-2.5px' }} />}
+                        key={index}
+                    >
+                        <h4 className="vertical-timeline-element-title">{experience.title}</h4>
+                        <h6 className="vertical-timeline-element-subtitle">{experience.company}</h6>
+                        <p>{experience.description}</p>
+                    </VerticalTimelineElement>
+                ))}
+            </VerticalTimeline>
+        </div>
+    );
+}
+
 ////////////////////// Exported Componets Below ////////////////////////////////
 
 const ProjectCards = (props) => {
@@ -71,19 +138,22 @@ const ProjectCards = (props) => {
 
 const Papers = (props) => {
     return (
-        <Accordion className='col-12 accordion'>
-            <Accordion.Item eventKey="0">
-                <Accordion.Header>
-                    {props.accordion_text}
-                    <small className="text-muted">&nbsp;{props.accordion_text_muted}</small>
-                </Accordion.Header>
-                <Accordion.Body>
-                    <div className="text-justify">
-                        <div id="arxivfeed">Loading Papers...</div>
-                    </div>
-                </Accordion.Body>
-            </Accordion.Item>
-        </Accordion>
+        <>
+            <LatestResearch latest_papers={props.latest_papers} />
+            <Accordion className='col-12 accordion rounded'>
+                <Accordion.Item eventKey="0">
+                    <Accordion.Header>
+                        {props.accordion_text}
+                        <small className="text-muted">&nbsp;{props.accordion_text_muted}</small>
+                    </Accordion.Header>
+                    <Accordion.Body>
+                        <div className="text-justify">
+                            <div id="arxivfeed">Loading Papers...</div>
+                        </div>
+                    </Accordion.Body>
+                </Accordion.Item>
+            </Accordion>
+        </>
     );
 }
 
@@ -110,27 +180,30 @@ const Resume = (props) => {
     }, []);
 
     return (
-        <Accordion className='col-12 accordion'>
-            <Accordion.Item eventKey="0">
-                <Accordion.Header>
-                    {props.accordion_text}
-                    <small className="text-muted">&nbsp;{props.accordion_text_muted}</small>
-                </Accordion.Header>
-                <Accordion.Body>
-                    <div className='col-12 text-center' ref={pdfWrapperRef}>
-                        <div className="d-grid gap-2 pb-2" id="resume_width_guide">
-                            <Button className='m1 text-white' variant="primary" size="sm" href={file}>Download Resume</Button>
+        <>
+            <Tools tools={props.tools} />
+            <Accordion className='col-12 rounded accordion'>
+                <Accordion.Item eventKey="0">
+                    <Accordion.Header>
+                        {props.accordion_text}
+                        <small className="text-muted">&nbsp;{props.accordion_text_muted}</small>
+                    </Accordion.Header>
+                    <Accordion.Body>
+                        <div className='col-12 text-center' ref={pdfWrapperRef}>
+                            <div className="d-grid gap-2 pb-2" id="resume_width_guide">
+                                <Button className='m1 text-white' variant="primary" size="sm" href={file}>Download Resume</Button>
+                            </div>
+                            <Document file={file} options={options} renderTextLayer={false} renderInteractiveForms={false}>
+                                <Page
+                                    width={width || undefined}
+                                    pageNumber={1}
+                                />
+                            </Document>
                         </div>
-                        <Document file={file} options={options} renderTextLayer={false} renderInteractiveForms={false}>
-                            <Page
-                                width={width || undefined}
-                                pageNumber={1}
-                            />
-                        </Document>
-                    </div>
-                </Accordion.Body>
-            </Accordion.Item>
-        </Accordion >
+                    </Accordion.Body>
+                </Accordion.Item>
+            </Accordion >
+        </>
     );
 }
 
@@ -194,6 +267,19 @@ const Header = (props) => {
         setThemeInStorage(darkTheme ? 'dark' : 'light');
     }, [darkTheme, props]);
 
+    const [scrollPosition, setScrollPosition] = useState(0);
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const handleScroll = () => {
+        setScrollPosition(window.pageYOffset);
+    }
+
+    const handleScrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
     return (
         <header id="header" className="d-flex flex-column justify-content-center">
             <DarkModeSwitch className="darkmodeswitch m-4" onChange={setDarkTheme} checked={darkTheme} />
@@ -207,6 +293,11 @@ const Header = (props) => {
                         </li>))}
                 </ul>
             </nav>
+            {scrollPosition > 1500 && (
+                <Button id="scroll_to_top" className="btn-scroll-top" size="sm" style={{ position: 'fixed', bottom: '15px', right: '15px' }} onClick={handleScrollToTop}>
+                    <Icon icon="bx:bx-up-arrow-alt" />
+                </Button>
+            )}
         </header>
     );
 }
@@ -223,23 +314,7 @@ const About = (props) => {
                         <p>{props.about_paragraph}</p>
                     </div>
                 </div>
-                <div className="col-lg-6 col-sm-12 p-3">
-                    <VerticalTimeline layout='1-column-left'>
-                        {props.work_experience.map((experience, index) => (
-                            <VerticalTimelineElement
-                                className="vertical-timeline-element--work"
-                                date={experience.date}
-                                contentArrowStyle={{ borderRight: '7px solid  var(--strong-color)' }}
-                                icon={<img src="assets/images/Cube.webp" alt="Cube" style={{ width: '100%', position: 'relative', top: '-2.5px' }} />}
-                                key={index}
-                            >
-                                <h4 className="vertical-timeline-element-title">{experience.title}</h4>
-                                <h6 className="vertical-timeline-element-subtitle">{experience.company}</h6>
-                                <p>{experience.description}</p>
-                            </VerticalTimelineElement>
-                        ))}
-                    </VerticalTimeline>
-                </div>
+                <AboutTimeline {...props} />
             </div>
         </section>
     );

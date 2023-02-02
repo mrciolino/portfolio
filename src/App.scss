@@ -41,17 +41,6 @@ General Section
   color: var(--text-color);
 }
 
-#spinner {
-  position: absolute;
-  margin: auto;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-  text-align: center;
-  align-items: center;
-}
-
 .darkmodeswitch {
   position: fixed;
   top: 0;
@@ -63,6 +52,53 @@ General Section
   top: 0 !important;
   left: 0 !important;
   transform: none !important;
+}
+
+#icon_list {
+  background-color: var(--off-bg-color);
+  color: var(--text-color);
+  font-size: 3.5rem;
+}
+
+#latest_research {
+  background-color: var(--off-bg-color);
+  color: var(--text-color);
+
+  .col-4 .img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+  .col-8 .card {
+    border-width: 0;
+
+    .card-body {
+      background-color: var(--off-bg-color);
+      color: var(--text-color);
+    }
+  }
+}
+
+// make scroll_to_top id only visible on mobile and when you scroll down
+#scroll_to_top {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  #scroll_to_top {
+    display: block;
+    background-color: var(--off-bg-color);
+    color: var(--text-color);
+    border-color: var(--dark-shadow);
+  }
+
+  #scroll_to_top:hover {
+    background-color: var(--light-color);
+    color: var(--bg-color);
+  }
+
 }
 
 /*--------------------------------------------------------------
