@@ -97,7 +97,7 @@ const Tools = (props) => {
 const AboutTimeline = (props) => {
     return (
         <div className="col-lg-6 col-sm-12 p-3">
-            <VerticalTimeline layout='1-column-left'>
+            <VerticalTimeline layout='1-column-left' animate={window.innerWidth > 768}>
                 {props.work_experience.map((experience, index) => (
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
@@ -211,7 +211,7 @@ const Resume = (props) => {
 const Hero = (props) => {
     return (
         <section id="hero" className="d-flex flex-column justify-content-center" data-aos="zoom-in" data-aos-delay="50" style={{ backgroundImage: "url(assets/images/hero-bg-ds.webp)" }}>
-            <div className="container" data-aos="fade-right" data-aos-delay="500">
+            <div className="container" data-aos="fade-right" data-aos-delay="100">
                 <h1>Matthew Ciolino</h1>
                 <TypedReact strings={props.titles} />
                 <div className="social-links">
@@ -280,8 +280,7 @@ const Header = (props) => {
     const handleScrollToTop = () => {
         const c = document.documentElement.scrollTop || document.body.scrollTop;
         if (c > 0) {
-            window.requestAnimationFrame(handleScrollToTop);
-            window.scrollTo(0, c - c / 16);
+            window.scrollTo({ top: 0, behavior: 'smooth', duration: 1000 });
         }
     };
 
@@ -298,7 +297,7 @@ const Header = (props) => {
                         </li>))}
                 </ul>
             </nav>
-            {scrollPosition > 1500 && (
+            {scrollPosition > 1000 && (
                 <Icon icon="ic:sharp-arrow-circle-up" id="scroll_to_top" className='medium mt-4' onClick={handleScrollToTop} />
             )}
         </header>
