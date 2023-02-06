@@ -184,6 +184,10 @@
                 "xEval": [
                     "https://www.xeval.io",
                     "gg:website"
+                ],
+                "About": [
+                    "https://github.com/mrciolino/portfolio-site/blob/master/public/assets/docs/xEval.md",
+                    "gg:readme"
                 ]
             }
         },
