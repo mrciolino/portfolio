@@ -1,6 +1,6 @@
 import { SectionIntro, ProjectCards, Papers, Resume, Hero, Header, Footer, About } from "./components.jsx";
 import Container from 'react-bootstrap/Container';
-import React, { useEffect } from 'react';
+import React from 'react';
 import Data from './data.json';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
@@ -64,13 +64,6 @@ const ProjectView = () => {
 }
 
 const PaperResumeView = () => {
-
-    useEffect(() => {
-        var height = Math.max(document.getElementById("icon_list").clientHeight, document.getElementById("latest_research").clientHeight);
-        document.getElementById("icon_list").style.paddingTop = (height - document.getElementById("icon_list").clientHeight) / 2 + "px";
-        document.getElementById("latest_research").style.paddingTop = (height - document.getElementById("latest_research").clientHeight) / 2 + "px";
-    }, []);
-
     return (
         <Container className="d-flex flex-wrap justify-content-center p-3" data-aos="zoom-in" data-aos-delay="100">
             <div className="col-lg-6 col-sm-12" >
