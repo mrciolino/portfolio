@@ -272,9 +272,9 @@
             "description": "Single Image Super Resolution using GANs to increase Object Detection mAP scores",
             "image": "assets/images/srgan.webp",
             "links": {
-                "Github": [
-                    "https://nbviewer.org/github/mrciolino/portfolio-site/blob/master/public/assets/docs/SISR_Example.ipynb",
-                    "simple-icons:github"
+                "About": [
+                    "https://github.com/mrciolino/portfolio-site/blob/master/public/assets/docs/SISR_Example.md",
+                    "gg:readme"
                 ],
                 "Paper": [
                     "https://arxiv.org/abs/1911.07934",
