@@ -147,6 +147,9 @@ const Papers = (props) => {
                         <small className="text-muted">&nbsp;{props.accordion_text_muted}</small>
                     </Accordion.Header>
                     <Accordion.Body>
+                        <div className="d-grid gap-2 pb-2" id="resume_width_guide">
+                            <Button className='m1 text-white' variant="primary" size="sm" href="https://arxiv.org/a/ciolino_m_1.html">View All Papers</Button>
+                        </div>
                         <div className="text-justify">
                             <div id="arxivfeed">Loading Papers...</div>
                         </div>
