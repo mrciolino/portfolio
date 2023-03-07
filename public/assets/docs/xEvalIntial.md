@@ -32,7 +32,7 @@ The user interface was built using Bootstrap, HTML, JS, and CSS. Bootstrap was u
 
 ## Backend
 
-Our backend consisted of three main components. First, a MySQL Database containing various tables for our Users, Bills, and Alerts. Second, a daily download of all legislation with changes from Legiscan. Third, a script that would check all of our users' alerts and send them an email if any of the bills matched their alerts. This backend automated the above process and allowed us to send our users daily emails with the legislation that matched their alerts. This process allows us to provide our users with a daily email with the legislation that matches their alerts, but we wanted to go a step further.
+Our backend consisted of three main components. First, a MySQL Database containing various tables for our Users, Bills, and Alerts. Second, a daily download of all legislation with changes from Legiscan. Third, a script that would check all of our users' alerts and send them an email if any of the bills matched their alerts. This process allows us to provide an automated way for our users get legislation alerts, but we wanted to go a step further.
 
 ## Data Science
 
