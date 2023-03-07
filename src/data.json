@@ -228,7 +228,7 @@
         },
         "Feature Projects": {
             "title": "Feature Projects",
-            "description": "Job Tag Classifier (NLP/Active Learning), Wikipedia Time Series Forcasting (Traffic), Voting Classifer (Federal Bills)",
+            "description": "Job Tag Classifier (NLP/Active Learning) and Wikipedia Time Series Forcasting (Traffic)",
             "image": "assets/images/wikipedia.webp",
             "links": {
                 "Job Tag Github": [
@@ -238,10 +238,6 @@
                 "Wikipedia Traffic Github": [
                     "https://github.com/mrciolino/Kaggle-Competitions/tree/master/Wikipedia%20Web%20Traffic",
                     "simple-icons:github"
-                ],
-                "Politician Voting Notebook": [
-                    "https://nbviewer.jupyter.org/github/mrciolino/Test-Repo/blob/master/xeval/US%20Map%20Example.ipynb",
-                    "simple-icons:jupyter"
                 ]
             }
         },
