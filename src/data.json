@@ -188,6 +188,10 @@
                 "About": [
                     "https://github.com/mrciolino/portfolio-site/blob/master/public/assets/docs/xEval.md",
                     "gg:readme"
+                ],
+                "History": [
+                    "https://github.com/mrciolino/portfolio-site/blob/master/public/assets/docs/xEvalIntial.md",
+                    "gg:readme"
                 ]
             }
         },
