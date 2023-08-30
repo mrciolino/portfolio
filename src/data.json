@@ -42,7 +42,7 @@
     "About": {
         "AboutIntro": {
             "title": "About",
-            "description": "Data Scientist at PeopleTec | Computer Vision | Natural Language Processing | Adversarial AI | MS Computer Science 2023 | BS Mechanical Engineering 2018"
+            "description": "Data Scientist at PeopleTec | Computer Vision | Natural Language Processing | Adversarial AI | MS Computer Science 2024 | BS Mechanical Engineering 2018"
         },
         "about_paragraph": "As a data scientist with experience in both computer vision and natural language processing, I have a proven track record of applying state-of-the-art deep learning algorithms to real-world problems. My background in mechanical engineering and current pursuit of a Master of Science in Computer Science from the Georgia Institute of Technology have equipped me with a unique skill set for tackling complex, interdisciplinary challenges. I have worked on projects ranging from object detection using TinyML, to adversarial AI and super resolution in computer vision. I am also an experienced software engineer, familiar with a variety of programming languages and development tools, and have presented my research at national and international machine learning conferences. My passion for solving problems through technology and drive for continual learning make me a strong asset to any team.",
         "work_experience": [
@@ -50,7 +50,7 @@
                 "title": "Data Scientist",
                 "company": "PeopleTec Remote",
                 "date": "Nov 2020 - Present",
-                "description": "Applied state-of-the-art deep learning algorithms to investigate effectiveness in satellite imagery"
+                "description": "Led research efforts in deep learning algorithms for satellite imagery for Object Detection,NLP, Adversarial AI, Dataset Creation, and other Computer Vision Tasks"
             },
             {
                 "title": "Machine Learning Engineer",
@@ -72,7 +72,7 @@
             "description": "A brief account of my professional experience, my past projects, my continuing education, and my technical skills. Feel free to use this document for job application purposes. Click on the below accordion to view or download my resume."
         },
         "accordion_text": "View or Download Resume",
-        "accordion_text_muted": "(December 2022)",
+        "accordion_text_muted": "(August 2023)",
         "tools": [
             {
                 "icon-text": "Python",
@@ -162,7 +162,7 @@
             "description": "A running history of my past research experience. Contains various topics including Image Classification, Object Detection, Natural Language Processing, Generative Adversarial Networks, Adversarial AI, Super Resolution and Game Agents."
         },
         "accordion_text": "View Papers",
-        "accordion_text_muted": "(2 of 16 shown)",
+        "accordion_text_muted": "(2 of 17 shown)",
         "latest_papers": {
             "title": "Soft Labels for Satellite Object Detection",
             "subtitle": "Matthew Ciolino, Grant Rosario, David Noever",
@@ -181,10 +181,6 @@
             "description": "Legislation monitoring and alert tool for daily legislation updates",
             "image": "assets/images/xeval.webp",
             "links": {
-                "xEval": [
-                    "https://www.xeval.io",
-                    "gg:website"
-                ],
                 "About": [
                     "https://github.com/mrciolino/portfolio-site/blob/master/public/assets/docs/xEval.md",
                     "gg:readme"
