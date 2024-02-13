@@ -304,8 +304,8 @@
                 ]
             }
         },
-        "TableTop Simualtor Motion Machine": {
-            "title": "TableTop Simualtor Motion Machine",
+        "Tabletop Simulator Motion Machine": {
+            "title": "Tabletop Simulator Motion Machine",
             "description": "A One-World compatable motion machine for simple animated movement in TableTop Simulator",
             "image": "assets/images/motion_machine.webp",
             "links": {
