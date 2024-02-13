@@ -294,7 +294,7 @@ const Header = (props) => {
                 <ul>
                     {Object.entries(props.header).map(([key, value]) => (
                         <li key={key}>
-                            <Link activeClass="active" duration={500} offset={-200} smooth="easeInOutSine" className="nav-link" spy to={value.div_id}>
+                            <Link activeClass="active" duration={200} offset={-200} delay={10} smooth="easeOutQuart" className="nav-link" spy to={value.div_id}>
                                 <Icon icon={value.icon} /><span>{value.text}</span>
                             </Link>
                         </li>))}
