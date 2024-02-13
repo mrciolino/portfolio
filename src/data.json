@@ -80,7 +80,7 @@
             },
             {
                 "icon-text": "Anaconda",
-                "icon-name": "vscode-icons:file-type-conda"
+                "icon-name": "devicon:anaconda"
             },
             {
                 "icon-text": "TensorFlow",
@@ -112,7 +112,7 @@
             },
             {
                 "icon-text": "Windows",
-                "icon-name": "logos:microsoft-windows"
+                "icon-name": "devicon:windows11"
             },
             {
                 "icon-text": "AWS",
@@ -137,6 +137,10 @@
             {
                 "icon-text": "Visual Studio Code",
                 "icon-name": "vscode-icons:file-type-vscode"
+            },
+            {
+                "icon-text": "Lua",
+                "icon-name": "devicon:lua"
             },
             {
                 "icon-text": "React",
