@@ -162,7 +162,7 @@
             "description": "A running history of my past research experience. Contains various topics including Image Classification, Object Detection, Natural Language Processing, Generative Adversarial Networks, Adversarial AI, Super Resolution and Game Agents."
         },
         "accordion_text": "View Papers",
-        "accordion_text_muted": "(2 of 17 shown)",
+        "accordion_text_muted": "(1 of 17 shown)",
         "latest_papers": {
             "title": "Soft Labels for Satellite Object Detection",
             "subtitle": "Matthew Ciolino, Grant Rosario, David Noever",
@@ -239,7 +239,7 @@
         },
         "Crowd Counter & Tracker": {
             "title": "Crowd Counter & Tracker",
-            "description": "Point Crowd Detection and Object Detection Simialrity Tracker",
+            "description": "Point Crowd Detection and Object Detection Similiarity Tracker",
             "image": "assets/images/tokyo_ppl.webp",
             "links": {
                 "Github Tracker": [
@@ -279,6 +279,43 @@
                 "Powerpoint": [
                     "assets/docs/Super Resolution SPIE.pdf",
                     "simple-icons:microsoftpowerpoint"
+                ]
+            }
+        },
+        "Sea of Thieves Fishing App": {
+            "title": "Sea of Thieves Cooking App",
+            "description": "A simple cooking timer app to help players cook fish in the game Sea of Thieves",
+            "image": "assets/images/fish.webp",
+            "links": {
+                "Website": [
+                    "https://sea-of-thieves-cooking-timer.onrender.com/",
+                    "gg:website"
+                ]
+            }
+        },
+        "StyleTTS2 Python Package": {
+            "title": "StyleTTS2 Python Package",
+            "description": "Convert any text to speech with a specific style in realtime using a pre-trained model. Check out the source code below.",
+            "image": "assets/images/speech_to_text.webp",
+            "links": {
+                "Github": [
+                    "https://github.com/mrciolino/StyleTTS2",
+                    "simple-icons:github"
+                ]
+            }
+        },
+        "TableTop Simualtor Motion Machine": {
+            "title": "TableTop Simualtor Motion Machine",
+            "description": "A One-World compatable motion machine for simple animated movement in TableTop Simulator",
+            "image": "assets/images/motion_machine.webp",
+            "links": {
+                "Steam": [
+                    "https://steamcommunity.com/sharedfiles/filedetails/?id=3037763814",
+                    "gg:website"
+                ],
+                "Github": [
+                    "https://github.com/mrciolino/Motion-Machine-TTS",
+                    "simple-icons:github"
                 ]
             }
         }

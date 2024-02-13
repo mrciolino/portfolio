@@ -127,7 +127,7 @@ const ProjectCards = (props) => {
                     <Card.Title as="h4">{props.title}</Card.Title>
                     <Card.Text>{props.description}</Card.Text>
                     {Object.entries(props.links).map(([key, value]) => (
-                        <Button className={`m-1 primary`} key={key} variant="primary" size="sm" href={value[0]}>
+                        <Button className={`m-1 primary`} key={key} variant="primary" size="sm" href={value[0]} target="_blank">
                             <Icon className="m-1" icon={value[1]} /> {key}
                         </Button>))}
                 </Card.Body>

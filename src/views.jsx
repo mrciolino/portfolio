@@ -59,6 +59,9 @@ const ProjectView = () => {
             <ProjectCards {...Data["Projects"]['Crowd Counter & Tracker']} />
             <ProjectCards {...Data["Projects"]['Portfolio Website']} />
             <ProjectCards {...Data["Projects"]['Single Image Super Resolution']} />
+            <ProjectCards {...Data["Projects"]['StyleTTS2 Python Package']} />
+            <ProjectCards {...Data["Projects"]['Sea of Thieves Fishing App']} />
+            <ProjectCards {...Data["Projects"]['TableTop Simualtor Motion Machine']} />
         </Container>
     );
 }
