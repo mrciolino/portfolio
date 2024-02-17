@@ -53,15 +53,15 @@ const ProjectView = () => {
     return (
         <Container id="projects" className="d-flex flex-wrap justify-content-center p-3 col-12" data-aos="zoom-in" data-aos-delay="100">
             <SectionIntro {...Data["Projects"]['ProjectsIntro']} />
-            <ProjectCards {...Data["Projects"]['xEval']} />
-            <ProjectCards {...Data["Projects"]['Transformers']} />
-            <ProjectCards {...Data["Projects"]['Feature Projects']} />
-            <ProjectCards {...Data["Projects"]['Crowd Counter & Tracker']} />
-            <ProjectCards {...Data["Projects"]['Portfolio Website']} />
-            <ProjectCards {...Data["Projects"]['Single Image Super Resolution']} />
             <ProjectCards {...Data["Projects"]['StyleTTS2 Python Package']} />
+            <ProjectCards {...Data["Projects"]['Transformers']} />
+            <ProjectCards {...Data["Projects"]['Single Image Super Resolution']} />
+            <ProjectCards {...Data["Projects"]['xEval']} />
+            <ProjectCards {...Data["Projects"]['Feature Projects']} />
+            <ProjectCards {...Data["Projects"]['Feature Demos']} />
             <ProjectCards {...Data["Projects"]['Sea of Thieves Fishing App']} />
             <ProjectCards {...Data["Projects"]['Tabletop Simulator Motion Machine']} />
+            <ProjectCards {...Data["Projects"]['Portfolio Website']} />
         </Container>
     );
 }

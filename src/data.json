@@ -34,7 +34,8 @@
         },
         "titles": [
             "Data Scientist",
-            "Computer Vision Expert",
+            "Computer Vision Engineer",
+            "Software Engineer",
             "Student",
             "Researcher"
         ]
@@ -241,17 +242,25 @@
                 ]
             }
         },
-        "Crowd Counter & Tracker": {
-            "title": "Crowd Counter & Tracker",
-            "description": "Point Crowd Detection and Object Detection Similiarity Tracker",
+        "Feature Demos": {
+            "title": "Feature Demos",
+            "description": "Collection of Streamlit Demos, including Object Tracker, Crowd Counter, Satellite Object Detection, and Web Map",
             "image": "assets/images/tokyo_ppl.webp",
             "links": {
-                "Github Tracker": [
-                    "https://github.com/mrciolino/yolov3_deepsort",
+                "Object Tracker": [
+                    "https://github.com/mrciolino/Streamlit-Apps/tree/main/yolov3_deepsort",
                     "simple-icons:github"
                 ],
-                "Github Counter": [
-                    "https://github.com/mrciolino/Crowd-Counter",
+                "Crowd Counter": [
+                    "https://github.com/mrciolino/Streamlit-Apps/tree/main/Crowd-Counter",
+                    "simple-icons:github"
+                ],
+                "Satellite Object Detection": [
+                    "https://github.com/mrciolino/Streamlit-Apps/tree/main/YoloV5_Streamlit",
+                    "simple-icons:github"
+                ],
+                "Web Map": [
+                    "https://github.com/mrciolino/Streamlit-Apps/tree/main/web_map_streamlit",
                     "simple-icons:github"
                 ]
             }
