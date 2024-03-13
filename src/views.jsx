@@ -61,6 +61,7 @@ const ProjectView = () => {
             <ProjectCards {...Data["Projects"]['Feature Demos']} />
             <ProjectCards {...Data["Projects"]['Sea of Thieves Fishing App']} />
             <ProjectCards {...Data["Projects"]['Tabletop Simulator Motion Machine']} />
+            <ProjectCards {...Data["Projects"]['Paltable']} />
             <ProjectCards {...Data["Projects"]['Portfolio Website']} />
         </Container>
     );

@@ -276,6 +276,22 @@
                 ]
             }
         },
+        "Paltable": {
+            "title": "Palworld Table",
+            "description": "Searchable Palworld table for Pals. Quickly and easily access all the information you want about Pals in Palworld.",
+            "image": "assets/images/paltable.webp",
+            "links": {
+                "Website": [
+                    "https://paltable.onrender.com/",
+                    "gg:website"
+                ],
+                "Github": [
+                    "https://github.com/mrciolino/Palworld-Pal-Table",
+                    "simple-icons:github"
+                ]
+
+            }
+        },
         "Single Image Super Resolution": {
             "title": "Super Resolution",
             "description": "Single Image Super Resolution using GANs to increase Object Detection mAP scores",
@@ -319,7 +335,7 @@
         },
         "Tabletop Simulator Motion Machine": {
             "title": "Tabletop Simulator Motion Machine",
-            "description": "A One-World compatable motion machine for simple animated movement in TableTop Simulator",
+            "description": "A One-World compatible motion machine for simple animated movement in TableTop Simulator",
             "image": "assets/images/motion_machine.webp",
             "links": {
                 "Steam": [
