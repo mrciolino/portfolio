@@ -234,7 +234,7 @@ const Footer = () => {
                 <h5>Matthew Ciolino</h5>
                 <p>Feel free to email me below for any opportunities. </p>
                 <div className="social-links">
-                    <a aria-label="email" href="mailto:matthew@matthewciolino.com"><Icon icon="bx:bx-envelope" /></a>
+                    <a aria-label="email" href="mailto:matthew@matthewciolino.com" className='m-1'><Icon icon="bx:bx-envelope" /></a>
                 </div>
                 <div>
                     Made with <Icon icon="bx:bx-heart" color="var(--strong-color)" /> and <Icon icon="bx:bx-code-alt" color="var(--strong-color)" /> using
