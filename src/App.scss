@@ -86,7 +86,7 @@ General Section
   display: none;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1048px) {
   #scroll_to_top {
     background-color: transparent;
     color: var(--text-color);
@@ -96,6 +96,15 @@ General Section
     top: 0;
     right: 4vw;
     font-size: 2rem;
+  }
+}
+
+// above 1500px
+@media (min-width: 1499px) {
+  #content {  
+    max-width: 75vw;
+    margin: 0 auto;
+    background: var(--bg-color);
   }
 }
 
@@ -195,7 +204,7 @@ General Section
     }
   }
 
-  @media (min-width: 992px) {
+  @media (min-width: 1048px) {
     padding-left: 5%;
     margin: 0 0 5% 0;
 
@@ -204,7 +213,7 @@ General Section
     }
   }
 
-  @media (max-width: 992px) {
+  @media (max-width: 1048px) {
     text-align: center;
 
     .container {
@@ -364,7 +373,7 @@ General Section
   overflow-y: auto;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1048px) {
   #header {
     width: 300px;
     background: var(--bg-color);
@@ -373,7 +382,7 @@ General Section
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1048px) {
   #main {
     margin-left: 100px;
   }
@@ -426,7 +435,7 @@ General Section
   color: var(--light-color);
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1048px) {
 
   .nav-menu a,
   .nav-menu a:focus {

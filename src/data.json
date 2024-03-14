@@ -70,7 +70,7 @@
     "Resume": {
         "ResumeIntro": {
             "title": "Resume",
-            "description": "A brief account of my professional experience, my past projects, my continuing education, and my technical skills. Feel free to use this document for job application purposes. Click on the below accordion to view or download my resume."
+            "description": "A brief account of my professional experience, my past projects, my continuing education, and my technical skills. Feel free to use this document for job application purposes. Expand below to view or download my resume."
         },
         "accordion_text": "View or Download Resume",
         "accordion_text_muted": "(August 2023)",
@@ -138,10 +138,6 @@
             {
                 "icon-text": "Visual Studio Code",
                 "icon-name": "vscode-icons:file-type-vscode"
-            },
-            {
-                "icon-text": "Lua",
-                "icon-name": "devicon:lua"
             },
             {
                 "icon-text": "React",

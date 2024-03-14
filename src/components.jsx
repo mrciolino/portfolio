@@ -258,7 +258,7 @@ const Header = (props) => {
 
     const [darkTheme, setDarkTheme] = useState(getThemeInStorage() === 'dark');
     useEffect(() => {
-        const root = document.getElementById('root');
+        const root = document.getElementById('content');
         root?.style.setProperty("--bg-color", darkTheme ? props.colors.bg_color_dark : props.colors.bg_color_light);
         root?.style.setProperty("--off-bg-color", darkTheme ? props.colors.off_bg_color_dark : props.colors.off_bg_color_light);
         root?.style.setProperty("--light-color", darkTheme ? props.colors.light_color_dark : props.colors.light_color_light);
