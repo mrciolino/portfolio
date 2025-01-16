@@ -34,7 +34,8 @@
         },
         "titles": [
             "Data Scientist",
-            "Computer Vision Expert",
+            "Computer Vision Engineer",
+            "Software Engineer",
             "Student",
             "Researcher"
         ]
@@ -42,7 +43,7 @@
     "About": {
         "AboutIntro": {
             "title": "About",
-            "description": "Data Scientist at PeopleTec | Computer Vision | Natural Language Processing | Adversarial AI | MS Computer Science 2023 | BS Mechanical Engineering 2018"
+            "description": "Data Scientist at PeopleTec | Computer Vision | Natural Language Processing | Adversarial AI | MS Computer Science 2024 | BS Mechanical Engineering 2018"
         },
         "about_paragraph": "As a data scientist with experience in both computer vision and natural language processing, I have a proven track record of applying state-of-the-art deep learning algorithms to real-world problems. My background in mechanical engineering and current pursuit of a Master of Science in Computer Science from the Georgia Institute of Technology have equipped me with a unique skill set for tackling complex, interdisciplinary challenges. I have worked on projects ranging from object detection using TinyML, to adversarial AI and super resolution in computer vision. I am also an experienced software engineer, familiar with a variety of programming languages and development tools, and have presented my research at national and international machine learning conferences. My passion for solving problems through technology and drive for continual learning make me a strong asset to any team.",
         "work_experience": [
@@ -50,7 +51,7 @@
                 "title": "Data Scientist",
                 "company": "PeopleTec Remote",
                 "date": "Nov 2020 - Present",
-                "description": "Applied state-of-the-art deep learning algorithms to investigate effectiveness in satellite imagery"
+                "description": "Led research efforts in deep learning algorithms for satellite imagery for Object Detection,NLP, Adversarial AI, Dataset Creation, and other Computer Vision Tasks"
             },
             {
                 "title": "Machine Learning Engineer",
@@ -69,10 +70,10 @@
     "Resume": {
         "ResumeIntro": {
             "title": "Resume",
-            "description": "A brief account of my professional experience, my past projects, my continuing education, and my technical skills. Feel free to use this document for job application purposes. Click on the below accordion to view or download my resume."
+            "description": "A brief account of my professional experience, my past projects, my continuing education, and my technical skills. Feel free to use this document for job application purposes. Expand below to view or download my resume."
         },
         "accordion_text": "View or Download Resume",
-        "accordion_text_muted": "(December 2022)",
+        "accordion_text_muted": "(September 2024)",
         "tools": [
             {
                 "icon-text": "Python",
@@ -80,7 +81,7 @@
             },
             {
                 "icon-text": "Anaconda",
-                "icon-name": "vscode-icons:file-type-conda"
+                "icon-name": "devicon:anaconda"
             },
             {
                 "icon-text": "TensorFlow",
@@ -112,7 +113,7 @@
             },
             {
                 "icon-text": "Windows",
-                "icon-name": "logos:microsoft-windows"
+                "icon-name": "devicon:windows11"
             },
             {
                 "icon-text": "AWS",
@@ -162,7 +163,7 @@
             "description": "A running history of my past research experience. Contains various topics including Image Classification, Object Detection, Natural Language Processing, Generative Adversarial Networks, Adversarial AI, Super Resolution and Game Agents."
         },
         "accordion_text": "View Papers",
-        "accordion_text_muted": "(2 of 16 shown)",
+        "accordion_text_muted": "(1 of 17 shown)",
         "latest_papers": {
             "title": "Soft Labels for Satellite Object Detection",
             "subtitle": "Matthew Ciolino, Grant Rosario, David Noever",
@@ -181,10 +182,6 @@
             "description": "Legislation monitoring and alert tool for daily legislation updates",
             "image": "assets/images/xeval.webp",
             "links": {
-                "xEval": [
-                    "https://www.xeval.io",
-                    "gg:website"
-                ],
                 "About": [
                     "https://github.com/mrciolino/portfolio-site/blob/master/public/assets/docs/xEval.md",
                     "gg:readme"
@@ -241,17 +238,25 @@
                 ]
             }
         },
-        "Crowd Counter & Tracker": {
-            "title": "Crowd Counter & Tracker",
-            "description": "Point Crowd Detection and Object Detection Simialrity Tracker",
+        "Feature Demos": {
+            "title": "Feature Demos",
+            "description": "Collection of Streamlit Demos, including Object Tracker, Crowd Counter, Satellite Object Detection, and Web Map",
             "image": "assets/images/tokyo_ppl.webp",
             "links": {
-                "Github Tracker": [
-                    "https://github.com/mrciolino/yolov3_deepsort",
+                "Object Tracker": [
+                    "https://github.com/mrciolino/Streamlit-Apps/tree/main/yolov3_deepsort",
                     "simple-icons:github"
                 ],
-                "Github Counter": [
-                    "https://github.com/mrciolino/Crowd-Counter",
+                "Crowd Counter": [
+                    "https://github.com/mrciolino/Streamlit-Apps/tree/main/Crowd-Counter",
+                    "simple-icons:github"
+                ],
+                "Satellite Object Detection": [
+                    "https://github.com/mrciolino/Streamlit-Apps/tree/main/YoloV5_Streamlit",
+                    "simple-icons:github"
+                ],
+                "Web Map": [
+                    "https://github.com/mrciolino/Streamlit-Apps/tree/main/web_map_streamlit",
                     "simple-icons:github"
                 ]
             }
@@ -265,6 +270,22 @@
                     "https://github.com/mrciolino/portfolio-site",
                     "simple-icons:github"
                 ]
+            }
+        },
+        "Paltable": {
+            "title": "Palworld Table",
+            "description": "Searchable Palworld table for Pals. Quickly and easily access all the information you want about Pals in Palworld.",
+            "image": "assets/images/paltable.webp",
+            "links": {
+                "Website": [
+                    "https://paltable.onrender.com/",
+                    "gg:website"
+                ],
+                "Github": [
+                    "https://github.com/mrciolino/Palworld-Pal-Table",
+                    "simple-icons:github"
+                ]
+
             }
         },
         "Single Image Super Resolution": {
@@ -283,6 +304,43 @@
                 "Powerpoint": [
                     "assets/docs/Super Resolution SPIE.pdf",
                     "simple-icons:microsoftpowerpoint"
+                ]
+            }
+        },
+        "Sea of Thieves Fishing App": {
+            "title": "Sea of Thieves Cooking App",
+            "description": "A simple cooking timer app to help players cook fish in the game Sea of Thieves",
+            "image": "assets/images/fish.webp",
+            "links": {
+                "Website": [
+                    "https://sea-of-thieves-cooking-timer.onrender.com/",
+                    "gg:website"
+                ]
+            }
+        },
+        "StyleTTS2 Python Package": {
+            "title": "StyleTTS2 Python Package",
+            "description": "Convert any text to speech with a specific style in realtime using a pre-trained model. Check out the source code below.",
+            "image": "assets/images/speech_to_text.webp",
+            "links": {
+                "Github": [
+                    "https://github.com/mrciolino/StyleTTS2",
+                    "simple-icons:github"
+                ]
+            }
+        },
+        "Tabletop Simulator Motion Machine": {
+            "title": "Tabletop Simulator Motion Machine",
+            "description": "A One-World compatible motion machine for simple animated movement in TableTop Simulator",
+            "image": "assets/images/motion_machine.webp",
+            "links": {
+                "Steam": [
+                    "https://steamcommunity.com/sharedfiles/filedetails/?id=3037763814",
+                    "gg:website"
+                ],
+                "Github": [
+                    "https://github.com/mrciolino/Motion-Machine-TTS",
+                    "simple-icons:github"
                 ]
             }
         }

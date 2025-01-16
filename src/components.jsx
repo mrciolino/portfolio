@@ -127,7 +127,7 @@ const ProjectCards = (props) => {
                     <Card.Title as="h4">{props.title}</Card.Title>
                     <Card.Text>{props.description}</Card.Text>
                     {Object.entries(props.links).map(([key, value]) => (
-                        <Button className={`m-1 primary`} key={key} variant="primary" size="sm" href={value[0]}>
+                        <Button className={`m-1 primary`} key={key} variant="primary" size="sm" href={value[0]} target="_blank">
                             <Icon className="m-1" icon={value[1]} /> {key}
                         </Button>))}
                 </Card.Body>
@@ -234,7 +234,7 @@ const Footer = () => {
                 <h5>Matthew Ciolino</h5>
                 <p>Feel free to email me below for any opportunities. </p>
                 <div className="social-links">
-                    <a aria-label="email" href="mailto:mrciolino@alum.lehigh.edu"><Icon icon="bx:bx-envelope" /></a>
+                    <a aria-label="email" href="mailto:matthew@matthewciolino.com" className='m-1'><Icon icon="bx:bx-envelope" /></a>
                 </div>
                 <div>
                     Made with <Icon icon="bx:bx-heart" color="var(--strong-color)" /> and <Icon icon="bx:bx-code-alt" color="var(--strong-color)" /> using
@@ -258,7 +258,7 @@ const Header = (props) => {
 
     const [darkTheme, setDarkTheme] = useState(getThemeInStorage() === 'dark');
     useEffect(() => {
-        const root = document.getElementById('root');
+        const root = document.getElementById('content');
         root?.style.setProperty("--bg-color", darkTheme ? props.colors.bg_color_dark : props.colors.bg_color_light);
         root?.style.setProperty("--off-bg-color", darkTheme ? props.colors.off_bg_color_dark : props.colors.off_bg_color_light);
         root?.style.setProperty("--light-color", darkTheme ? props.colors.light_color_dark : props.colors.light_color_light);
@@ -294,7 +294,7 @@ const Header = (props) => {
                 <ul>
                     {Object.entries(props.header).map(([key, value]) => (
                         <li key={key}>
-                            <Link activeClass="active" duration={500} offset={-200} smooth="easeInOutSine" className="nav-link" spy to={value.div_id}>
+                            <Link activeClass="active" duration={200} offset={-200} delay={10} smooth="easeOutQuart" className="nav-link" spy to={value.div_id}>
                                 <Icon icon={value.icon} /><span>{value.text}</span>
                             </Link>
                         </li>))}
