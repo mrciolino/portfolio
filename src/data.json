@@ -163,7 +163,7 @@
             "description": "A running history of my past research experience. Contains various topics including Image Classification, Object Detection, Natural Language Processing, Generative Adversarial Networks, Adversarial AI, Super Resolution and Game Agents."
         },
         "accordion_text": "View Papers",
-        "accordion_text_muted": "(1 of 17 shown)",
+        "accordion_text_muted": "(1 of 18 shown)",
         "latest_papers": {
             "title": "From Pixels to Planes: Minimum Ground Sample Distance for Aircraft",
             "subtitle": "Matthew Ciolino and Willie Maddox",
