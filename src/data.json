@@ -45,7 +45,7 @@
             "title": "About",
             "description": "Data Scientist at PeopleTec | Computer Vision | Natural Language Processing | Adversarial AI | MS Computer Science 2024 | BS Mechanical Engineering 2018"
         },
-        "about_paragraph": "As a data scientist with experience in both computer vision and natural language processing, I have a proven track record of applying state-of-the-art deep learning algorithms to real-world problems. My background in mechanical engineering and current pursuit of a Master of Science in Computer Science from the Georgia Institute of Technology have equipped me with a unique skill set for tackling complex, interdisciplinary challenges. I have worked on projects ranging from object detection using TinyML, to adversarial AI and super resolution in computer vision. I am also an experienced software engineer, familiar with a variety of programming languages and development tools, and have presented my research at national and international machine learning conferences. My passion for solving problems through technology and drive for continual learning make me a strong asset to any team.",
+        "about_paragraph": "I am a data scientist with expertise in computer vision and natural language processing, applying cutting-edge deep learning algorithms to solve real-world challenges. My background in mechanical engineering and an M.S. in Computer Science from Georgia Tech provide me with a strong foundation for addressing complex, interdisciplinary problems. Key projects include TinyML object detection, adversarial AI, and super-resolution techniques in computer vision. Additionally, I am an experienced software engineer proficient in diverse programming languages and development tools, with research presentations at both national and international machine learning conferences. My passion for leveraging technology to solve problems, combined with a commitment to lifelong learning, makes me a valuable addition to any team.",
         "work_experience": [
             {
                 "title": "Data Scientist",
@@ -163,13 +163,13 @@
             "description": "A running history of my past research experience. Contains various topics including Image Classification, Object Detection, Natural Language Processing, Generative Adversarial Networks, Adversarial AI, Super Resolution and Game Agents."
         },
         "accordion_text": "View Papers",
-        "accordion_text_muted": "(1 of 17 shown)",
+        "accordion_text_muted": "(1 of 18 shown)",
         "latest_papers": {
-            "title": "Soft Labels for Satellite Object Detection",
-            "subtitle": "Matthew Ciolino, Grant Rosario, David Noever",
-            "description": "The paper examines the use of soft labels in satellite object detection using a YOLOv5 model on the xView dataset to detect cars, planes, and ships. Training on soft labels resulted in similar accuracy to the original dataset.",
-            "image": "assets/images/soft_labels.webp",
-            "Paper": "https://arxiv.org/abs/2212.00585v3"
+            "title": "From Pixels to Planes: Minimum Ground Sample Distance for Aircraft",
+            "subtitle": "Matthew Ciolino and Willie Maddox",
+            "description": "This study examines GSD's effect on aircraft detection using the AllPlanes 120 dataset, finding 0.86m as the threshold where aircraft under 20m wingspan become harder to detect.",
+            "image": "assets/images/AllPlanes.webp",
+            "Paper": "https://arxiv.org/abs/2412.02137v1"
         }
     },
     "Projects": {
@@ -285,7 +285,17 @@
                     "https://github.com/mrciolino/Palworld-Pal-Table",
                     "simple-icons:github"
                 ]
-
+            }
+        },
+        "OSMSAT": {
+            "title": "Open Street Map with AllPlanes Object Detection",
+            "description": "Navigable Open Street Map (Google/Mapbox/Bing) with airplane type detection.",
+            "image": "assets/images/osmsat.webp",
+            "links": {
+                "Github": [
+                    "https://github.com/WillieMaddox/osmsat-client",
+                    "simple-icons:github"
+                ]
             }
         },
         "Single Image Super Resolution": {
