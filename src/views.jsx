@@ -53,7 +53,6 @@ const ProjectView = () => {
     return (
         <Container id="projects" className="d-flex flex-wrap justify-content-center p-3 col-12" data-aos="zoom-in" data-aos-delay="100">
             <SectionIntro {...Data["Projects"]['ProjectsIntro']} />
-            <ProjectCards {...Data["Projects"]['OSMSAT']} />
             <ProjectCards {...Data["Projects"]['StyleTTS2 Python Package']} />
             <ProjectCards {...Data["Projects"]['Transformers']} />
             <ProjectCards {...Data["Projects"]['Single Image Super Resolution']} />
